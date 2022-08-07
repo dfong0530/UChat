@@ -1,9 +1,10 @@
 import './App.css';
+import Message from './Pages/Messages.js'
 
 function App() {
   return (
     <>
-      <h1>App</h1>
+      <Message/>
     </>
   );
 }

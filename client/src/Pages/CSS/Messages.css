@@ -1,0 +1,30 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+
+.page {
+    height: 100vh; 
+    display: grid; 
+    grid-template-columns: 1fr 3fr;
+}
+
+.page div {
+    border: solid 1px black; 
+}
+
+.side { 
+    display: flex;  
+    flex-direction: column;
+}
+
+.add {
+    flex: 1; 
+}
+
+.friends {
+    flex: 7; 
+}
+
