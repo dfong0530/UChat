@@ -5,7 +5,8 @@
 }
 
 
-.page {
+.page { 
+    font-family: 'Inter'; 
     height: 100vh; 
     display: grid; 
     grid-template-columns: 1fr 3fr;
@@ -16,12 +17,25 @@
 }
 
 .side { 
+    background-color:#4F677D;
+    color: white;
+    font-size: 30px; 
     display: flex;  
     flex-direction: column;
 }
 
 .add {
     flex: 1; 
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    column-gap: 34px;
+}
+
+.add img {
+    width: 49px; 
+    height: 37px; 
+    object-fit: contain; 
 }
 
 .friends {
