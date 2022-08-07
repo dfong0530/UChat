@@ -12,10 +12,6 @@
     grid-template-columns: 1fr 3fr;
 }
 
-.page div {
-    border: solid 1px black; 
-}
-
 .side { 
     background-color:#4F677D;
     color: white;
@@ -25,6 +21,7 @@
 }
 
 .add {
+    border-bottom: 2px solid #CECECE; 
     flex: 1; 
     display: flex;  
     justify-content: center;
@@ -38,7 +35,34 @@
     object-fit: contain; 
 }
 
+/* .add img:active {
+
+} */
+
 .friends {
     flex: 7; 
+    display: flex; 
+    flex-direction: column; 
 }
+
+.friends div {
+    display: flex; 
+    justify-content: left; 
+    align-items: center;
+    column-gap: 25px; 
+}
+
+.single-friend {
+    border-bottom: 1px solid white; 
+    height: 143px; 
+}
+
+.profile-pic {
+    background-color: #5BA3E4;
+    border-radius: 50px;  
+    height: 80px; 
+    width: 83px;
+    margin-left: 25px; 
+}
+
 

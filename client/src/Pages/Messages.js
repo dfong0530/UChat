@@ -32,6 +32,21 @@ const Messages = () => {
                     </div>
 
                     <div className='friends'>
+                        <div className="single-friend">
+                            <div className="profile-pic">
+                                
+                            </div>
+
+                            <p>
+                                Sarah 
+                            </p> 
+                        </div>
+
+                        <div className="single-friend">
+                            <p>
+                                Veevek
+                            </p>
+                        </div> 
                     </div>
                 </div>
 
