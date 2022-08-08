@@ -1,6 +1,8 @@
 import "./CSS/Messages.css";
-import {useEffect} from "react"
+import {useEffect, useContext} from "react"
+import GlobalContext from "../GlobalContext";
 import io from 'socket.io-client';
+
 
 const socket = io();
 
