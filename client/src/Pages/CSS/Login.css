@@ -1,0 +1,85 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+.login-page, .info {
+    display: flex; 
+    flex-direction: column;
+
+}
+
+.login-page, .login-button {
+    font-family: "Poppins"; 
+}
+
+
+.login-page {
+    color: #6AB1F0; 
+    height: 100vh; 
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-style: normal; 
+    font-weight: 800; 
+    font-size: 55px; 
+    margin-bottom: 85px; 
+}
+
+.info {
+    row-gap: 47px; 
+    margin-bottom: 47px; 
+}
+
+.login-button, .name, .pass {
+    width: 567px; 
+    border-radius: 50px; 
+    border: none; 
+}
+
+.create-account, .name, .pass {
+    font-size: 25px; 
+}
+
+.name, .pass {
+    color: #787878; 
+    height: 76px; 
+    line-height: 41px; 
+    padding-left: 55px; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s; 
+}
+
+.name:hover, .pass:hover {
+    opacity: 0.85; 
+}
+
+.name:active, .pass:active {
+    border-style: hidden;
+}
+
+.login-button {
+    background-color: #6AB1F0; 
+    color: white; 
+    height: 85px; 
+    font-size: 32px; 
+    margin-bottom: 25px; 
+    transition: 0.25s; 
+}
+
+.login-button:hover {
+    opacity: 0.85; 
+}
+
+.login-button:active {
+    opacity: 0.60; 
+}
+
+.create-account {
+    color: black; 
+}
+
+
