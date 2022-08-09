@@ -8,7 +8,14 @@ const Login = () => {
 
     const [form, setForm] = useState({username: '', password: ''})
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+
+        console.log(form.username)
+        console.log(form.password);
+
+        setForm({username: '', password: ''});
     }
 
     return (
@@ -21,11 +28,17 @@ const Login = () => {
                     <input 
                         className="name"
                         placeholder="Username"
+                        value={form.username}
+                        onChange={(e) => setForm({...form, username: e.target.value})}
+                        required
                     />
                     
                     <input 
                         className="pass"
                         placeholder="Password"
+                        value={form.password}
+                        onChange={(e) => setForm({...form, password: e.target.value})}
+                        required
                     />   
 
                     <button className="login-button">
