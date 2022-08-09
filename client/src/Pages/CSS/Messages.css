@@ -9,12 +9,12 @@
     font-family: 'Inter'; 
     height: 100vh; 
     display: grid; 
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 25% 75%;
 }
 
 /* all of the features that use a flexbox */
 .sidebar, .add-friend, .friends, .friends div
-, .main, .header, .info, .name-location {
+, .main, .header, .information, .name-location {
     display: flex; 
 }
 
@@ -22,7 +22,7 @@
     flex-direction: column;
 }
 
-.add-friend, .friends div, .header, .info 
+.add-friend, .friends div, .header, .information 
 , .name-location {
     align-items: center;
 }
@@ -85,7 +85,7 @@ the name of the friend and a donation button */
 }
 
 /* the profile picture and the text */
-.info {
+.information {
     column-gap: 25px;
     margin-left: 35px; 
 }
@@ -95,7 +95,7 @@ the name of the friend and a donation button */
 }
 
 /* the specifications for the text */
-.name {
+.id {
     color: #797979; 
     font-size: 40px; 
 }

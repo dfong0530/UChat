@@ -58,13 +58,13 @@ const Messages = () => {
                         {/* the information regarding the friend w/
                         their profile picture, where they are from 
                         and their name */}
-                        <section className="info">
+                        <section className="information">
                             {/* the profile picture */}
                             <div className="profile-pic"></div>
                             
                             {/* for the name and location */}
                             <div className="name-location">
-                                <p className="name">
+                                <p className="id">
                                     Veevek
                                 </p>
 
