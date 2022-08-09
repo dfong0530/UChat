@@ -1,14 +1,17 @@
 import "./CSS/Messages.css";
+import io from 'socket.io-client';
 import {useEffect, useContext} from "react"
 import GlobalContext from "../GlobalContext";
-import addIcon from "./images/add-friend-icon.jpg";
-import io from 'socket.io-client';
+
+import { fontSize } from "@mui/system";
+import SendIcon from '@mui/icons-material/Send';
+import PersonIcon from '@mui/icons-material/Person';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 
 
 const socket = io();
 
 const Messages = () => {
-
     useEffect(() => {
         /* This is where I will adding socket event listeners. 
 
@@ -33,19 +36,87 @@ const Messages = () => {
                         <p>
                             UChat
                         </p>
-                        {/* the add feature */}
-                        <img src={addIcon} />
+
+                        <PersonAddAlt1Icon 
+                            className="add-button"
+                            sx={{fontSize: 60}}
+                        />
                     </div>
 
                     {/* the friends feature of the side */}
                     <div className="friends">
                         {/* there is a friend with a profile pic and their name */}
                         <div className="single-friend">
-                            <div className="profile-pic"></div>
+                            <div className="profile-pic">
+                                <PersonIcon
+                                    sx={{fontSize: 50}}
+                                />
+                            </div>
+
                             <p>
                                 Sarah
                             </p> 
                         </div>
+
+                        <div className="single-friend">
+                            <div className="profile-pic">
+                                <PersonIcon
+                                    sx={{fontSize: 50}}
+                                />
+                            </div>
+
+                            <p>
+                                Sarah
+                            </p> 
+                        </div>
+
+                        <div className="single-friend">
+                            <div className="profile-pic">
+                                <PersonIcon
+                                    sx={{fontSize: 50}}
+                                />
+                            </div>
+
+                            <p>
+                                Sarah
+                            </p> 
+                        </div>
+
+                        <div className="single-friend">
+                            <div className="profile-pic">
+                                <PersonIcon
+                                    sx={{fontSize: 50}}
+                                />
+                            </div>
+
+                            <p>
+                                Sarah
+                            </p> 
+                        </div>
+
+                        <div className="single-friend">
+                            <div className="profile-pic">
+                                <PersonIcon
+                                    sx={{fontSize: 50}}
+                                />
+                            </div>
+
+                            <p>
+                                Sarah
+                            </p> 
+                        </div>
+                        <div className="single-friend">
+                            <div className="profile-pic">
+                                <PersonIcon
+                                    sx={{fontSize: 50}}
+                                />
+                            </div>
+
+                            <p>
+                                Sarah
+                            </p> 
+                        </div>
+                            
                     </div>
                 </div>
 
@@ -60,7 +131,15 @@ const Messages = () => {
                         and their name */}
                         <section className="information">
                             {/* the profile picture */}
-                            <div className="profile-pic"></div>
+                            <div className="profile-pic">
+                                <PersonIcon 
+                                    className="icon"
+                                    sx={{
+                                        color: "white", 
+                                        fontSize: 50
+                                    }}
+                                />
+                            </div>
                             
                             {/* for the name and location */}
                             <div className="name-location">
@@ -88,8 +167,20 @@ const Messages = () => {
 
                     {/* THE INPUT PART WHERE YOU COLLECT THE DATA AND 
                     MANIPULATE IT*/}
-                    <div className="message-input">
-                    </div>
+                    <form className="message-input">
+                        <input 
+                            className="message-box"
+                            placeholder="Type your message here..."
+                        />
+                        <div className="enter-button">
+                            <SendIcon 
+                                sx={{
+                                    color: "white", 
+                                    fontSize: 30 
+                                }}
+                            />
+                        </div>
+                    </form>
                 </div>
             </section>
         </>
