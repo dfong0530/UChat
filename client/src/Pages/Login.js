@@ -1,19 +1,23 @@
-
-
+import {useState, useContext} from "react";
+import { Link } from "react-router-dom";
 import "./CSS/Login.css";
+import GlobalContext from "../GlobalContext";
 
 const Login = () => {
 
+
+    const [form, setForm] = useState({username: '', password: ''})
+
+    const handleSubmit = () => {
+    }
+
     return (
         <>
-<<<<<<< HEAD
-=======
             <section className="login-page">
                 <p className="title">
                     UChat
                 </p>
-
-                <form className="info">
+                <form className="info" onSubmit={handleSubmit}>
                     <input 
                         className="name"
                         placeholder="Username"
@@ -30,10 +34,9 @@ const Login = () => {
                 </form>
 
                 <p className="create-account">
-                    or <a href="#">create an account</a> 
+                    or <Link to="/create-account" >create an account</Link >
                 </p>
             </section>
->>>>>>> 855d8cb3d1c94bce30e16d7c7d0adda4dcc0bb9c
         </>
     );
 }

@@ -9,7 +9,7 @@ import {Routes, Route, useNavigate} from "react-router"
 
 function App() {
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //navigate("/messages")
   const [user, setUser] = useState(null); //{_id, username, password, friends: [{ roomID: string, friendUsername: string}]}
   const [room, setRoom] = useState({roomID: "", room: "", messages: []}); //{roomID: str, room: str, messages: [{_id: str, userID, message: str}]}
 
