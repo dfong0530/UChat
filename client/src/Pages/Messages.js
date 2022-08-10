@@ -104,14 +104,19 @@ const Messages = () => {
                         
                         {/* this is the donate button */}
                         <button className="donate"> 
-                            Donate Now to Veevek
+                            Donate Now
                         </button>
                     </div>
 
 
 
                     {/* the CHAT PART */}
-                    <div className="messages-chat"></div>
+                    <div className="messages-chat">
+
+
+
+
+                    </div>
                     
 
                     {/* THE INPUT PART WHERE YOU COLLECT THE DATA AND 
