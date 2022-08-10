@@ -104,7 +104,7 @@ const Messages = () => {
                         
                         {/* this is the donate button */}
                         <button className="donate"> 
-                            Donate Now
+                            Donate Now to Veevek
                         </button>
                     </div>
 
