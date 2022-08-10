@@ -1,77 +1,83 @@
-* {
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box;
-}
-
 /* setting up the font and the display of the entire page */
-.page { 
-    font-family: 'Inter'; 
-    height: 100vh; 
-    display: grid; 
-    grid-template-columns: 25% 75%;
+.page {
+  font-family: "Inter";
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 25% 75%;
 }
 
 /* all of the features that use a flexbox */
-.sidebar, .add-friend, .friends, .friends div
-, .main, .header, .information, .name-location {
-    display: flex; 
+.sidebar,
+.add-friend,
+.friends,
+.friends div,
+.main,
+.header,
+.information,
+.name-location {
+  display: flex;
 }
 
-.sidebar, .friends, .main, .name-location {
-    flex-direction: column;
+.sidebar,
+.friends,
+.main,
+.name-location {
+  flex-direction: column;
 }
 
-.add-friend, .friends div, .header, .information 
-, .name-location {
-    align-items: center;
+.add-friend,
+.friends div,
+.header,
+.information,
+.name-location {
+  align-items: center;
 }
 
 /* ===setting up the side=== */
-.sidebar { 
-    background-color:#4F677D;
-    color: white;
-    font-size: 30px; 
+.sidebar {
+  background-color: #4f677d;
+  color: white;
+  font-size: 30px;
 }
 
 /* setting up the add feature */
 .add-friend {
-    border-bottom: 2px solid #CECECE; 
-    flex: 1; 
-    justify-content: center;
-    column-gap: 34px;
+  border-bottom: 2px solid #cecece;
+  flex: 1;
+  justify-content: center;
+  column-gap: 34px;
 }
 
 /* the add "button" */
 .add-friend img {
-    width: 49px; 
-    height: 37px; 
-    object-fit: contain; 
+  width: 49px;
+  height: 37px;
+  object-fit: contain;
 }
 
 /* setting up the part with all of the friends listed */
 .friends {
-    flex: 7; 
+  flex: 7;
 }
 
 /* setting up the section for each friend div */
 .friends div {
-    justify-content: left; 
-    column-gap: 25px; 
+  justify-content: left;
+  column-gap: 25px;
 }
 
 /* the section for each single friend */
 .single-friend {
-    border-bottom: 1px solid white; 
-    height: 143px; 
+  border-bottom: 1px solid white;
+  height: 143px;
 }
 
 .profile-pic {
-    background-color: #5BA3E4;
-    border-radius: 50px;  
-    height: 80px; 
-    width: 83px;
-    margin-left: 25px; 
+  background-color: #5ba3e4;
+  border-radius: 50px;
+  height: 80px;
+  width: 83px;
+  margin-left: 25px;
 }
 
 /* ===now the main part of the messages page=== */
@@ -79,62 +85,60 @@
 /* this is on top of the messaging chat UI that displays
 the name of the friend and a donation button */
 .header {
-    border-bottom: 6px solid #DDDDDD; 
-    flex: 1; 
-    justify-content: space-between;
+  border-bottom: 6px solid #dddddd;
+  flex: 1;
+  justify-content: space-between;
 }
 
 /* the profile picture and the text */
 .information {
-    column-gap: 25px;
-    margin-left: 35px; 
+  column-gap: 25px;
+  margin-left: 35px;
 }
 
 .name-location {
-    line-height: 40px; 
+  line-height: 40px;
 }
 
 /* the specifications for the text */
 .id {
-    color: #797979; 
-    font-size: 40px; 
+  color: #797979;
+  font-size: 40px;
 }
 
 .location {
-    color: #a1a1a1; 
-    font-size: 25px; 
+  color: #a1a1a1;
+  font-size: 25px;
 }
 
 .donate {
-    color: white; 
-    background-color: #70D367; 
-    border-style: none; 
-    border-radius: 25px;
-    font-family: "Poppins"; 
-    font-size: 30px; 
-    width: 266px; 
-    height: 74px; 
-    margin-right: 100px;
-    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25); 
-    transition: 0.2s; 
+  color: white;
+  background-color: #70d367;
+  border-style: none;
+  border-radius: 25px;
+  font-family: "Poppins";
+  font-size: 30px;
+  width: 266px;
+  height: 74px;
+  margin-right: 100px;
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
+  transition: 0.2s;
 }
 
 /* when hovering and clicking on the button */
 .donate:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
 .donate:active {
-    opacity: 0.65; 
+  opacity: 0.65;
 }
 
 .messages-chat {
-    flex: 7;
+  flex: 7;
 }
 
 .messages-input {
-    flex: 1; 
-    display: flex; 
-    
+  flex: 1;
+  display: flex;
 }
-
