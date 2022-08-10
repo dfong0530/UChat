@@ -1,17 +1,24 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
+// import user from "../App.js"
 import {useEffect, useContext} from "react"
 import GlobalContext from "../GlobalContext";
 
-import { fontSize } from "@mui/system";
 import SendIcon from '@mui/icons-material/Send';
 import PersonIcon from '@mui/icons-material/Person';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+import { useSearchParams } from "react-router-dom";
 
 
 const socket = io();
 
 const Messages = () => {
+    // const [users, setUsers] = useState([]); 
+
+    const handleClick = () => {
+
+    }
+
     useEffect(() => {
         /* This is where I will adding socket event listeners. 
 
@@ -19,9 +26,8 @@ const Messages = () => {
             the frontend. Once the data is retrieved on the front end state variables will be updated
             accordingly 
         */
-
-
     })
+
 
     return (
         <> 
@@ -43,80 +49,23 @@ const Messages = () => {
                         />
                     </div>
 
+    
                     {/* the friends feature of the side */}
                     <div className="friends">
                         {/* there is a friend with a profile pic and their name */}
-                        <div className="single-friend">
-                            <div className="profile-pic">
-                                <PersonIcon
-                                    sx={{fontSize: 50}}
-                                />
+                        {
+                            <div className="single-friend">
+                                <div className="profile-pic">
+                                    <PersonIcon
+                                        sx={{fontSize: 50}}
+                                    />
+                                </div>
+
+                                <p>
+                                    Sarah
+                                </p> 
                             </div>
-
-                            <p>
-                                Sarah
-                            </p> 
-                        </div>
-
-                        <div className="single-friend">
-                            <div className="profile-pic">
-                                <PersonIcon
-                                    sx={{fontSize: 50}}
-                                />
-                            </div>
-
-                            <p>
-                                Sarah
-                            </p> 
-                        </div>
-
-                        <div className="single-friend">
-                            <div className="profile-pic">
-                                <PersonIcon
-                                    sx={{fontSize: 50}}
-                                />
-                            </div>
-
-                            <p>
-                                Sarah
-                            </p> 
-                        </div>
-
-                        <div className="single-friend">
-                            <div className="profile-pic">
-                                <PersonIcon
-                                    sx={{fontSize: 50}}
-                                />
-                            </div>
-
-                            <p>
-                                Sarah
-                            </p> 
-                        </div>
-
-                        <div className="single-friend">
-                            <div className="profile-pic">
-                                <PersonIcon
-                                    sx={{fontSize: 50}}
-                                />
-                            </div>
-
-                            <p>
-                                Sarah
-                            </p> 
-                        </div>
-                        <div className="single-friend">
-                            <div className="profile-pic">
-                                <PersonIcon
-                                    sx={{fontSize: 50}}
-                                />
-                            </div>
-
-                            <p>
-                                Sarah
-                            </p> 
-                        </div>
-                            
+                        }
                     </div>
                 </div>
 
@@ -162,7 +111,12 @@ const Messages = () => {
 
 
                     {/* the CHAT PART */}
-                    <div className="messages-chat"></div>
+                    <div className="messages-chat">
+
+
+
+
+                    </div>
                     
 
                     {/* THE INPUT PART WHERE YOU COLLECT THE DATA AND 
@@ -178,6 +132,7 @@ const Messages = () => {
                                     color: "white", 
                                     fontSize: 30 
                                 }}
+                                onClick={handleClick}
                             />
                         </div>
                     </form>

@@ -7,13 +7,11 @@
 .login-page, .info {
     display: flex; 
     flex-direction: column;
-
 }
 
 .login-page, .login-button {
     font-family: "Poppins"; 
 }
-
 
 .login-page {
     color: #6AB1F0; 
@@ -23,10 +21,9 @@
 }
 
 .title {
-    font-style: normal; 
     font-weight: 800; 
     font-size: 55px; 
-    margin-bottom: 85px; 
+    margin-bottom: 85px;
 }
 
 .info {

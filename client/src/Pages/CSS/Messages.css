@@ -6,16 +6,12 @@
   grid-template-columns: 25% 75%;
 }
 
-/* all of the features that use a flexbox */
-.sidebar,
-.add-friend,
-.friends,
-.friends div,
-.main,
-.header,
-.information,
-.name-location {
-  display: flex;
+/* setting up the font and the display of the entire page */
+.page {
+  font-family: "Inter";
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 23% 77%;
 }
 
 /* all of the features that use a flexbox */
@@ -98,7 +94,7 @@
 .single-friend {
   height: 16.67%;
   border-bottom: 1px solid white;
-  column-gap: 30px;
+  column-gap: 22px;
 }
 
 .single-friend:hover {
@@ -136,7 +132,7 @@ the name of the friend and a donation button */
 /* the profile picture and the text */
 .information {
   column-gap: 25px;
-  margin-left: 35px;
+  margin-left: 3%;
 }
 
 .name-location {
@@ -160,10 +156,10 @@ the name of the friend and a donation button */
   border-style: none;
   border-radius: 25px;
   font-family: "Poppins";
-  font-size: 30px;
-  width: 266px;
-  height: 74px;
-  margin-right: 100px;
+  font-size: 25px;
+  width: 250px;
+  height: 68px;
+  margin-right: 9%;
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -187,7 +183,7 @@ the name of the friend and a donation button */
   height: 50%;
   border: none;
   border-radius: 30px;
-  font-size: 30px;
+  font-size: 25px;
   vertical-align: middle;
   padding-left: 4%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
