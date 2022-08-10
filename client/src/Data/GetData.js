@@ -4,9 +4,9 @@ export const Login = async(username, password) => {
 }
 
 
-export const CreateAccount = async() => {
+export const CreateAccount = async(auth) => {
 }
 
 
-export const GetRoomData = async() => {
+export const GetRoomData = async(roomID, username, password) => {
 }

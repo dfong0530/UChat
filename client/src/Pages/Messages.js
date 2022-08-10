@@ -13,20 +13,69 @@ import { useSearchParams } from "react-router-dom";
 const socket = io();
 
 const Messages = () => {
-    // const [users, setUsers] = useState([]); 
+    
+
+    const {user, setUser, room, setRoom} = useContext(GlobalContext);
+
+
+
+    useEffect(() => {
+         /* This is where I will adding socket event listeners. 
+
+            These even listeners will help me send data from the backend to
+            the frontend. Once the data is retrieved on the front end state variables will be updated
+            accordingly 
+
+
+            EMIT ACTIONS: --> socket.emit(action, params)
+
+            1. 'join-room', { userID: string, username: string } --> Used when user wants a new friend
+
+            2. 'switch-room', room: string --> Used when user switches to differnt friend (In the backend it switches the socket.io room)
+
+            3. 'leave-room', room: string --> Used before you write before you call switch room. MUST LEAVE ROOM BEFORE JOINING NEW ROOM
+
+            4. 'message' { userID: string, roomID: string, message: string, roomNum: string } --> USED WHEN NEW MESSAGE ENTERED
+
+
+        */
+
+        const joinRoomHandler = async({friendUsername, roomID, roomNum}) => {
+
+        }
+
+
+        const messageHandler = ({userID, message, _id}) => {
+
+        }
+
+
+        const friendJoinedHandler = ({username, roomID}) => {
+
+        }
+        
+
+        //Update user, make api request to update currentMessages
+        socket.on('join-room', joinRoomHandler);
+
+        socket.on('message',messageHandler);
+
+        socket.on('friend-joined', friendJoinedHandler);
+
+
+        return () => {
+            socket.off('join-room', joinRoomHandler);
+            socket.off('message',messageHandler);
+            socket.off('friend-joined', friendJoinedHandler)
+        }
+
+    }, [room, setRoom, setUser, user]);
+
+
 
     const handleClick = () => {
 
     }
-
-    useEffect(() => {
-        /* This is where I will adding socket event listeners. 
-
-            ALL you need to know is that these even listeners will help me send data from the backend to
-            the frontend. Once the data is retrieved on the front end state variables will be updated
-            accordingly 
-        */
-    })
 
 
     return (

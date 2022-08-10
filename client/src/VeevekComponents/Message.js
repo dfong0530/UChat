@@ -1,6 +1,6 @@
-import "./CSS/Initial.css";
+import "./CSS/Message.css";
 
-const Initial = () => {
+const Message = () => {
     
     return (
         <>
@@ -9,4 +9,4 @@ const Initial = () => {
     );
 }
 
-export default Initial;
+export default Message;
