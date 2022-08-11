@@ -16,13 +16,13 @@ Backend Developers: David Fong
 
 ### Contribution
 
-##### David Fong
+#### <u>David Fong</u>
 
-##### Justin Tran
+#### Justin Tran
 
-##### Veevek Dave
+#### Veevek Dave
 
-##### Tashi Sherpa
+#### Tashi Sherpa
 
 ### How to test
 
