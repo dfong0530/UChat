@@ -13,7 +13,7 @@ function App() {
   const navigate = useNavigate(); 
   //{_id, username, password, friends: [{ roomID: string, friendUsername: string}]}
   const [user, setUser] = useState(null); 
-  //{roomID: str, room: str, messages: [{_id: str, userID, message: str}]}
+  //{roomID: str, room: str, messages: [{_id: str, userID, message: string, donation: bool, donationAmount: int}]}
   const [room, setRoom] = useState({roomID: "", room: "", messages: []}); 
 
 
