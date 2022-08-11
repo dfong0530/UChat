@@ -16,18 +16,18 @@ Backend Developers: David Fong
 
 ### Contribution
 
-David Fong
+#### David Fong
 
     I worked on building out the backend portion of this project with Mongo.db, Node.js, Express, and
     socket.io. I also designed the frontend architecture of the application and oversaw the project as a whole.
 
     I learned a lot about node.js, express, mongo.db, and socket.io. I mainly worked on the frontend with React before the start of this project and leanred a lot about new backend technologies like socket.io, node.js, and express.
 
-- #### Justin Tran
+#### Justin Tran
 
-- #### Veevek Dave
+#### Veevek Dave
 
-- #### Tashi Sherpa
+#### Tashi Sherpa
 
 ### How to test
 
