@@ -1,13 +1,11 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
-// import user from "../App.js"
 import {useState, useEffect, useContext} from "react"
 import GlobalContext from "../GlobalContext";
 
 import SendIcon from '@mui/icons-material/Send';
 import PersonIcon from '@mui/icons-material/Person';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import { useSearchParams } from "react-router-dom";
 
 
 const socket = io();
@@ -37,19 +35,37 @@ const Messages = () => {
 
             4. 'message' { userID: string, roomID: string, message: string, roomNum: string } --> USED WHEN NEW MESSAGE ENTERED
 
+            
+
+            ret = API request
+          
+            socekt.emit('leave-room', room.room)
+            socke.emit('switch-room', newRoom);
+
+             setRoom(ret)
+
+
+            handleAddUsre = () => {
+                socket.emit('join-room', {userID: user._id, username: user.username});
+            }
+
+            
 
         */
-
+        
+        //Sent from Backend --> After backend finishes procesing adding a new room 
+        //The website should add a new friend to the top of the side bar
         const joinRoomHandler = async({friendUsername, roomID, roomNum}) => {
-
         }
 
-
+        //Sent from Backend --> After backend finishes procesing adding a new message
+        //The website should add a mesage to the screen
         const messageHandler = ({userID, message, _id}) => {
 
         }
 
-
+        //Sent from Backend --> After second user wants to add a friend. First user updates friendUsername
+        //The website should update anonymous with new username
         const friendJoinedHandler = ({username, roomID}) => {
 
         }
@@ -171,8 +187,6 @@ const Messages = () => {
                             placeholder="Type your message here..."
                             // id={id}
                             // userID={username}
-                            value={message.text}
-                            onChange={handleChange}
                         />
                         <div className="enter-button">
                             <SendIcon 

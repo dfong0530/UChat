@@ -17,6 +17,7 @@ function App() {
   //{roomID: str, room: str, messages: [{_id: str, userID, message: str}]}
   const [room, setRoom] = useState({roomID: "", room: "", messages: []}); 
 
+
   return (
     <>
       <GlobalContext.Provider value={{navigate, user, setUser,room, setRoom}}>
@@ -24,7 +25,7 @@ function App() {
           <Route path="/" element={<Initial />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/messages" element={<Message user={user} />} />
+          <Route path="/messages" element={<Message />} />
         </Routes>
       </GlobalContext.Provider>
     </>
