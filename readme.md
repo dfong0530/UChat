@@ -6,7 +6,7 @@ GIF
 
 ### Application: LINK
 
-Frontend Developers: David Fong, Justin Tran, Veevek Dave, Tashi Sherpa
+Frontend Developers: Justin Tran, David Fong, Veevek Dave, Tashi Sherpa
 
 Backend Developers: David Fong
 
@@ -16,7 +16,12 @@ Backend Developers: David Fong
 
 ### Contribution
 
-#### <u>David Fong</u>
+#### David Fong
+
+I worked on building out the backend portion of this project with Mongo.db, Node.js, Express, and
+socket.io. I also designed the frontend architecture of the application and oversaw the project as a whole.
+
+I learned a lot about node.js, express, mongo.db, and socket.io. I mainly worked on the frontend with React before the start of this project and leanred a lot about new backend technologies like socket.io, node.js, and express.
 
 #### Justin Tran
 
