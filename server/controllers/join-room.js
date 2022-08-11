@@ -17,31 +17,33 @@ const uuid = require('uuid');
     Return The Room Num, RoomID, and current Messages, username
 */
 
-const JoinRoom = async(userId, username) => {
-    const UserQueue = await RoomQueue.findOne({});      
+const JoinRoom = async(userId, username, otherCountry, country) => {
+    const OtherQueue = await RoomQueue.findOne({country: otherCountry});
+    const SameQueue = await RoomQueue.findOne({country});      
 
     let ret = {roomNum: null, roomID: null, otherUser: null, secondUser: false}                      
 
-    if(UserQueue.waiting.length === 0 || UserQueue.waiting[0].userId === userId){       
+    if(OtherQueue.waiting.length === 0){       
         ret.roomNum = uuid.v1();
 
         ret.otherUser = {roomNum: ret.roomNum, userId: uuid.v1(), username: "Anonymous"};
         const {roomID} = await CreateRoom({_id: userId, username: username}, {_id: ret.otherUser.userId, username: ret.otherUser.username}, ret.roomNum);
-        UserQueue.waiting.push({roomID: String(roomID), roomNum: ret.roomNum, userId, username, _id: uuid.v1()});
+        SameQueue.waiting.push({roomID: String(roomID), roomNum: ret.roomNum, userId, username, _id: uuid.v1()});
         ret.roomID = String(roomID);
+        await RoomQueue.findByIdAndUpdate({_id: SameQueue._id}, {waiting: SameQueue.waiting});
     }
     else{
-        ret.otherUser  = UserQueue.waiting.pop();
+        ret.otherUser  = OtherQueue.waiting.shift();
         ret.roomNum = ret.otherUser.roomNum;
         ret.roomID = ret.otherUser.roomID
         ret.secondUser = true;
 
         await UpdateUserTwo(ret.roomID, {_id: userId, username});
         await UpdateFriend(ret.otherUser.userId, ret.roomID, username);
+        await RoomQueue.findByIdAndUpdate({_id: OtherQueue._id}, {waiting: OtherQueue.waiting});
     }  
 
     await AddRoomToUser(userId, ret.roomID, ret.otherUser.username);
-    await RoomQueue.findByIdAndUpdate({_id: UserQueue._id}, {waiting: UserQueue.waiting});
     return {roomNum: ret.roomNum, roomID: ret.roomID, friendUsername: ret.otherUser.username, secondUser: ret.secondUser}
 }
 

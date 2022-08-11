@@ -2,7 +2,6 @@ import "./CSS/Messages.css";
 import io from 'socket.io-client';
 import {useState, useEffect, useContext} from "react"
 import GlobalContext from "../GlobalContext";
-
 import SendIcon from '@mui/icons-material/Send';
 import PersonIcon from '@mui/icons-material/Person';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
@@ -16,7 +15,6 @@ const Messages = () => {
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
 
 
-
     useEffect(() => {
          /* This is where I will adding socket event listeners. 
 
@@ -27,7 +25,7 @@ const Messages = () => {
 
             EMIT ACTIONS: --> socket.emit(action, params)
 
-            1. 'join-room', { userID: string, username: string } --> Used when user wants a new friend
+            1. 'join-room', { userID: string, username: string, inUkraine: bool } --> Used when user wants a new friend
 
             2. 'switch-room', room: string --> Used when user switches to differnt friend (In the backend it switches the socket.io room)
 
@@ -49,8 +47,7 @@ const Messages = () => {
                 socket.emit('join-room', {userID: user._id, username: user.username});
             }
 
-            
-
+        
         */
         
         //Sent from Backend --> After backend finishes procesing adding a new room 

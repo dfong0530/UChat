@@ -26,9 +26,9 @@ const io = new Server(server, {
 
 io.on('connection', socket => {
 
-    socket.on('join-room', async({ userID, username }) => {
+    socket.on('join-room', async({ userID, username, inUkraine }) => {
         console.log("join room");
-        const ret = await JoinRoom(userID, username);
+        const ret = await JoinRoom(userID, username, inUkraine ? '*' : 'Ukraine', inUkraine ? 'Ukraine' : '*');
 
         if(ret.secondUser){
             socket.broadcast.to(ret.roomNum).emit("friend-joined", {username, roomID: ret.roomID});
