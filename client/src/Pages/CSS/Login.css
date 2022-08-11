@@ -1,79 +1,105 @@
-.login-page, .info {
-    display: flex; 
-    flex-direction: column;
+.login-page,
+.info {
+  display: flex;
+  flex-direction: column;
 }
 
-.login-page, .login-button {
-    font-family: "Poppins"; 
+.login-page,
+.login-button {
+  font-family: "Poppins";
 }
 
 .login-page {
-    color: #6AB1F0; 
-    height: 100vh; 
-    justify-content: top;
-    align-items: center;
-    margin-top: 7%; 
+  color: #6ab1f0;
+  height: 100%;
+  justify-content: top;
+  align-items: center;
+  margin-top: 5%;
 }
 
 .title {
-    font-weight: 800; 
-    font-size: 55px; 
-    margin-bottom: 85px;
+  font-weight: 800;
+  font-size: 55px;
+  margin-bottom: 48px;
 }
 
 .info {
-    width: 30%; 
-    row-gap: 47px; 
-    margin-bottom: 47px; 
+  width: 38%;
+  row-gap: 47px;
+  margin-bottom: 22px;
 }
 
-.login-button, .name, .pass {  
-    border: none; 
-    border-radius: 50px; 
+.login-button,
+.name,
+.pass {
+  border: none;
+  border-radius: 50px;
 }
 
-.create-account, .name, .pass {
-    font-size: 22px; 
+.create-account,
+.name,
+.pass {
+  font-size: 22px;
 }
 
-.name, .pass {
-    color: #787878; 
-    height: 70px; 
-    line-height: 41px; 
-    padding-left: 55px; 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transition: 0.15s; 
+.name,
+.pass {
+  color: #787878;
+  height: 65px;
+  width: 100%;
+  padding-left: 55px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.15s;
+  font-size: 20px;
+  margin-bottom: 1px;
 }
 
-.name:hover, .pass:hover, .login-button:hover {
-    opacity: 0.85; 
+.name:hover,
+.pass:hover,
+.login-button:hover {
+  opacity: 0.85;
 }
 
-.name:active, .pass:active {
-    border-style: hidden;
+.name:active,
+.pass:active {
+  border-style: hidden;
 }
 
-.name:focus, .pass:focus {
-    outline: none; 
+.name:focus,
+.pass:focus {
+  outline: none;
 }
 
 .login-button {
-    background-color: #6AB1F0; 
-    color: white; 
-    height: 79px; 
-    font-size: 28px;  
-    transition: 0.25s; 
+  background-color: #6ab1f0;
+  color: white;
+  height: 60px;
+  font-size: 28px;
+  transition: 0.25s;
 }
 
 .login-button:active {
-    opacity: 0.60; 
+  opacity: 0.6;
 }
 
 .create-account {
-    color: black; 
-    margin-top: -1%; 
+  color: rgb(70, 70, 70);
+  margin-top: 0px;
+  font-size: 17px;
+  margin-right: 10px;
 }
 
+.create-account-link {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 38px;
+  /* identical to box height */
 
+  color: #0075ff;
+}
 
-
+.create-account-link:hover {
+  filter: brightness(130%);
+}

@@ -1,6 +1,6 @@
 import "./CSS/Login.css";
 import { Link } from "react-router-dom";
-import {useState, useContext} from "react";
+import {useState, useContext, useRef, useEffect} from "react";
 import GlobalContext from "../GlobalContext";
 import SmsIcon from '@mui/icons-material/Sms';
 
@@ -9,6 +9,12 @@ const Login = () => {
 
 
     const [form, setForm] = useState({username: '', password: ''})
+    const usernameRef = useRef(null);
+
+    useEffect(() => {
+        usernameRef.current.focus();
+    }, []);
+
 
     const handleSubmit = (e) => {
 
@@ -18,6 +24,7 @@ const Login = () => {
         console.log(form.password);
 
         setForm({username: '', password: ''});
+        usernameRef.current.focus();
     }
 
     return (
@@ -25,13 +32,12 @@ const Login = () => {
             <section className="login-page">
                 <SmsIcon 
                     className="logo"
-                    sx={{fontSize: 90}}
+                    sx={{fontSize: 105}}
                 />
 
                 <p className="title">
                     UChat
                 </p>
-
                 <form className="info" onSubmit={handleSubmit}>
                     <input 
                         className="name"
@@ -39,9 +45,11 @@ const Login = () => {
                         value={form.username}
                         onChange={(e) => setForm({...form, username: e.target.value})}
                         required
+                        ref={usernameRef}
                     />
                     
                     <input 
+                        type="password"
                         className="pass"
                         placeholder="Password"
                         value={form.password}
@@ -53,10 +61,10 @@ const Login = () => {
                         Login
                     </button>
                 </form>
-
                 <p className="create-account">
-                    or <Link to="/create-account" >create an account</Link>
+                    or <Link className="create-account-link" to="/create-account" >create an account</Link>
                 </p>
+
             </section>
         </>
     );
