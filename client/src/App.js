@@ -6,7 +6,6 @@ import CreateAccount from "./Pages/CreateAccount";
 import {useState} from "react";
 import GlobalContext from './GlobalContext';
 import {Routes, Route, useNavigate} from "react-router"
-import { useSearchParams } from 'react-router-dom';
 
 function App() {
 
