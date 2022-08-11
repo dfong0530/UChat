@@ -6,12 +6,16 @@ import CreateAccount from "./Pages/CreateAccount";
 import {useState} from "react";
 import GlobalContext from './GlobalContext';
 import {Routes, Route, useNavigate} from "react-router"
+import { useSearchParams } from 'react-router-dom';
 
 function App() {
 
-  const navigate = useNavigate(); //navigate("/messages")
-  const [user, setUser] = useState(null); //{_id, username, password, friends: [{ roomID: string, friendUsername: string}]}
-  const [room, setRoom] = useState({roomID: "", room: "", messages: []}); //{roomID: str, room: str, messages: [{_id: str, userID, message: str}]}
+  //navigate("/messages")
+  const navigate = useNavigate(); 
+  //{_id, username, password, friends: [{ roomID: string, friendUsername: string}]}
+  const [user, setUser] = useState(null); 
+  //{roomID: str, room: str, messages: [{_id: str, userID, message: str}]}
+  const [room, setRoom] = useState({roomID: "", room: "", messages: []}); 
 
   return (
     <>
@@ -20,7 +24,7 @@ function App() {
           <Route path="/" element={<Initial />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/messages" element={<Message />} />
+          <Route path="/messages" element={<Message user={user} />} />
         </Routes>
       </GlobalContext.Provider>
     </>
