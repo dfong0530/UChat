@@ -1,5 +1,6 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
+import { GetRoomData } from "../Data/GetData";
 import {useState, useEffect, useContext} from "react"
 import GlobalContext from "../GlobalContext";
 import SendIcon from '@mui/icons-material/Send';
@@ -10,10 +11,8 @@ import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 const socket = io();
 
 const Messages = () => {
-    
-
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
-
+    const [message, setMessage] = useState({_id: "", userID: "", text: ""})
 
     useEffect(() => {
          /* This is where I will adding socket event listeners. 
@@ -25,11 +24,14 @@ const Messages = () => {
 
             EMIT ACTIONS: --> socket.emit(action, params)
 
-            1. 'join-room', { userID: string, username: string, inUkraine: bool } --> Used when user wants a new friend
+            1. 'join-room', { userID: string, username: string, inUkraine: bool } 
+            --> Used when user wants a new friend
 
-            2. 'switch-room', room: string --> Used when user switches to differnt friend (In the backend it switches the socket.io room)
+            2. 'switch-room', room: string 
+            --> Used when user switches to differnt friend (In the backend it switches the socket.io room)
 
-            3. 'leave-room', room: string --> Used before you write before you call switch room. MUST LEAVE ROOM BEFORE JOINING NEW ROOM
+            3. 'leave-room', room: string 
+            --> Used before you write before you call switch room. MUST LEAVE ROOM BEFORE JOINING NEW ROOM
 
             4. 'message' { userID: string, roomID: string, message: string, roomNum: string, donation: bool, donationAmount: int } --> USED WHEN NEW MESSAGE ENTERED
 
@@ -58,7 +60,16 @@ const Messages = () => {
         //Sent from Backend --> After backend finishes procesing adding a new message
         //The website should add a mesage to the screen
         const messageHandler = ({userID, message, _id, donation, donationAmount}) => {
-
+            const ret = GetRoomData();
+            const msg = {_id: message._id, userID: message.userID, text: message.text};
+            
+            if (message._id && message.userID && message.text) {
+                socket.emit('message', msg);
+                setMessage({ret}); 
+                setRoom([...room, [...message, message.text]]); 
+                setMessage({...message, text: ""}); 
+            } 
+            return {room}; 
         }
 
         //Sent from Backend --> After second user wants to add a friend. First user updates friendUsername
@@ -176,14 +187,13 @@ const Messages = () => {
 
                     {/* THE INPUT PART WHERE YOU COLLECT THE DATA AND 
                     MANIPULATE IT*/}
-                    {/* onSubmit={handleSubmit} */}
-                    <form className="message-input" >
+                    <form className="message-input">
                         <input 
                             type="text"
                             className="message-box"
                             placeholder="Type your message here..."
-                            // id={id}
-                            // userID={username}
+                            value={message.text}
+                            onChange={(e) => setMessage(e.target.value)}
                         />
                         <div className="enter-button">
                             <SendIcon 
