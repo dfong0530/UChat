@@ -12,41 +12,64 @@ import { useSearchParams } from "react-router-dom";
 
 const socket = io();
 
-const Messages = (props) => {
-    // const {id} = props.user; 
-    // const {roomID, room, messages} = room; 
+const Messages = () => {
     
-    const [message, setMessage] = useState({
-        id: "",
-        userID: "", 
-        text: ""
-    });
 
-    const handleChange = (e) => {
-        // const id = e.target.id; 
-        // const userID = e.target.userID;
-        e.preventDefault(); 
+    const {user, setUser, room, setRoom} = useContext(GlobalContext);
 
-        const text = e.target.value;  
-        setMessage({id, userID, text}); 
-    };
 
-    const handleSubmit = (e) => {
-        e.preventDefault(); 
-        if (message.text) { 
-            setMessage({id: "", userID: "", text: ""}); 
-        }
-    }
-       
+
     useEffect(() => {
-        /* This is where I will adding socket event listeners. 
+         /* This is where I will adding socket event listeners. 
 
-            ALL you need to know is that these even listeners will help me send data from the backend to
+            These even listeners will help me send data from the backend to
             the frontend. Once the data is retrieved on the front end state variables will be updated
             accordingly 
-        */
-    })
 
+
+            EMIT ACTIONS: --> socket.emit(action, params)
+
+            1. 'join-room', { userID: string, username: string } --> Used when user wants a new friend
+
+            2. 'switch-room', room: string --> Used when user switches to differnt friend (In the backend it switches the socket.io room)
+
+            3. 'leave-room', room: string --> Used before you write before you call switch room. MUST LEAVE ROOM BEFORE JOINING NEW ROOM
+
+            4. 'message' { userID: string, roomID: string, message: string, roomNum: string } --> USED WHEN NEW MESSAGE ENTERED
+
+
+        */
+
+        const joinRoomHandler = async({friendUsername, roomID, roomNum}) => {
+
+        }
+
+
+        const messageHandler = ({userID, message, _id}) => {
+
+        }
+
+
+        const friendJoinedHandler = ({username, roomID}) => {
+
+        }
+        
+
+        //Update user, make api request to update currentMessages
+        socket.on('join-room', joinRoomHandler);
+
+        socket.on('message',messageHandler);
+
+        socket.on('friend-joined', friendJoinedHandler);
+
+
+        return () => {
+            socket.off('join-room', joinRoomHandler);
+            socket.off('message',messageHandler);
+            socket.off('friend-joined', friendJoinedHandler)
+        }
+
+    }, [room, setRoom, setUser, user]);
 
     return (
         <> 
@@ -130,7 +153,12 @@ const Messages = (props) => {
 
 
                     {/* the CHAT PART */}
-                    <div className="messages-chat"></div>
+                    <div className="messages-chat">
+
+
+
+
+                    </div>
                     
 
                     {/* THE INPUT PART WHERE YOU COLLECT THE DATA AND 
