@@ -31,7 +31,7 @@ const Messages = () => {
 
             3. 'leave-room', room: string --> Used before you write before you call switch room. MUST LEAVE ROOM BEFORE JOINING NEW ROOM
 
-            4. 'message' { userID: string, roomID: string, message: string, roomNum: string } --> USED WHEN NEW MESSAGE ENTERED
+            4. 'message' { userID: string, roomID: string, message: string, roomNum: string, donation: bool, donationAmount: int } --> USED WHEN NEW MESSAGE ENTERED
 
             
 
@@ -57,7 +57,7 @@ const Messages = () => {
 
         //Sent from Backend --> After backend finishes procesing adding a new message
         //The website should add a mesage to the screen
-        const messageHandler = ({userID, message, _id}) => {
+        const messageHandler = ({userID, message, _id, donation, donationAmount}) => {
 
         }
 
