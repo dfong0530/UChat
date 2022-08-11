@@ -9,7 +9,7 @@
     font-family: 'Inter'; 
     height: 100vh; 
     display: grid; 
-    grid-template-columns: 23% 77%;
+    grid-template-columns: 24% 76%;
 }
 
 /* all of the features that use a flexbox */
@@ -47,7 +47,6 @@
 
 .add-button {
     filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.15)); 
-
 }
 
 .add-button:hover, .add-button:active, .single-friend, .donate
@@ -73,7 +72,7 @@
 .single-friend {
     height: 16.67%; 
     border-bottom: 1px solid white; 
-    column-gap: 22px; 
+    column-gap: 6%; 
 }
 
 .single-friend:hover{
@@ -133,7 +132,7 @@ the name of the friend and a donation button */
     color: white; 
     background-color: #70D367; 
     border-style: none; 
-    border-radius: 25px;
+    border-radius: 20px;
     font-family: "Poppins"; 
     font-size: 25px; 
     width: 250px; 
@@ -162,7 +161,7 @@ the name of the friend and a donation button */
     height: 50%; 
     border: none; 
     border-radius: 30px;  
-    font-size: 25px; 
+    font-size: 22px; 
     vertical-align: middle; 
     padding-left: 4%; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -171,7 +170,6 @@ the name of the friend and a donation button */
 .message-box:focus {
     outline: none; 
 }
-
 
 .enter-button {
     width: 4%; 

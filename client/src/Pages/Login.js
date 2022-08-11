@@ -1,7 +1,9 @@
-import {useState, useContext} from "react";
-import { Link } from "react-router-dom";
 import "./CSS/Login.css";
+import { Link } from "react-router-dom";
+import {useState, useContext} from "react";
 import GlobalContext from "../GlobalContext";
+import SmsIcon from '@mui/icons-material/Sms';
+
 
 const Login = () => {
 
@@ -21,9 +23,15 @@ const Login = () => {
     return (
         <>
             <section className="login-page">
+                <SmsIcon 
+                    className="logo"
+                    sx={{fontSize: 90}}
+                />
+
                 <p className="title">
                     UChat
                 </p>
+
                 <form className="info" onSubmit={handleSubmit}>
                     <input 
                         className="name"
@@ -47,7 +55,7 @@ const Login = () => {
                 </form>
 
                 <p className="create-account">
-                    or <Link to="/create-account" >create an account</Link >
+                    or <Link to="/create-account" >create an account</Link>
                 </p>
             </section>
         </>

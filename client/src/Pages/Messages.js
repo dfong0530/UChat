@@ -1,7 +1,7 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
 // import user from "../App.js"
-import {useEffect, useContext} from "react"
+import {useState, useEffect, useContext} from "react"
 import GlobalContext from "../GlobalContext";
 
 import SendIcon from '@mui/icons-material/Send';
@@ -12,13 +12,32 @@ import { useSearchParams } from "react-router-dom";
 
 const socket = io();
 
-const Messages = () => {
-    // const [users, setUsers] = useState([]); 
+const Messages = (props) => {
+    // const {id} = props.user; 
+    // const {roomID, room, messages} = room; 
+    
+    const [message, setMessage] = useState({
+        id: "",
+        userID: "", 
+        text: ""
+    });
 
-    const handleClick = () => {
+    const handleChange = (e) => {
+        // const id = e.target.id; 
+        // const userID = e.target.userID;
+        e.preventDefault(); 
 
+        const text = e.target.value;  
+        setMessage({id, userID, text}); 
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); 
+        if (message.text) { 
+            setMessage({id: "", userID: "", text: ""}); 
+        }
     }
-
+       
     useEffect(() => {
         /* This is where I will adding socket event listeners. 
 
@@ -104,7 +123,7 @@ const Messages = () => {
                         
                         {/* this is the donate button */}
                         <button className="donate"> 
-                            Donate Now to Veevek
+                            Donate Now 
                         </button>
                     </div>
 
@@ -116,10 +135,16 @@ const Messages = () => {
 
                     {/* THE INPUT PART WHERE YOU COLLECT THE DATA AND 
                     MANIPULATE IT*/}
-                    <form className="message-input">
+                    {/* onSubmit={handleSubmit} */}
+                    <form className="message-input" >
                         <input 
+                            type="text"
                             className="message-box"
                             placeholder="Type your message here..."
+                            // id={id}
+                            // userID={username}
+                            value={message.text}
+                            onChange={handleChange}
                         />
                         <div className="enter-button">
                             <SendIcon 
@@ -127,7 +152,6 @@ const Messages = () => {
                                     color: "white", 
                                     fontSize: 30 
                                 }}
-                                onClick={handleClick}
                             />
                         </div>
                     </form>
