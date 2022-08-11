@@ -28,10 +28,10 @@ const UpdateUserTwo = async(roomID, userTwo) => {
     }
 }
 
-const AddMessage = async(roomID, userID, message, _id) => {
+const AddMessage = async(roomID, userID, message, _id, donation, donationAmount) => {
 
     try{
-        const append = {_id, userID, message};
+        const append = {_id, userID, message, donation, donationAmount};
         await Rooms.findOneAndUpdate({_id: roomID}, {"$push": {messages: append}});
         return {completed: true}
     }
