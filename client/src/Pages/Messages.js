@@ -1,7 +1,7 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
 import { GetRoomData } from "../Data/GetData";
-import {useState, useEffect, useContext} from "react"
+import {useState, useEffect, useContext, useRef} from "react"
 import GlobalContext from "../GlobalContext";
 import SendIcon from '@mui/icons-material/Send';
 import PersonIcon from '@mui/icons-material/Person';
@@ -11,6 +11,7 @@ import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 const socket = io();
 
 const Messages = () => {
+
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
     const [rooms, setRooms] = useState([]); 
     const [message, setMessage] = useState({_id: "", userID: "", text: ""})
@@ -19,6 +20,29 @@ const Messages = () => {
         e.preventDefault(); 
         socket.emit('message', message); 
     }; 
+
+    //These are refs to make sure the input msg box is focused on refresh
+    //and that the msg scrolls down when messages are sent
+    const inputRef = useRef(null);
+    const msgSecRef = useRef(null);
+    
+
+    //When web page loads focus the cursor on the input message box.
+    //If the user has friends join the room of the first friend
+    useEffect(() => {
+        inputRef.current.focus();
+        if(user.friends.length !== 0){
+
+            socket.emit('switch-room', room.room);
+        }
+    }, [room.room, user.friends.length]);
+
+
+    //Every time messages are added make sure it automatically scrolls to bottom.
+    useEffect(() => {
+        msgSecRef.current.scrollTop = msgSecRef.current.scrollHeight;
+    }, [room])
+
 
     useEffect(() => {
          /* This is where I will adding socket event listeners. 
@@ -194,7 +218,7 @@ const Messages = () => {
 
 
                     {/* the CHAT PART */}
-                    <div className="messages-chat">
+                    <div className="messages-chat" ref={msgSecRef}>
 
 
 
@@ -210,7 +234,8 @@ const Messages = () => {
                             className="message-box"
                             placeholder="Type your message here..."
                             value={message.text}
-                            onChange={(e) => setMessage({...message, text: e.target.value})}
+                            onChange={(e) => setMessage(e.target.value)}
+                            ref={inputRef}
                         />
                         {/* api request return value from getRoomData is used 
                         as onClick handler */}

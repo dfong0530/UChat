@@ -1,6 +1,6 @@
 const RoomQueue = require('../models/join-room');
 const { AddRoomToUser, UpdateFriend } = require('./auth');
-const { CreateRoom, AddMessage, UpdateUserTwo} = require('../controllers/rooms');
+const { CreateRoom, UpdateUserTwo} = require('../controllers/rooms');
 const uuid = require('uuid');
 
 /*

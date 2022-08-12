@@ -5,3 +5,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* @media (min-width: 1440px) {
+  body {
+    background-color: red;
+  }
+} */
+
+/* @media (min-height: 710px) {
+  body {
+    background-color: red;
+  }
+} */

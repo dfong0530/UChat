@@ -47,12 +47,12 @@ io.on('connection', socket => {
         socket.leave(room);
     })
 
-    socket.on('message', async({ userID, roomID, message, roomNum }) => {
+    socket.on('message', async({ userID, roomID, message, roomNum, donation, donationAmount }) => {
         console.log('message');
         const _id = uuid.v1();
 
-        await AddMessage(roomID, userID, message, _id);
-        io.in(roomNum).emit('message', {_id, userID, message});
+        await AddMessage(roomID, userID, message, _id, donation, donationAmount);
+        io.in(roomNum).emit('message', {_id, userID, message, donation, donationAmount});
     }); 
 });
 

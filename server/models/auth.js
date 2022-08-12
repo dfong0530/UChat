@@ -18,7 +18,7 @@ const AuthShema = new mongoose.Schema({
         required: true
     },
     rooms: {
-        type: [{roomID: String, friendUsername: String}],
+        type: [{roomID: {type: String, required: true}, friendUsername: {type: String, rquired: true}}],
         default: []
     }
 }, {

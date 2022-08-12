@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { stringify } = require('uuid');
 
 const RoomSchema = new mongoose.Schema({
     roomNum: {
@@ -6,15 +7,15 @@ const RoomSchema = new mongoose.Schema({
         required: true
     },
     userOne: {
-        type: {_id: String, username: String},
+        type: {_id: {type: String, required: true}, username: {type: String, required: true}},
         required: true
     },
     userTwo: {
-        type: {_id: String, username: String},
+        type: {_id: {type: String, required: true}, username: {type: String, required: true}},
         required: true
     },
     messages: {
-        type: [{_id: String, userID: String, message: String}],
+        type: [{_id: {type: String, required: true}, userID: {type: String, required: true}, message: {type: String, required: true}, donation: {type: Boolean, required: true}, donationAmount: {type: Number, required: true}}],
         default: [],
         required: true
     }
