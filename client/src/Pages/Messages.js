@@ -12,7 +12,13 @@ const socket = io();
 
 const Messages = () => {
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
+    const [rooms, setRooms] = useState([]); 
     const [message, setMessage] = useState({_id: "", userID: "", text: ""})
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); 
+        socket.emit('message', message); 
+    }; 
 
     useEffect(() => {
          /* This is where I will adding socket event listeners. 
@@ -33,7 +39,8 @@ const Messages = () => {
             3. 'leave-room', room: string 
             --> Used before you write before you call switch room. MUST LEAVE ROOM BEFORE JOINING NEW ROOM
 
-            4. 'message' { userID: string, roomID: string, message: string, roomNum: string, donation: bool, donationAmount: int } --> USED WHEN NEW MESSAGE ENTERED
+            4. 'message' { userID: string, roomID: string, message: string, roomNum: string, donation: bool, donationAmount: int } 
+            --> USED WHEN NEW MESSAGE ENTERED
 
             
 
@@ -54,35 +61,44 @@ const Messages = () => {
         
         //Sent from Backend --> After backend finishes procesing adding a new room 
         //The website should add a new friend to the top of the side bar
-        const joinRoomHandler = async({friendUsername, roomID, roomNum}) => {
+        const joinRoomHandler = async({friendUsername, roomID, roomNum}) => {   
+            let incomingFriend = {roomID: roomID, friendUsername: friendUsername}; 
+            room.friends.push(incomingFriend); 
+            let newFriends = room.friends; 
+            setUser({...user, friends: newFriends}); 
         }
 
         //Sent from Backend --> After backend finishes procesing adding a new message
-        //The website should add a mesage to the screen
+        //The website should add a mesage to the screen 
         const messageHandler = ({userID, message, _id, donation, donationAmount}) => {
-            const ret = GetRoomData();
-            const msg = {_id: message._id, userID: message.userID, text: message.text};
-            
-            if (message._id && message.userID && message.text) {
-                socket.emit('message', msg);
-                setMessage({ret}); 
-                setRoom([...room, [...message, message.text]]); 
-                setMessage({...message, text: ""}); 
-            } 
-            return {room}; 
+            let incomingMessage = {_id: _id, userID: userID, message: message}; 
+            room.messages.push(incomingMessage);
+            let newMessages = room.messages; 
+            setRoom({...room, messages: newMessages}); 
+            setMessage({_id: "", userID: "", text: ""}); 
         }
 
-        //Sent from Backend --> After second user wants to add a friend. First user updates friendUsername
-        //The website should update anonymous with new username
+        //Sent from Backend --> After second user wants to add a friend. 
+        //First user updates friendUsername The website should update anonymous 
+        // with new username
         const friendJoinedHandler = ({username, roomID}) => {
-
+            user.friends.map(aUser => {
+                if (roomID == aUser.roomID) {
+                    let updatedFriend = {roomID: roomID, friendUsername: username}; 
+                    let index = user.friends.indexOf(aUser);
+                    user.friends[index] = updatedFriend; 
+                    let newFriends = user.friends; 
+                    setUser({...user, friends: newFriends}); 
+                    return; 
+                }
+            })
         }
         
 
         //Update user, make api request to update currentMessages
         socket.on('join-room', joinRoomHandler);
 
-        socket.on('message',messageHandler);
+        socket.on('message', messageHandler);
 
         socket.on('friend-joined', friendJoinedHandler);
 
@@ -94,6 +110,7 @@ const Messages = () => {
         }
 
     }, [room, setRoom, setUser, user]);
+
 
     return (
         <> 
@@ -187,14 +204,16 @@ const Messages = () => {
 
                     {/* THE INPUT PART WHERE YOU COLLECT THE DATA AND 
                     MANIPULATE IT*/}
-                    <form className="message-input">
+                    <form className="message-input" onSubmit={handleSubmit}>
                         <input 
                             type="text"
                             className="message-box"
                             placeholder="Type your message here..."
                             value={message.text}
-                            onChange={(e) => setMessage(e.target.value)}
+                            onChange={(e) => setMessage({...message, text: e.target.value})}
                         />
+                        {/* api request return value from getRoomData is used 
+                        as onClick handler */}
                         <div className="enter-button">
                             <SendIcon 
                                 sx={{
