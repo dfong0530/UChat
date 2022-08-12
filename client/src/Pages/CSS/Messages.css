@@ -47,6 +47,7 @@
   color: white;
   font-size: 30px;
   background-color: #4f677d;
+  overflow-y: scroll;
 }
 
 .add-friend {
