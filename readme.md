@@ -1,4 +1,4 @@
-# UChat
+# UChat "Make a difference on message at a time"
 
 GIF
 
@@ -14,9 +14,9 @@ GIF
 
 On Thursday, Febuary 22, 2022, Russia invaded Ukraine. The invasion wreaked havoc on the civilians and many lost their homes, lives, and loved ones. Depsite the invasion, Ukraine has not lost hope and continues fighting.
 
-This project was created in support on Ukraine. We wanted to create an application where the rest of the world could reach out to the people directly within Ukraine and provide support. This chat application application allows users in Ukraine to communicate with the rest of the world and the rest of the world to communicate with Ukraine.
+This project was created in support on Ukraine. We wanted to create an application where the rest of the world could reach out and provide support to people directly within Ukraine. This chat application application allows users in Ukraine to communicate with the rest of the world and the rest of the world to communicate with Ukraine.
 
-This software acts as a means for communciation between those who need support and those generous enough to provide it.
+This software connects those who need support and those who are generous enough to provide it.
 
 ### What is does
 
