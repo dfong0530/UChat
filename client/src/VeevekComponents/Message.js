@@ -9,7 +9,7 @@ const Message = (props) => {
     const{userID, _id, message} = props;
     return (
         //{userID === _id ? "grey-msg":"blue-msg"}
-        <div className= "message" >
+        <div className= {userID === _id ? "grey-msg" : "blue-msg"} >
             <p>My family has been living in Ukraine ever since I was born.</p>
         </div>
     );

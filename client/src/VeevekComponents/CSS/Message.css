@@ -1,8 +1,18 @@
-.message{
+.blue-msg{
   background-color: #5BA3E4;
   max-width: 400px;
   padding: 14px 14px 14px 14px;
   color: white;
+  font-size: 20px;
+  border-radius: 20px;
+  font-family: "Poppins";
+}
+
+.grey-msg{
+  background-color: #D8D8D8;
+  max-width: 400px;
+  padding: 14px 14px 14px 14px;
+  color: black;
   font-size: 20px;
   border-radius: 20px;
   font-family: "Poppins";
