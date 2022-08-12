@@ -1,9 +1,10 @@
 import "./CSS/CreateAccount.css";
+import Message from "../VeevekComponents/Message"
 
 const CreateAccount = () => {
     return (
         <>
-            <h1>Create Account</h1>
+            <Message />
         </>
     )
 }

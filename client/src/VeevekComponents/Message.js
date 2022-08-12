@@ -1,11 +1,17 @@
 import "./CSS/Message.css";
+import React, { useState, useEffect } from 'react';
 
-const Message = () => {
-    
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,600&family=Roboto:wght@400;500;700&display=swap');
+</style>
+
+const Message = (props) => {
+    const{userID, _id, message} = props;
     return (
-        <>
-            <h1>Initial</h1>
-        </>
+        //{userID === _id ? "grey-msg":"blue-msg"}
+        <div className= "message" >
+            <p>My family has been living in Ukraine ever since I was born.</p>
+        </div>
     );
 }
 
