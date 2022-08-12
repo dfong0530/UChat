@@ -1,4 +1,4 @@
-# UChat "Make a difference on message at a time"
+# UChat
 
 GIF
 
