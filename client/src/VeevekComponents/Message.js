@@ -6,11 +6,11 @@ import React, { useState, useEffect } from 'react';
 </style>
 
 const Message = (props) => {
-    const{userID, _id, message} = props;
+    const{userID, _id, message, action, action_id} = props;
     return (
-        //{userID === _id ? "grey-msg":"blue-msg"}
         <div className= {userID === _id ? "grey-msg" : "blue-msg"} >
-            <p>My family has been living in Ukraine ever since I was born.</p>
+            <p className= {action === action_id ? "donate-msg" : "no-msg"}>Donated $100</p>
+            <p>I believe in you. </p>
         </div>
     );
 }

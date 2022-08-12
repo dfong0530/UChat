@@ -1,6 +1,7 @@
 .blue-msg{
   background-color: #5BA3E4;
   max-width: 400px;
+  display: flex;
   padding: 14px 14px 14px 14px;
   color: white;
   font-size: 20px;
@@ -10,12 +11,19 @@
 
 .grey-msg{
   background-color: #D8D8D8;
-  max-width: 400px;
+  max-width: 200px;
   padding: 14px 14px 14px 14px;
   color: black;
   font-size: 20px;
   border-radius: 20px;
   font-family: "Poppins";
 }
+
+.donate-msg {
+  font-weight: bold;
+  color: #20D111;
+  font-size: medium;
+}
+
 
 
