@@ -6,9 +6,9 @@ GIF
 
 ### Project Link: LINK
 
-Frontend Developers: Justin Tran, David Fong, Veevek Dave, Tashi Sherpa
+###### Frontend Developers: David Fong, Justin Tran, Veevek Dave, Tashi Sherpa
 
-Backend Developers: David Fong
+###### Backend Developers: David Fong
 
 ### Inspiration
 
