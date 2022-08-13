@@ -1,5 +1,6 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
+import Message from "../VeevekComponents/Message.js"
 import { GetRoomData } from "../Data/GetData";
 import {useState, useEffect, useContext, useRef} from "react"
 import GlobalContext from "../GlobalContext";
@@ -154,18 +155,22 @@ const Messages = () => {
                     {/* the friends feature of the side */}
                     <div className="friends">
                         {/* there is a friend with a profile pic and their name */}
-                        {
-                            <div className="single-friend">
-                                <div className="profile-pic">
-                                    <PersonIcon
-                                        sx={{fontSize: 50}}
-                                    />
-                                </div>
+                        {   
+                        user.friends.map(friend => {
+                            return (
+                                <div className="single-friend">
+                                    <div className="profile-pic">
+                                        <PersonIcon
+                                            sx={{fontSize: 50}}
+                                        />
+                                    </div>
 
-                                <p>
-                                    Sarah
-                                </p> 
-                            </div>
+                                    <p>
+                                        {friend.username}
+                                    </p> 
+                                </div>
+                                ); 
+                            })
                         }
                     </div>
                 </div>
@@ -213,7 +218,11 @@ const Messages = () => {
 
                     {/* the CHAT PART */}
                     <div className="messages-chat" ref={msgSecRef}>
-
+                        {
+                            room.messages.map(msg => {
+                                return <Message message={message}/>;
+                            })
+                        }
 
 
 
