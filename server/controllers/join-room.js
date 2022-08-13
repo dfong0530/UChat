@@ -17,7 +17,7 @@ const uuid = require('uuid');
     Return The Room Num, RoomID, and current Messages, username
 */
 
-const JoinRoom = async(userId, username, otherCountry, country) => {
+const JoinRoom = async(userId, name, otherCountry, country) => {
     const OtherQueue = await RoomQueue.findOne({country: otherCountry});
     const SameQueue = await RoomQueue.findOne({country});      
 
@@ -26,9 +26,9 @@ const JoinRoom = async(userId, username, otherCountry, country) => {
     if(OtherQueue.waiting.length === 0){       
         ret.roomNum = uuid.v1();
 
-        ret.otherUser = {roomNum: ret.roomNum, userId: uuid.v1(), username: "Anonymous"};
-        const {roomID} = await CreateRoom({_id: userId, username: username}, {_id: ret.otherUser.userId, username: ret.otherUser.username}, ret.roomNum);
-        SameQueue.waiting.push({roomID: String(roomID), roomNum: ret.roomNum, userId, username, _id: uuid.v1()});
+        ret.otherUser = {roomNum: ret.roomNum, userId: uuid.v1(), name: "Anonymous"};
+        const {roomID} = await CreateRoom({_id: userId, name: name}, {_id: ret.otherUser.userId, name: ret.otherUser.name}, ret.roomNum);
+        SameQueue.waiting.push({roomID: String(roomID), roomNum: ret.roomNum, userId, name, _id: uuid.v1()});
         ret.roomID = String(roomID);
         await RoomQueue.findByIdAndUpdate({_id: SameQueue._id}, {waiting: SameQueue.waiting});
     }
@@ -38,13 +38,13 @@ const JoinRoom = async(userId, username, otherCountry, country) => {
         ret.roomID = ret.otherUser.roomID
         ret.secondUser = true;
 
-        await UpdateUserTwo(ret.roomID, {_id: userId, username});
-        await UpdateFriend(ret.otherUser.userId, ret.roomID, username);
+        await UpdateUserTwo(ret.roomID, {_id: userId, name});
+        await UpdateFriend(ret.otherUser.userId, ret.roomID, name);
         await RoomQueue.findByIdAndUpdate({_id: OtherQueue._id}, {waiting: OtherQueue.waiting});
     }  
 
-    await AddRoomToUser(userId, ret.roomID, ret.otherUser.username);
-    return {roomNum: ret.roomNum, roomID: ret.roomID, friendUsername: ret.otherUser.username, secondUser: ret.secondUser}
+    await AddRoomToUser(userId, ret.roomID, ret.otherUser.name);
+    return {roomNum: ret.roomNum, roomID: ret.roomID, friendName: ret.otherUser.name, secondUser: ret.secondUser}
 }
 
 module.exports = {

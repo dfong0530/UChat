@@ -22,7 +22,7 @@ const Login = async(req, res) => {
 
 const CreateAccount = async (req, res) => {
 
-    const { username, password, location, inUkraine } = req.body;
+    const { username, password, name, location, inUkraine } = req.body;
 
     try{
         const UserExists = await Auth.findOne({ username, password });
@@ -31,7 +31,7 @@ const CreateAccount = async (req, res) => {
             return res.status(409).json({status: 409, User: null});
         }
 
-        const User = await Auth.create({ username, password, location, inUkraine });
+        const User = await Auth.create({ username, password, name, location, inUkraine });
         return res.status(200).json({ status: 200, User });
     }
     catch(e){
@@ -40,9 +40,9 @@ const CreateAccount = async (req, res) => {
     }
 }
 
-const AddRoomToUser = async(userId, roomID, friendUsername) => {
+const AddRoomToUser = async(userId, roomID, name) => {
 
-    const append = {roomID, friendUsername};
+    const append = {roomID, name};
 
     try{
         await Auth.findOneAndUpdate({_id: userId}, {"$push": {rooms: append}}, {
@@ -56,13 +56,13 @@ const AddRoomToUser = async(userId, roomID, friendUsername) => {
     }   
 }
 
-const UpdateFriend = async(userID, roomID, username) => {
+const UpdateFriend = async(userID, roomID, name) => {
     try{
         let User = await Auth.findOne({_id: userID});
 
         User.rooms.map(room => {
             if(room.roomID === roomID){
-               room.friendUsername = username;
+               room.name = name;
             }
             return room;
         });

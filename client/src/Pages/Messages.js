@@ -62,7 +62,7 @@ const Messages = () => {
 
             EMIT ACTIONS: --> socket.emit(action, params)
 
-            1. 'join-room', { userID: string, username: string, inUkraine: bool } 
+            1. 'join-room', { userID: string, name: string, inUkraine: bool } 
             --> Used when user wants a new friend
 
             2. 'switch-room', room: string 
@@ -77,7 +77,7 @@ const Messages = () => {
         
         //Sent from Backend --> After backend finishes procesing adding a new room 
         //The website should add a new friend to the top of the side bar
-        const joinRoomHandler = async({friendUsername, roomID, roomNum}) => {   
+        const joinRoomHandler = async({friendName, roomID, roomNum}) => {   
             let incomingFriend = {roomID: roomID, friendUsername: friendUsername}; 
             let newFriends = user.friends;
             newFriends.push(incomingFriend); 
@@ -102,7 +102,7 @@ const Messages = () => {
         //Sent from Backend --> After second user wants to add a friend. 
         //First user updates friendUsername The website should update anonymous 
         // with new username
-        const friendJoinedHandler = ({username, roomID}) => {
+        const friendJoinedHandler = ({name, roomID}) => {
             let updatedUserFriend = users.friend; 
             updatedUserFriend.map(friend => {
                 if (friend.roomID == roomID) {
