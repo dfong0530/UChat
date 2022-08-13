@@ -35,7 +35,7 @@ Users outside of Ukraine have options to donate to the person they are speaking 
     I worked on building out the backend portion of this project with Mongo.db, Node.js, Express, and
     socket.io. I also designed the frontend architecture of the application and oversaw the project as a whole.
 
-    Before the start of this project, I mainly worked on the frontend with React. However, during the interim of this project I leanred a lot about various backend technologies like socket.io, node.js, and express.
+    I leanred a lot about various backend technologies like socket.io, node.js, and express.
 
 #### Justin Tran
 

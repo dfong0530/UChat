@@ -6,6 +6,7 @@ const cors = require('cors');
 const uuid = require('uuid');
 const authRouter = require('./routes/auth');
 const roomsRouter = require('./routes/rooms');
+const mapRouter = require('./routes/maps');
 const { JoinRoom } = require('./controllers/join-room');
 const { AddMessage } = require('./controllers/rooms');
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/rooms", roomsRouter);
+app.use("/api/v1/maps", mapRouter);
 
 const server = http.createServer(app);
 const io = new Server(server, {
