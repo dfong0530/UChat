@@ -85,7 +85,7 @@ const Messages = () => {
 
             const ret = GetRoomData(roomID, friendUsername, roomNum); 
             socket.emit("leave-room", room.room); 
-            socket.emit("switch-room", room. roomNum);
+            socket.emit("switch-room", room.roomNum);
             setRoom(ret); 
         }
 
