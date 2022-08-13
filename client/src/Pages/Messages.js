@@ -1,5 +1,6 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
+import Message from "../VeevekComponents/Message.js"
 import { GetRoomData } from "../Data/GetData";
 import {useState, useEffect, useContext, useRef} from "react"
 import GlobalContext from "../GlobalContext";
@@ -13,12 +14,19 @@ const socket = io();
 const Messages = () => {
 
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
-    const [rooms, setRooms] = useState([]); 
-    const [message, setMessage] = useState({_id: "", userID: "", text: ""})
+
+    const [message, setMessage] = useState({_id: "", userID: "", text: "", 
+    donation: false, donationAmount: 0})
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
         socket.emit('message', message); 
+        setMessage({_id: "", userID: "", text: "", 
+        donation: false, donationAmount: 0}); 
+    }; 
+
+    const handleClick = (e) => {
+
     }; 
 
     //These are refs to make sure the input msg box is focused on refresh
@@ -40,7 +48,7 @@ const Messages = () => {
 
     //Every time messages are added make sure it automatically scrolls to bottom.
     useEffect(() => {
-        msgSecRef.current.scrollTop = msgSecRef.current.scrollHeight;
+        msgSecRef.current.n = msgSecRef.current.scrollHeight;
     }, [room])
 
 
@@ -65,57 +73,44 @@ const Messages = () => {
 
             4. 'message' { userID: string, roomID: string, message: string, roomNum: string, donation: bool, donationAmount: int } 
             --> USED WHEN NEW MESSAGE ENTERED
-
-            
-
-            ret = API request
-          
-            socekt.emit('leave-room', room.room)
-            socke.emit('switch-room', newRoom);
-
-             setRoom(ret)
-
-
-            handleAddUsre = () => {
-                socket.emit('join-room', {userID: user._id, username: user.username});
-            }
-
-        
         */
         
         //Sent from Backend --> After backend finishes procesing adding a new room 
         //The website should add a new friend to the top of the side bar
         const joinRoomHandler = async({friendName, roomID, roomNum}) => {   
             let incomingFriend = {roomID: roomID, friendUsername: friendUsername}; 
-            room.friends.push(incomingFriend); 
-            let newFriends = room.friends; 
+            let newFriends = user.friends;
+            newFriends.push(incomingFriend); 
             setUser({...user, friends: newFriends}); 
+
+            const ret = GetRoomData(roomID, friendUsername, roomNum); 
+            socket.emit("leave-room", room.room); 
+            socket.emit("switch-room", room. roomNum);
+            setRoom(ret); 
         }
 
         //Sent from Backend --> After backend finishes procesing adding a new message
         //The website should add a mesage to the screen 
         const messageHandler = ({userID, message, _id, donation, donationAmount}) => {
-            let incomingMessage = {_id: _id, userID: userID, message: message}; 
-            room.messages.push(incomingMessage);
+            let incomingMessage = {_id: _id, userID: userID, message: message, 
+            donation: donation, donationAmount: donationAmount}; 
             let newMessages = room.messages; 
+            newMessages.push(incomingMessage); 
             setRoom({...room, messages: newMessages}); 
-            setMessage({_id: "", userID: "", text: ""}); 
         }
 
         //Sent from Backend --> After second user wants to add a friend. 
         //First user updates friendUsername The website should update anonymous 
         // with new username
         const friendJoinedHandler = ({name, roomID}) => {
-            user.friends.map(aUser => {
-                if (roomID == aUser.roomID) {
-                    let updatedFriend = {roomID: roomID, friendUsername: username}; 
-                    let index = user.friends.indexOf(aUser);
-                    user.friends[index] = updatedFriend; 
-                    let newFriends = user.friends; 
-                    setUser({...user, friends: newFriends}); 
-                    return; 
-                }
-            })
+            let updatedUserFriend = users.friend; 
+            updatedUserFriend.map(friend => {
+                if (friend.roomID == roomID) {
+                    friend.username = username; 
+                    return friend; 
+                } 
+            }); 
+            setUser({...user, friends: updatedUserFriend}); 
         }
         
 
@@ -160,18 +155,22 @@ const Messages = () => {
                     {/* the friends feature of the side */}
                     <div className="friends">
                         {/* there is a friend with a profile pic and their name */}
-                        {
-                            <div className="single-friend">
-                                <div className="profile-pic">
-                                    <PersonIcon
-                                        sx={{fontSize: 50}}
-                                    />
-                                </div>
+                        {   
+                        user.friends.map(friend => {
+                            return (
+                                <div className="single-friend">
+                                    <div className="profile-pic">
+                                        <PersonIcon
+                                            sx={{fontSize: 50}}
+                                        />
+                                    </div>
 
-                                <p>
-                                    Sarah
-                                </p> 
-                            </div>
+                                    <p>
+                                        {friend.username}
+                                    </p> 
+                                </div>
+                                ); 
+                            })
                         }
                     </div>
                 </div>
@@ -219,7 +218,11 @@ const Messages = () => {
 
                     {/* the CHAT PART */}
                     <div className="messages-chat" ref={msgSecRef}>
-
+                        {
+                            room.messages.map(msg => {
+                                return <Message message={message}/>;
+                            })
+                        }
 
 
 
@@ -239,7 +242,7 @@ const Messages = () => {
                         />
                         {/* api request return value from getRoomData is used 
                         as onClick handler */}
-                        <div className="enter-button">
+                        <div className="enter-button" onClick={handleClick}>
                             <SendIcon 
                                 sx={{
                                     color: "white", 
