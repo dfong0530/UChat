@@ -78,15 +78,14 @@ const Messages = () => {
         //Sent from Backend --> After backend finishes procesing adding a new room 
         //The website should add a new friend to the top of the side bar
         const joinRoomHandler = async({friendName, roomID, roomNum}) => {   
-            let incomingFriend = {roomID: roomID, friendUsername: friendUsername}; 
+            let incomingFriend = {roomID: roomID, friendName: friendName}; 
             let newFriends = user.friends;
             newFriends.push(incomingFriend); 
             setUser({...user, friends: newFriends}); 
 
-            const ret = GetRoomData(roomID, friendUsername, roomNum); 
+            const ret = GetRoomData(roomID, friendName, roomNum); 
             socket.emit("leave-room", room.room); 
-            socket.emit("switch-room", room.roomNum);
-            setRoom(ret); 
+            socket.emit("switch-room", ret.room);
         }
 
         //Sent from Backend --> After backend finishes procesing adding a new message
@@ -106,7 +105,7 @@ const Messages = () => {
             let updatedUserFriend = users.friend; 
             updatedUserFriend.map(friend => {
                 if (friend.roomID == roomID) {
-                    friend.username = username; 
+                    friend.name = name; 
                     return friend; 
                 } 
             }); 
