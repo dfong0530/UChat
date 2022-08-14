@@ -1,8 +1,9 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
+import Friends from "../JustinComponents/Friends.js"
 import Message from "../VeevekComponents/Message.js"
 import { GetRoomData } from "../Data/GetData";
-import {useState, useEffect, useContext, useRef} from "react"
+import {useState, useEffect, useContext, useRef, useDeferredValue} from "react"
 import GlobalContext from "../GlobalContext";
 import SendIcon from '@mui/icons-material/Send';
 import PersonIcon from '@mui/icons-material/Person';
@@ -18,6 +19,25 @@ const Messages = () => {
     const [message, setMessage] = useState({_id: "", userID: "", text: "", 
     donation: false, donationAmount: 0})
 
+    const handleFriend = (e) => {
+        socket.emit('join-room', {_id: user._id, name: user.name, 
+        inUkraine: false}); 
+        setRoom({roomID: e.target.roomID, room: e.target.room, messages: []}); 
+    };
+
+    const handleSwitch = async(e) => {
+        const ret = await GetRoomData(e.target.roomID, e.target.name, 
+        e.target.roomNum); 
+        socket.emit('leave-room', room.room); 
+        socket.emit('switch-room', ret.room);
+        setRoom(ret); 
+    };
+
+    // TASHI 
+    const handleDonation = (e) => {
+        
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault(); 
         socket.emit('message', message); 
@@ -25,8 +45,10 @@ const Messages = () => {
         donation: false, donationAmount: 0}); 
     }; 
 
-    const handleClick = (e) => {
-
+    const handleMessage = (e) => {
+        socket.emit('message', message);
+        setMessage({_id: "", userID: "", text: "", 
+        donation: false, donationAmount: 0}); 
     }; 
 
     //These are refs to make sure the input msg box is focused on refresh
@@ -34,7 +56,6 @@ const Messages = () => {
     const inputRef = useRef(null);
     const msgSecRef = useRef(null);
     
-
     //When web page loads focus the cursor on the input message box.
     //If the user has friends join the room of the first friend
     useEffect(() => {
@@ -121,7 +142,6 @@ const Messages = () => {
 
         socket.on('friend-joined', friendJoinedHandler);
 
-
         return () => {
             socket.off('join-room', joinRoomHandler);
             socket.off('message',messageHandler);
@@ -147,7 +167,8 @@ const Messages = () => {
 
                         <PersonAddAlt1Icon 
                             className="add-button"
-                            sx={{fontSize: 60}}
+                            onClick={handleFriend}
+                            sx={{fontSize: 50}}
                         />
                     </div>
 
@@ -156,20 +177,8 @@ const Messages = () => {
                     <div className="friends">
                         {/* there is a friend with a profile pic and their name */}
                         {   
-                        user.friends.map(friend => {
-                            return (
-                                <div className="single-friend">
-                                    <div className="profile-pic">
-                                        <PersonIcon
-                                            sx={{fontSize: 50}}
-                                        />
-                                    </div>
-
-                                    <p>
-                                        {friend.name}
-                                    </p> 
-                                </div>
-                                ); 
+                            user.friends.map(friend => {
+                                return <Friends friend={friend} />
                             })
                         }
                     </div>
@@ -191,7 +200,7 @@ const Messages = () => {
                                     className="icon"
                                     sx={{
                                         color: "white", 
-                                        fontSize: 50
+                                        fontSize: 40
                                     }}
                                 />
                             </div>
@@ -208,8 +217,8 @@ const Messages = () => {
                             </div>
                         </section>
                         
-                        {/* this is the donate button */}
-                        <button className="donate"> 
+                        {/* this is the donate button for TASHI*/}
+                        <button className="donate" onClick={handleDonation}> 
                             Donate Now 
                         </button>
                     </div>
@@ -220,7 +229,7 @@ const Messages = () => {
                     <div className="messages-chat" ref={msgSecRef}>
                         {
                             room.messages.map(msg => {
-                                return <Message message={message}/>;
+                                return <Message message={msg}/>;
                             })
                         }
                     </div>
@@ -239,11 +248,11 @@ const Messages = () => {
                         />
                         {/* api request return value from getRoomData is used 
                         as onClick handler */}
-                        <div className="enter-button" onClick={handleClick}>
+                        <div className="enter-button" onClick={handleMessage}>
                             <SendIcon 
                                 sx={{
                                     color: "white", 
-                                    fontSize: 30 
+                                    fontSize: 25 
                                 }}
                             />
                         </div>

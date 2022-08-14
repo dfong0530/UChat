@@ -3,23 +3,11 @@
   font-family: "Inter";
   height: 100vh;
   display: grid;
-  grid-template-columns: 25% 75%;
-}
-
-/* setting up the font and the display of the entire page */
-.page {
-  font-family: "Inter";
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 22% 78%;
+  grid-template-columns: 24% 76%;
 }
 
 /* all of the features that use a flexbox */
-.sidebar,
 .add-friend,
-.friends,
-.friends div,
-.main,
 .header,
 .information,
 .name-location,
@@ -27,9 +15,6 @@
   display: flex;
 }
 
-.sidebar,
-.friends,
-.main,
 .name-location {
   flex-direction: column;
 }
@@ -44,16 +29,20 @@
 
 /* ===setting up the side=== */
 .sidebar {
+  background-color: #4f677d;
   color: white;
   font-size: 30px;
-  background-color: #4f677d;
 }
 
 /* setting up the add feature */
 .add-friend {
-  flex: 1;
+  height: 15.25%;
   border-bottom: 2px solid #cecece;
   justify-content: space-evenly;
+}
+
+.add-friend p {
+  font-size: 28px;
 }
 
 .add-button {
@@ -65,26 +54,30 @@
 .single-friend,
 .donate,
 .message-box,
-.enter-button {
+.enter-button,
+.friends::-webkit-scrollbar {
   transition: 0.2s;
 }
 
 .add-button:hover,
 .donate:hover,
 .message-box:hover,
-.enter-button:hover {
+.enter-button:hover,
+.friends::-webkit-scrollbar-thumb:hover {
   opacity: 0.85;
 }
 
 .add-button:active,
 .donate:active,
-.enter-button:active {
+.message-box:active, 
+.enter-button:active,
+.friends::-webkit-scrollbar-thumb:active {
   opacity: 0.65;
 }
 
 /* setting up the part with all of the friends listed */
 .friends {
-  flex: 7;
+  height: 84.75%; 
   overflow-y: scroll; 
 }
 
@@ -92,84 +85,66 @@
   width: 10px; 
 }
 
-.friends::-webkit-scrollbar-track {
-  background-color: #60758a;
-}
-
 .friends::-webkit-scrollbar-thumb {
-  background-color: #283c50; 
+  background-color: rgb(32, 50, 68); 
+  border: none; 
   border-radius: 20px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); 
 }
 
-/* the section for each single friend */
-.single-friend {
-    height: 16.67%; 
-    border-bottom: 1px solid white; 
-    column-gap: 6%; 
+.friends::-webkit-scrollbar-track {
+  background-color: #435463;
 }
 
-.single-friend:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.single-friend:active {
-  background-color: rgba(0, 0, 0, 0.18);
-}
-
-.enter-button,
-.profile-pic {
+.enter-button {
   background-color: #5ba3e4;
   border-radius: 100px;
 }
 
-.profile-pic {
-  height: 80px;
-  width: 83px;
-  margin-left: 25px;
-  justify-content: center;
-  align-items: center;
-}
 
 /* ===now the main part of the messages page=== */
+.main {
+  height: 97vh; 
+}
 
 /* this is on top of the messaging chat UI that displays
 the name of the friend and a donation button */
 .header {
+  height: 15.75%; 
   border-bottom: 6px solid #dddddd;
   justify-content: space-between;
-  height: 12.75%;
 }
 
 /* the profile picture and the text */
 .information {
+  margin-left: 1%;
   column-gap: 25px;
-  margin-left: 3%;
 }
 
 .name-location {
-  line-height: 40px;
+  line-height: 35px;
 }
 
 /* the specifications for the text */
 .id {
   color: #797979;
-  font-size: 40px;
+  font-size: 32.5px;
 }
 
 .location {
   color: #a1a1a1;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .donate {
-    color: white; 
     background-color: #70D367; 
-    border-style: none; 
-    border-radius: 20px;
+    color: white; 
+    width: 220px; 
+    height: 58px; 
     font-family: "Poppins"; 
     font-size: 25px; 
-    width: 250px; 
-    height: 68px; 
+    border-style: none; 
+    border-radius: 15px;
     margin-right: 9%;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25); 
 }
@@ -180,21 +155,21 @@ the name of the friend and a donation button */
 
 .message-input {
   height: 14.55%;
+  margin-left: -2%;
+  column-gap: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 2%;
-  margin-left: -4%;
 }
 
 .message-box {
     background-color:#E8E8E8;
     color:#949494; 
-    width: 80%;
+    width: 75%;
     height: 50%; 
+    font-size: 20px; 
     border: none; 
     border-radius: 30px;  
-    font-size: 22px; 
     vertical-align: middle; 
     padding-left: 4%; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
