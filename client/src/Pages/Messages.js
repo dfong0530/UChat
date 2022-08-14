@@ -78,14 +78,15 @@ const Messages = () => {
         //Sent from Backend --> After backend finishes procesing adding a new room 
         //The website should add a new friend to the top of the side bar
         const joinRoomHandler = async({friendName, roomID, roomNum}) => {   
-            let incomingFriend = {roomID: roomID, friendName: friendName}; 
+            let incomingFriend = {roomID: roomID, name: friendName}; 
             let newFriends = user.friends;
-            newFriends.push(incomingFriend); 
+            newFriends.unshift(incomingFriend); 
             setUser({...user, friends: newFriends}); 
 
-            const ret = GetRoomData(roomID, friendName, roomNum); 
+            const ret = await GetRoomData(roomID, friendName, roomNum); 
             socket.emit("leave-room", room.room); 
             socket.emit("switch-room", ret.room);
+            setRoom(ret); 
         }
 
         //Sent from Backend --> After backend finishes procesing adding a new message
@@ -104,10 +105,10 @@ const Messages = () => {
         const friendJoinedHandler = ({name, roomID}) => {
             let updatedUserFriend = users.friend; 
             updatedUserFriend.map(friend => {
-                if (friend.roomID == roomID) {
+                if (friend.roomID === roomID) {
                     friend.name = name; 
-                    return friend; 
-                } 
+                }                     
+                return friend; 
             }); 
             setUser({...user, friends: updatedUserFriend}); 
         }
@@ -165,7 +166,7 @@ const Messages = () => {
                                     </div>
 
                                     <p>
-                                        {friend.username}
+                                        {friend.name}
                                     </p> 
                                 </div>
                                 ); 
@@ -222,9 +223,6 @@ const Messages = () => {
                                 return <Message message={message}/>;
                             })
                         }
-
-
-
                     </div>
                     
 

@@ -47,15 +47,11 @@
   color: white;
   font-size: 30px;
   background-color: #4f677d;
-  overflow-y: scroll;
-}
-
-.add-friend {
-  flex: 1;
 }
 
 /* setting up the add feature */
 .add-friend {
+  flex: 1;
   border-bottom: 2px solid #cecece;
   justify-content: space-evenly;
 }
@@ -89,6 +85,20 @@
 /* setting up the part with all of the friends listed */
 .friends {
   flex: 7;
+  overflow-y: scroll; 
+}
+
+.friends::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.friends::-webkit-scrollbar-track {
+  background-color: #60758a;
+}
+
+.friends::-webkit-scrollbar-thumb {
+  background-color: #283c50; 
+  border-radius: 20px; 
 }
 
 /* the section for each single friend */
