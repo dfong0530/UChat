@@ -102,12 +102,12 @@ const Messages = () => {
         //First user updates friendUsername The website should update anonymous 
         // with new username
         const friendJoinedHandler = ({name, roomID}) => {
-            let updatedUserFriend = users.friend; 
-            updatedUserFriend.map(friend => {
-                if (friend.roomID == roomID) {
+            let updatedUserFriend = user.friend; 
+            updatedUserFriend.map((friend) => {
+                if (friend.roomID === roomID) {
                     friend.name = name; 
-                    return friend; 
                 } 
+                return friend; 
             }); 
             setUser({...user, friends: updatedUserFriend}); 
         }
