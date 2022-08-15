@@ -2,10 +2,9 @@ import "./CSS/Friends.css";
 import PersonIcon from '@mui/icons-material/Person';
 
 
-const Friends = (props) => {
-    const {roomID, name} = props.friend; 
+const Friends = ({roomID, name}) => {
     return (
-        <div className="single-friend" onClick={handleSwitch}>
+        <div className="single-friend">
                 <div className="profile-pic">
                     <PersonIcon
                         sx={{fontSize: 50}}
