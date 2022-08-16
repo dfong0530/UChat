@@ -24,9 +24,9 @@
 }
 
 .info {
-  width: 30%;
+  width: 27%;
   margin-bottom: 8px;
-  row-gap: 35px;
+  row-gap: 32px;
 }
 
 .login-button,
@@ -45,10 +45,9 @@
 .name,
 .pass {
   color: #787878;
-  height: 55px;
+  height: 50px;
   width: 100%;
   padding-left: 40px;
-  margin-bottom: 1px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: 0.15s;
 }
@@ -72,7 +71,7 @@
 .login-button {
   background-color: #6ab1f0;
   color: white;
-  height: 60px;
+  height: 55px;
   font-size: 22px;
   transition: 0.25s;
 }
@@ -90,11 +89,12 @@
 
 .create-account-link {
   color: #0075ff;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   font-style: normal;
   font-family: "Poppins";
   line-height: 38px;
+  text-decoration: none; 
   /* identical to box height */
 }
 
