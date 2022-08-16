@@ -1,0 +1,27 @@
+/* the section for each single friend */
+.single-friend {
+    height: 16.67%; 
+    border-bottom: 1px solid white; 
+    column-gap: 6%; 
+}
+
+.single-friend:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.single-friend:active {
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+.profile-pic {
+  background-color: #5ba3e4;
+  border-radius: 100px;
+}
+
+.profile-pic {
+  height: 65px;
+  width: 68px;
+  margin-left: 25px;
+  justify-content: center;
+  align-items: center;
+}

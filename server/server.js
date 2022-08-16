@@ -28,15 +28,15 @@ const io = new Server(server, {
 
 io.on('connection', socket => {
 
-    socket.on('join-room', async({ userID, username, inUkraine }) => {
+    socket.on('join-room', async({ userID, name, inUkraine }) => {
         console.log("join room");
-        const ret = await JoinRoom(userID, username, inUkraine ? '*' : 'Ukraine', inUkraine ? 'Ukraine' : '*');
+        const ret = await JoinRoom(userID, name, inUkraine ? '*' : 'Ukraine', inUkraine ? 'Ukraine' : '*');
 
         if(ret.secondUser){
-            socket.broadcast.to(ret.roomNum).emit("friend-joined", {username, roomID: ret.roomID});
+            socket.broadcast.to(ret.roomNum).emit("friend-joined", {name, roomID: ret.roomID});
         }
 
-        socket.emit("join-room", {friendUsername: ret.friendUsername, roomID: ret.roomID, roomNum: ret.roomNum });
+        socket.emit("join-room", {friendName: ret.friendName, roomID: ret.roomID, roomNum: ret.roomNum });
     });
 
     socket.on('switch-room', room => {
