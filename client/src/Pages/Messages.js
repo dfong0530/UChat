@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import Friends from "../JustinComponents/Friends.js"
 import Message from "../VeevekComponents/Message.js"
 import { GetRoomData } from "../Data/GetData";
-import {useState, useEffect, useContext, useRef, useDeferredValue} from "react"
+import {useState, useEffect, useContext, useRef} from "react"
 import GlobalContext from "../GlobalContext";
 import SendIcon from '@mui/icons-material/Send';
 import PersonIcon from '@mui/icons-material/Person';
@@ -177,8 +177,8 @@ const Messages = () => {
                     <div className="friends">
                         {/* there is a friend with a profile pic and their name */}
                         {   
-                            user.friends.map(friend => {
-                                return <Friends friend={friend} />
+                            user.friends.map((friend) => {
+                                return <Friends key={friend.roomID} friend={friend} />
                             })
                         }
                     </div>
@@ -229,7 +229,7 @@ const Messages = () => {
                     <div className="messages-chat" ref={msgSecRef}>
                         {
                             room.messages.map(msg => {
-                                return <Message message={msg}/>;
+                                return <Message key={msg._id} message={msg}/>;
                             })
                         }
                     </div>
