@@ -39,7 +39,9 @@ Users outside of Ukraine have options to donate to the person they are speaking 
 
 #### Justin Tran
 
-    I worked on building the frontend portion of the project for the login and messaging page using React Javascript, HTML and CSS. I also worked on integrating the functionality from the backend to reflect it on the frontend by updating the views and incorporating interactive UIs for the user. 
+    I worked on building the frontend portion of the project for the login and messaging page using 
+    React Javascript, HTML and CSS. I also worked on integrating the functionality from the backend to reflect 
+    it on the frontend by updating the views and incorporating interactive UIs for the user. 
 
     Overall, I developed my understanding of React JS and reinforced my skills for HTML and CSS.  
 
