@@ -33,7 +33,7 @@
 }
 
 /* ===setting up the side=== */
-.sidebar, .regular {
+.sidebar {
   background-color: #4f677d;
   color: white;
   font-size: 30px;
@@ -101,9 +101,7 @@
   background-color: #435463;
 }
 
-.light {
-  background: rgba(255, 255, 255, 0.18);
-}
+
 
 
 /* ===now the main part of the messages page=== */

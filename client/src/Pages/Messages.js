@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 import handleFriend from "../JustinComponents/Friends.js";
 import handleSwitch from "../JustinComponents/Friends.js";
 import getFriendName from "../JustinComponents/Friends.js";  
+import getFriendLocation from "../JustinComponents/Friend.js"
 import Friends from "../JustinComponents/Friends.js";
 import Message from "../VeevekComponents/Message.js";
 import { GetRoomData } from "../Data/GetData";
@@ -216,6 +217,7 @@ const Messages = () => {
                                 </p>
 
                                 <p className="location">
+                                    <getFriendLocation /> 
                                     From Kyiv
                                 </p>
                             </div>

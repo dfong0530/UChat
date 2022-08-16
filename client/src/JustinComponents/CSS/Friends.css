@@ -13,6 +13,14 @@
   background-color: rgba(0, 0, 0, 0.18);
 }
 
+.regular {
+  background-color: #4f677d;
+}
+
+.light {
+  background: rgba(255, 255, 255, 0.18);
+}
+
 .profile-pic {
   background-color: #5ba3e4;
   border-radius: 100px;
