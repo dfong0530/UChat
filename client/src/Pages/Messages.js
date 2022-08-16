@@ -18,18 +18,25 @@ const Messages = () => {
     const [message, setMessage] = useState({_id: "", userID: "", text: "", 
     donation: false, donationAmount: 0})
 
+    //These are refs to make sure the input msg box is focused on refresh
+    //and that the msg scrolls down when messages are sent
+    const inputRef = useRef(null);
+    const msgSecRef = useRef(null);
+
     const handleFriend = () => {
         socket.emit('join-room', {_id: user._id, name: user.name, 
-        inUkraine: false}); 
+        inUkraine: user.inUkraine}); 
     };
 
     const handleSwitch = async(e, aFriend) => {
         const ret = await GetRoomData(aFriend.roomID, user.username, user.password);
         socket.emit('leave-room', room.room);
         socket.emit('switch-room', ret.room); 
-        setRoom(ret.room); 
+        setRoom(ret); 
     };
 
+    //When your calling this function make sure that thre is more than one
+    //friend. --> Could cause bugs if coditions aren't met
     const getFriendName = () => {
         let friendName = user.friends.filter(aFriend => {
             return aFriend.roomID === room.roomID
@@ -54,11 +61,6 @@ const Messages = () => {
         setMessage({_id: "", userID: "", text: "", 
         donation: false, donationAmount: 0}); 
     }; 
-
-    //These are refs to make sure the input msg box is focused on refresh
-    //and that the msg scrolls down when messages are sent
-    const inputRef = useRef(null);
-    const msgSecRef = useRef(null);
     
     //When web page loads focus the cursor on the input message box.
     //If the user has friends join the room of the first friend
