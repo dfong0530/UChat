@@ -33,7 +33,7 @@
 }
 
 /* ===setting up the side=== */
-.sidebar {
+.sidebar, .regular {
   background-color: #4f677d;
   color: white;
   font-size: 30px;
@@ -101,9 +101,8 @@
   background-color: #435463;
 }
 
-.enter-button {
-  background-color: #5ba3e4;
-  border-radius: 100px;
+.light {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 
@@ -187,6 +186,8 @@ the name of the friend and a donation button */
 }
 
 .enter-button {
+  background-color: #5ba3e4;
+  border-radius: 100px;
   width: 4%;
   height: 45%;
   display: flex;
