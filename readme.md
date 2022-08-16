@@ -35,9 +35,13 @@ Users outside of Ukraine have options to donate to the person they are speaking 
     I worked on building out the backend portion of this project with Mongo.db, Node.js, Express, and
     socket.io. I also designed the frontend architecture of the application and oversaw the project as a whole.
 
-    I leanred a lot about various backend technologies like socket.io, node.js, and express.
+    I learned a lot about various backend technologies like socket.io, node.js, and express.
 
 #### Justin Tran
+
+    I worked on building the frontend portion of the project for the login and messaging page using React Javascript, HTML and CSS. I also worked on integrating the functionality from the backend to reflect it on the frontend by updating the views and incorporating interactive UIs for the user. 
+
+    Overall, I developed my understanding of React JS and reinforced my skills for HTML and CSS.  
 
 #### Veevek Dave
 
