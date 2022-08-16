@@ -11,19 +11,24 @@
 .header,
 .information,
 .name-location,
-.profile-pic {
+.profile-pic, 
+.message-input, 
+.enter-button {
   display: flex;
 }
 
-.name-location {
-  flex-direction: column;
+.message-input,
+.enter-button {
+  justify-content: center;
 }
 
 .add-friend,
 .friends div,
 .header,
 .information,
-.name-location {
+.name-location,
+.message-input, 
+.enter-button {
   align-items: center;
 }
 
@@ -78,7 +83,7 @@
 /* setting up the part with all of the friends listed */
 .friends {
   height: 84.75%; 
-  overflow-y: scroll; 
+  overflow-y: auto; 
 }
 
 .friends::-webkit-scrollbar {
@@ -117,11 +122,12 @@ the name of the friend and a donation button */
 
 /* the profile picture and the text */
 .information {
-  margin-left: 1%;
+  margin-left: 4%;
   column-gap: 25px;
 }
 
 .name-location {
+  flex-direction: column;
   line-height: 35px;
 }
 
@@ -141,11 +147,11 @@ the name of the friend and a donation button */
     color: white; 
     width: 220px; 
     height: 58px; 
-    font-family: "Poppins"; 
     font-size: 25px; 
+    font-family: "Poppins"; 
     border-style: none; 
     border-radius: 15px;
-    margin-right: 9%;
+    margin-right: 12%;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25); 
 }
 
@@ -153,19 +159,20 @@ the name of the friend and a donation button */
   height: 72.7%;
 }
 
+.message {
+  margin-bottom: 5px; 
+}
+
 .message-input {
   height: 14.55%;
-  margin-left: -2%;
-  column-gap: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-left: -4%;
+  column-gap: 2%;
 }
 
 .message-box {
     background-color:#E8E8E8;
     color:#949494; 
-    width: 75%;
+    width: 70%;
     height: 50%; 
     font-size: 20px; 
     border: none; 
@@ -184,6 +191,4 @@ the name of the friend and a donation button */
   height: 45%;
   display: flex;
   flex-direction: center;
-  justify-content: center;
-  align-items: center;
 }

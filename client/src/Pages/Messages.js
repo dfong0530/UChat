@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 import Friends from "../JustinComponents/Friends.js"
 import Message from "../VeevekComponents/Message.js"
 import { GetRoomData } from "../Data/GetData";
+
 import {useState, useEffect, useContext, useRef} from "react"
 import GlobalContext from "../GlobalContext";
 import SendIcon from '@mui/icons-material/Send';
@@ -13,28 +14,31 @@ import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 const socket = io();
 
 const Messages = () => {
-
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
-
     const [message, setMessage] = useState({_id: "", userID: "", text: "", 
     donation: false, donationAmount: 0})
 
-    const handleFriend = (e) => {
+    const handleFriend = () => {
         socket.emit('join-room', {_id: user._id, name: user.name, 
         inUkraine: false}); 
-        setRoom({roomID: e.target.roomID, room: e.target.room, messages: []}); 
     };
 
-    const handleSwitch = async(e) => {
-        const ret = await GetRoomData(e.target.roomID, e.target.name, 
-        e.target.roomNum); 
-        socket.emit('leave-room', room.room); 
-        socket.emit('switch-room', ret.room);
-        setRoom(ret); 
+    const handleSwitch = async(e, aFriend) => {
+        const ret = await GetRoomData(aFriend.roomID, user.username, user.password);
+        socket.emit('leave-room', room.room);
+        socket.emit('switch-room', ret.room); 
+        setRoom(ret.room); 
     };
+
+    const getFriendName = () => {
+        let friendName = user.friends.filter(aFriend => {
+            return aFriend.roomID === room.roomID
+        }); 
+        return friendName[0];
+    }
 
     // TASHI 
-    const handleDonation = (e) => {
+    const handleDonation = () => {
         
     };
 
@@ -45,7 +49,7 @@ const Messages = () => {
         donation: false, donationAmount: 0}); 
     }; 
 
-    const handleMessage = (e) => {
+    const handleMessage = () => {
         socket.emit('message', message);
         setMessage({_id: "", userID: "", text: "", 
         donation: false, donationAmount: 0}); 
@@ -177,12 +181,16 @@ const Messages = () => {
                     <div className="friends">
                         {/* there is a friend with a profile pic and their name */}
                         {   
-                            user.friends.map((friend) => {
-                                return <Friends key={friend.roomID} friend={friend} />
+                            user.friends.map(friend => {
+                                return <Friends 
+                                    key={friend.roomID} 
+                                    friend={friend} 
+                                    onClick={() => handleFriend(friend)}
+                                />; 
                             })
                         }
                     </div>
-                </div>
+                </div>2wsw
 
 
                 {/* now for the main part of the messages page 
@@ -208,6 +216,7 @@ const Messages = () => {
                             {/* for the name and location */}
                             <div className="name-location">
                                 <p className="id">
+                                    {/* <getFriendName/> */}
                                     Veevek
                                 </p>
 
@@ -229,7 +238,11 @@ const Messages = () => {
                     <div className="messages-chat" ref={msgSecRef}>
                         {
                             room.messages.map(msg => {
-                                return <Message key={msg._id} message={msg}/>;
+                                return (
+                                    <div className="message">  
+                                        <Message key={msg._id} message={msg}/>
+                                    </div>
+                                );
                             })
                         }
                     </div>
