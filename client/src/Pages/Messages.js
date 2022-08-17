@@ -1,10 +1,14 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
-import Friends from "../JustinComponents/Friends.js"
-import Message from "../VeevekComponents/Message.js"
+import handleFriend from "../JustinComponents/Friends.js";
+import handleSwitch from "../JustinComponents/Friends.js";
+import getFriendName from "../JustinComponents/Friends.js";  
+// import getFriendLocation from "../JustinComponents/Friend.js";
+import Friends from "../JustinComponents/Friends.js";
+import Message from "../VeevekComponents/Message.js";
 import { GetRoomData } from "../Data/GetData";
 
-import {useState, useEffect, useContext, useRef, useDeferredValue} from "react"
+import {useState, useEffect, useContext, useRef} from "react";
 import GlobalContext from "../GlobalContext";
 import SendIcon from '@mui/icons-material/Send';
 import PersonIcon from '@mui/icons-material/Person';
@@ -15,29 +19,14 @@ const socket = io();
 
 const Messages = () => {
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
-    const [message, setMessage] = useState({_id: "", userID: "", text: "", 
-    donation: false, donationAmount: 0})
+    const [message, setMessage] = useState(""); 
 
-    const handleFriend = () => {
-        socket.emit('join-room', {_id: user._id, name: user.name, 
-        inUkraine: false}); 
-    };
+    //These are refs to make sure the input msg box is focused on refresh
+    //and that the msg scrolls down when messages are sent
+    const inputRef = useRef(null);
+    const msgSecRef = useRef(null);
 
-    const handleSwitch = async(e, aFriend) => {
-        e.target.style.backgroundColor = rgba(0, 0, 0, 0.18); 
-        const ret = await GetRoomData(aFriend.roomID, user.username, user.password);
-        socket.emit('leave-room', room.room);
-        socket.emit('switch-room', ret.room); 
-        setRoom(ret.room); 
-    };
-
-    const getFriendName = () => {
-        let friendName = user.friends.filter(aFriend => {
-            aFriend.roomID === room.roomID
-        }); 
-        return friendName[0];
-    }
-
+   
     // TASHI 
     const handleDonation = () => {
         
@@ -45,21 +34,18 @@ const Messages = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
-        socket.emit('message', message); 
-        setMessage({_id: "", userID: "", text: "", 
-        donation: false, donationAmount: 0}); 
+        socket.emit('message', {userID: user._id, roomID: room.roomID, 
+        message: message, roomNum: room.room, donation: room.donation, 
+        donationAmount: room.donationAmount}); 
+        setMessage(""); 
     }; 
 
     const handleMessage = () => {
-        socket.emit('message', message);
-        setMessage({_id: "", userID: "", text: "", 
-        donation: false, donationAmount: 0}); 
+        socket.emit('message', {userID: user._id, roomID: room.roomID, 
+        message: message, roomNum: room.room, donation: room.donation, 
+        donationAmount: room.donationAmount});
+        setMessage(""); 
     }; 
-
-    //These are refs to make sure the input msg box is focused on refresh
-    //and that the msg scrolls down when messages are sent
-    const inputRef = useRef(null);
-    const msgSecRef = useRef(null);
     
     //When web page loads focus the cursor on the input message box.
     //If the user has friends join the room of the first friend
@@ -129,11 +115,11 @@ const Messages = () => {
         //First user updates friendUsername The website should update anonymous 
         // with new username
         const friendJoinedHandler = ({name, roomID}) => {
-            let updatedUserFriend = users.friend; 
-            updatedUserFriend.map(friend => {
+            let updatedUserFriend = user.friend; 
+            updatedUserFriend.map((friend) => {
                 if (friend.roomID === roomID) {
                     friend.name = name; 
-                }                     
+                } 
                 return friend; 
             }); 
             setUser({...user, friends: updatedUserFriend}); 
@@ -167,12 +153,14 @@ const Messages = () => {
                     <div className="add-friend">
                         {/* the app name */}
                         <p>
-                            UChat
+                            UChat   
                         </p>
 
                         <PersonAddAlt1Icon 
                             className="add-button"
-                            onClick={handleFriend}
+                            onClick={<handleFriend 
+                                socket={socket} user={user}
+                            />}
                             sx={{fontSize: 50}}
                         />
                     </div>
@@ -183,10 +171,14 @@ const Messages = () => {
                         {/* there is a friend with a profile pic and their name */}
                         {   
                             user.friends.map(friend => {
-                                return <Friends 
+                                return <Friends
                                     key={friend.roomID} 
                                     friend={friend} 
-                                    onClick={handleFriend(friend)}
+                                    onClick={<handleSwitch 
+                                        key={friend.roomID} socket={socket}
+                                        aFriend={friend} user={user}
+                                        room={room} GetRoomData={GetRoomData}
+                                    />}
                                 />; 
                             })
                         }
@@ -217,11 +209,15 @@ const Messages = () => {
                             {/* for the name and location */}
                             <div className="name-location">
                                 <p className="id">
-                                    {/* <getFriendName/> */}
+                                    <getFriendName 
+                                        user={user}
+                                        room={room}
+                                    />
                                     Veevek
                                 </p>
 
                                 <p className="location">
+                                    <getFriendLocation /> 
                                     From Kyiv
                                 </p>
                             </div>
@@ -241,7 +237,7 @@ const Messages = () => {
                             room.messages.map(msg => {
                                 return (
                                     <div className="message">  
-                                        <Message message={msg}/>
+                                        <Message key={msg._id} message={msg}/>
                                     </div>
                                 );
                             })
@@ -256,7 +252,7 @@ const Messages = () => {
                             type="text"
                             className="message-box"
                             placeholder="Type your message here..."
-                            value={message.text}
+                            value={message}
                             onChange={(e) => setMessage(e.target.value)}
                             ref={inputRef}
                         />

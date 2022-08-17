@@ -101,10 +101,7 @@
   background-color: #435463;
 }
 
-.enter-button {
-  background-color: #5ba3e4;
-  border-radius: 100px;
-}
+
 
 
 /* ===now the main part of the messages page=== */
@@ -187,6 +184,8 @@ the name of the friend and a donation button */
 }
 
 .enter-button {
+  background-color: #5ba3e4;
+  border-radius: 100px;
   width: 4%;
   height: 45%;
   display: flex;
