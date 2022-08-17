@@ -11,7 +11,7 @@ const Initial = () => {
   return (
     <div className="initialPage">
       <div className="logoTitle">
-        <SmsIcon className="logo" sx={{ fontSize: 120 }} />
+        <SmsIcon className="logo" sx={{ fontSize: 120 }} />    eefe
         <h1>UChat</h1>
       </div>
       <h2>Support your friends in Ukraine</h2>
