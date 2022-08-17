@@ -45,10 +45,6 @@ const Messages = () => {
         donationAmount: room.donationAmount}); 
         setMessage(""); 
     }; 
-<<<<<<< HEAD
-
-=======
->>>>>>> 6124f7cbd8ceaab5445f3f4fcf8d8a8f73f9ed2d
     
     //When web page loads focus the cursor on the input message box.
     //If the user has friends join the room of the first friend
@@ -149,47 +145,8 @@ const Messages = () => {
         <> 
             {/* a css grid that represents the whole page */}
             <section className="page">
-<<<<<<< HEAD
-                {/* the side part of the page that displays
-                 the add friend button along with the friends  DFONG --> duplicate section??*/}
-                <div className="sidebar">
-                    {/* the add feature of the side */}
-                    <div className="add-friend">
-                        {/* the app name */}
-                        <p>
-                            UChat   
-                        </p>
-
-                        <PersonAddAlt1Icon
-                            className="add-button"
-                            onClick={<handleFriend 
-                                socket={socket} user={user}
-                            />}
-                            sx={{fontSize: 50}}
-                        />
-                    </div>
-
-    
-                    {/* the friends feature of the side */}
-                    <div className="friends">
-                        {/* there is a friend with a profile pic and their name */}
-                        {   
-                            user.friends.map(friend => {
-                                return <Friends
-                                    key={friend.roomID} 
-                                    friend={friend} 
-                                    socket={socket}
-                                />; 
-                            })
-                        }
-                    </div>
-                </div>
-
-
-=======
                 <Friends socket={socket} />
                      
->>>>>>> 6124f7cbd8ceaab5445f3f4fcf8d8a8f73f9ed2d
                 {/* now for the main part of the messages page 
                 that includes the head, the chat UI, and the 
                 messages input feature */} 
@@ -255,13 +212,7 @@ const Messages = () => {
                             onChange={(e) => setMessage(e.target.value)}
                             ref={inputRef}
                         />
-<<<<<<< HEAD
-                        {/* api request return value from getRoomData is used 
-                        as onClick handler */}
-                        <div className="enter-button">
-=======
                         <div className="enter-button" onClick={handleSubmit}>
->>>>>>> 6124f7cbd8ceaab5445f3f4fcf8d8a8f73f9ed2d
                             <SendIcon 
                                 sx={{
                                     color: "white", 

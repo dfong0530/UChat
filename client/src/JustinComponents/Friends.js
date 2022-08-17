@@ -7,7 +7,7 @@ import PersonAddAlt1 from "@mui/icons-material/PersonAddAlt1";
 
 const Friends = ({socket}) => {
 
-    const {user, room, setRoom} = useContext(GlobalContext);
+    const {user, setUser, room, setRoom} = useContext(GlobalContext);
 
     const handleFriend = () => {
         socket.emit('join-room', {_id: user._id, name: user.name, 
