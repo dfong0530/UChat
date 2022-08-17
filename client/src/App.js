@@ -7,6 +7,15 @@ import {useState} from "react";
 import GlobalContext from './GlobalContext';
 import {Routes, Route, useNavigate} from "react-router"
 
+useEffect(() => {
+
+  navigator.geolocation.getCurrentPosition(function(position) {
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+  });
+
+}, [])
+
 function App() {
 
   //navigate("/messages")
@@ -29,6 +38,7 @@ function App() {
         </Routes>
       </GlobalContext.Provider>
     </>
+    
   );
 }
 
