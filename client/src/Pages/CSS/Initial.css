@@ -1,6 +1,6 @@
 .initialPage {
   position: absolute;
-  top: 45%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0;
@@ -9,18 +9,18 @@
 }
 
 .logo {
-  color: #5BA3E4; 
+  color: #5ba3e4;
 }
 
-h1 {
+.initialPage h1 {
   color: #6ab1f0;
   font-size: 40px;
   font-family: Poppins;
   font-weight: 800;
 }
 
-h2 {
-  color: #a9d3f9;
+.initialPage h2 {
+  color: #a5d1fa;
   font-size: 1.1rem;
   font-family: Poppins;
   font-weight: 500;
@@ -37,11 +37,11 @@ h2 {
 }
 
 .btnLogin {
-  background: #FFFFFF;
-  border: 3px solid #5BA3E4;
+  background: #ffffff;
+  border: 3px solid #5ba3e4;
   border-radius: 50px;
-  width: 325px;
-  height: 45px;
+  width: 350px;
+  height: 48px;
   color: #5ba3e4;
   font-size: 1.3rem;
   font-family: Poppins;
@@ -56,8 +56,8 @@ h2 {
   background: #5ba3e4;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
-  width: 325px;
-  height: 45px;
+  width: 350px;
+  height: 48px;
   border: none;
   color: #ffffff;
   font-size: 1.3rem;
@@ -66,15 +66,11 @@ h2 {
 }
 
 .btnLogin:hover {
-  color: #FFFFFF;
-  background-color: #5ba3e4;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+  filter: brightness(115%);
   transition: 0.4s;
-  opacity: 0.75;
 }
 
 .btnSignUp:hover {
+  filter: brightness(110%);
   transition: 0.4s;
-  background: #65b0f2;
-   opacity: 0.75;
 }

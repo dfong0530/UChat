@@ -1,12 +1,20 @@
 import "./CSS/Initial.css";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import React from "react";
 import SmsIcon from "@mui/icons-material/Sms";
+import GlobalContext from "../GlobalContext";
 
 const Initial = () => {
-  const handleClickLogin = () => {};
 
-  const handleClickSignUp = () => {};
+  const {navigate} = useContext(GlobalContext);
+
+  const handleClickLogin = () => {
+    navigate("/login");
+  };
+
+  const handleClickSignUp = () => {
+    navigate("/create-account");
+  };
 
   return (
     <div className="initialPage">

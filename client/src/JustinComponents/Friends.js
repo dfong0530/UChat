@@ -3,13 +3,13 @@ import PersonIcon from '@mui/icons-material/Person';
 import {useContext} from "react";
 import GlobalContext from "../GlobalContext";
 
-const Friends = ({roomID, name}) => {
+const Friends = ({roomID, name, socket}) => {
 
     const {setRoom} = useContext(GlobalContext);
 
-    const handleFriend = ({socket, user}) => {
-    socket.emit('join-room', {_id: user._id, name: user.name, 
-    inUkraine: user.inUkraine}); 
+    const handleFriend = (user) => {
+        socket.emit('join-room', {_id: user._id, name: user.name, 
+        inUkraine: user.inUkraine}); 
     };
 
     const handleSwitch = async({socket, aFriend, user, room, GetRoomData}) => {
@@ -27,11 +27,7 @@ const Friends = ({roomID, name}) => {
         }); 
         return friendName[0];
     };
-
-    const getFriendLocation = () => {
-
-    };
-
+    
     return (
         <div className="single-friend">
                 <div className="profile-pic">

@@ -1,6 +1,6 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
-import handleFriend from "../JustinComponents/Friends.js";
+import handleFriend from "../JustinComponents/Friends.js"; //DFONG --> No need to have these import statements
 import handleSwitch from "../JustinComponents/Friends.js";
 import getFriendName from "../JustinComponents/Friends.js";  
 // import getFriendLocation from "../JustinComponents/Friend.js";
@@ -40,6 +40,7 @@ const Messages = () => {
         setMessage(""); 
     }; 
 
+    //DFONG --> Duplicate Function as above
     const handleMessage = () => {
         socket.emit('message', {userID: user._id, roomID: room.roomID, 
         message: message, roomNum: room.room, donation: room.donation, 
@@ -147,7 +148,7 @@ const Messages = () => {
             {/* a css grid that represents the whole page */}
             <section className="page">
                 {/* the side part of the page that displays
-                 the add friend button along with the friends */}
+                 the add friend button along with the friends  DFONG --> duplicate section??*/}
                 <div className="sidebar">
                     {/* the add feature of the side */}
                     <div className="add-friend">
@@ -174,7 +175,8 @@ const Messages = () => {
                                 return <Friends
                                     key={friend.roomID} 
                                     friend={friend} 
-                                    onClick={<handleSwitch 
+                                    socket={socket}
+                                    onClick={<handleSwitch //DFONG --> Incorrect
                                         key={friend.roomID} socket={socket}
                                         aFriend={friend} user={user}
                                         room={room} GetRoomData={GetRoomData}
