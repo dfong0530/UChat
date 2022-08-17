@@ -27,9 +27,9 @@ const Friends = ({roomID, name, socket}) => {
         }); 
         return friendName[0];
     };
-    
+
     return (
-        <div className="single-friend">
+        <div className="single-friend" >
                 <div className="profile-pic">
                     <PersonIcon
                         sx={{fontSize: 50}}

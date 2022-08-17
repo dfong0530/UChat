@@ -40,13 +40,6 @@ const Messages = () => {
         setMessage(""); 
     }; 
 
-    //DFONG --> Duplicate Function as above
-    const handleMessage = () => {
-        socket.emit('message', {userID: user._id, roomID: room.roomID, 
-        message: message, roomNum: room.room, donation: room.donation, 
-        donationAmount: room.donationAmount});
-        setMessage(""); 
-    }; 
     
     //When web page loads focus the cursor on the input message box.
     //If the user has friends join the room of the first friend
@@ -157,7 +150,7 @@ const Messages = () => {
                             UChat   
                         </p>
 
-                        <PersonAddAlt1Icon 
+                        <PersonAddAlt1Icon
                             className="add-button"
                             onClick={<handleFriend 
                                 socket={socket} user={user}
@@ -176,11 +169,6 @@ const Messages = () => {
                                     key={friend.roomID} 
                                     friend={friend} 
                                     socket={socket}
-                                    onClick={<handleSwitch //DFONG --> Incorrect
-                                        key={friend.roomID} socket={socket}
-                                        aFriend={friend} user={user}
-                                        room={room} GetRoomData={GetRoomData}
-                                    />}
                                 />; 
                             })
                         }
@@ -260,7 +248,7 @@ const Messages = () => {
                         />
                         {/* api request return value from getRoomData is used 
                         as onClick handler */}
-                        <div className="enter-button" onClick={handleMessage}>
+                        <div className="enter-button">
                             <SendIcon 
                                 sx={{
                                     color: "white", 
