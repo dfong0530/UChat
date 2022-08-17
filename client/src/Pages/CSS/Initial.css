@@ -1,0 +1,76 @@
+.initialPage {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  display: block;
+  text-align: center;
+}
+
+.logo {
+  color: #5ba3e4;
+}
+
+.initialPage h1 {
+  color: #6ab1f0;
+  font-size: 40px;
+  font-family: Poppins;
+  font-weight: 800;
+}
+
+.initialPage h2 {
+  color: #a5d1fa;
+  font-size: 1.1rem;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+/* NOTE! These are all based on full-screen Macbook view! */
+
+.logoTitle {
+  padding: 0 0 20px 0;
+}
+
+.buttonDiv {
+  margin: 85px 0 0 0;
+}
+
+.btnLogin {
+  background: #ffffff;
+  border: 3px solid #5ba3e4;
+  border-radius: 50px;
+  width: 350px;
+  height: 48px;
+  color: #5ba3e4;
+  font-size: 1.3rem;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+.btnLogin-div {
+  padding: 0 0 25px 0;
+}
+
+.btnSignUp {
+  background: #5ba3e4;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  width: 350px;
+  height: 48px;
+  border: none;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+.btnLogin:hover {
+  filter: brightness(115%);
+  transition: 0.4s;
+}
+
+.btnSignUp:hover {
+  filter: brightness(110%);
+  transition: 0.4s;
+}

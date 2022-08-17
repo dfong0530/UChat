@@ -20,8 +20,8 @@ function App() {
 
   //navigate("/messages")
   const navigate = useNavigate(); 
-  //{_id, username, password, friends: [{ roomID: string, friendUsername: string}]}
-  const [user, setUser] = useState({_id: '', username: '', password: '', friends: []}); 
+  //{_id, username, password, name, location, inUkraine, friends: [{ roomID: string, name: string}]}
+  const [user, setUser] = useState({_id: '', username: '', password: '', name: '', friends: []}); 
   //{roomID: str, room: str, messages: [{_id: str, userID, message: string, donation: 
   // bool, donationAmount: int}]}
   const [room, setRoom] = useState({roomID: "", room: "", messages: []}); 

@@ -32,7 +32,7 @@ const Login = () => {
             <section className="login-page">
                 <SmsIcon 
                     className="logo"
-                    sx={{fontSize: 105}}
+                    sx={{fontSize: 120}}
                 />
 
                 <p className="title">
@@ -62,7 +62,7 @@ const Login = () => {
                     </button>
                 </form>
                 <p className="create-account">
-                    or <Link className="create-account-link" to="/create-account" >create an account</Link>
+                    or <Link className="create-account-link" to="/create-account">create an account</Link>
                 </p>
 
             </section>

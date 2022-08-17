@@ -9,6 +9,10 @@ const AuthShema = new mongoose.Schema({
         type: String,
         required: true
     },
+    name: {
+        type: String,
+        requried: true
+    },
     location: {
         type: String,
         requried: true
@@ -18,7 +22,7 @@ const AuthShema = new mongoose.Schema({
         required: true
     },
     rooms: {
-        type: [{roomID: {type: String, required: true}, friendUsername: {type: String, rquired: true}}],
+        type: [{roomID: {type: String, required: true}, name: {type: String, rquired: true}}],
         default: []
     }
 }, {
