@@ -1,6 +1,6 @@
 .initialPage {
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 0;
@@ -14,59 +14,67 @@
 
 h1 {
   color: #6ab1f0;
-  font-size: 3.75rem;
+  font-size: 40px;
   font-family: Poppins;
   font-weight: 800;
 }
 
 h2 {
   color: #a9d3f9;
-  font-size: 1.5625rem;
+  font-size: 1.1rem;
   font-family: Poppins;
   font-weight: 500;
 }
 
 /* NOTE! These are all based on full-screen Macbook view! */
+
+.logoTitle {
+  padding: 0 0 20px 0;
+}
+
 .buttonDiv {
-  margin: 100px 0 0 0;
+  margin: 85px 0 0 0;
 }
 
 .btnLogin {
   background: #FFFFFF;
   border: 3px solid #5BA3E4;
   border-radius: 50px;
-  width: 493px;
-  height: 65px;
+  width: 325px;
+  height: 45px;
+  color: #5ba3e4;
+  font-size: 1.3rem;
+  font-family: Poppins;
+  font-weight: 500;
 }
 
 .btnLogin-div {
-  padding: 0 0 30px 0;
+  padding: 0 0 25px 0;
 }
 
 .btnSignUp {
-  background: #5BA3E4;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #5ba3e4;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
-  width: 493px;
-  height: 65px;
-}
-
-.loginText {
-  color: #5ba3e4;
-  font-size: 1.875rem;
-  font-family: Poppins;
-  font-weight: 500;
-}
-
-.signUpText {
+  width: 325px;
+  height: 45px;
+  border: none;
   color: #ffffff;
-  font-size: 1.875rem;
+  font-size: 1.3rem;
   font-family: Poppins;
   font-weight: 500;
 }
 
-.btnLogin:hover,
-.btnSignUp:hover {
-    opacity: 0.85;
+.btnLogin:hover {
+  color: #FFFFFF;
+  background-color: #5ba3e4;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+  transition: 0.4s;
+  opacity: 0.75;
 }
 
+.btnSignUp:hover {
+  transition: 0.4s;
+  background: #65b0f2;
+   opacity: 0.75;
+}
