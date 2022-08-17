@@ -11,7 +11,7 @@ const Friends = ({socket}) => {
 
     const handleFriend = () => {
         socket.emit('join-room', {_id: user._id, name: user.name, 
-        inUkraine: user.inUkraine}); 
+        inUkraine: user.inUkraine, location: user.location}); 
     };
 
     const handleSwitch = async(aFriend) => {
@@ -26,6 +26,7 @@ const Friends = ({socket}) => {
             friends = friends.map(friend => {
                 if(friend.roomID === aFriend.roomID){
                     friend.name = userTwo.name;
+                    friend.location = userTwo.location;
                 }
                 return friend;
             });

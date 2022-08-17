@@ -40,9 +40,9 @@ const CreateAccount = async (req, res) => {
     }
 }
 
-const AddRoomToUser = async(userId, roomID, name) => {
+const AddRoomToUser = async(userId, roomID, name, location) => {
 
-    const append = {roomID, name};
+    const append = {roomID, name, location};
 
     try{
         await Auth.findOneAndUpdate({_id: userId}, {"$push": {rooms: append}}, {
@@ -56,13 +56,14 @@ const AddRoomToUser = async(userId, roomID, name) => {
     }   
 }
 
-const UpdateFriend = async(userID, roomID, name) => {
+const UpdateFriend = async(userID, roomID, name, location) => {
     try{
         let User = await Auth.findOne({_id: userID});
 
         User.rooms.map(room => {
             if(room.roomID === roomID){
                room.name = name;
+               room.location = location;
             }
             return room;
         });

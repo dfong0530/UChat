@@ -6,7 +6,7 @@ const JoinRoomQueue = new mongoose.Schema({
         required: true
     },
     waiting: {
-        type: [{roomID: String, roomNum: String, userId: String, _id: String, name: String}],
+        type: [{roomID: String, roomNum: String, userId: String, _id: String, name: String, location: String}],
         default: []
     }
 }, {
