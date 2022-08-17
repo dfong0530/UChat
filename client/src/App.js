@@ -7,20 +7,12 @@ import {useState} from "react";
 import GlobalContext from './GlobalContext';
 import {Routes, Route, useNavigate} from "react-router"
 
-useEffect(() => {
-
-  navigator.geolocation.getCurrentPosition(function(position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
-  });
-
-}, [])
 
 function App() {
 
   //navigate("/messages")
   const navigate = useNavigate(); 
-  //{_id, username, password, name, location, inUkraine, friends: [{ roomID: string, name: string}]}
+  //{_id, username, password, name, location, inUkraine, friends: [{ roomID: string, name: string, location: string}]}
   const [user, setUser] = useState({_id: '', username: '', password: '', name: '', friends: []}); 
   //{roomID: str, room: str, messages: [{_id: str, userID, message: string, donation: 
   // bool, donationAmount: int}]}

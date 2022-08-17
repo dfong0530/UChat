@@ -41,8 +41,8 @@ const Messages = () => {
     const handleSubmit = (e) => {
         e.preventDefault(); 
         socket.emit('message', {userID: user._id, roomID: room.roomID, 
-        message: message, roomNum: room.room, donation: room.donation, 
-        donationAmount: room.donationAmount}); 
+        message: message, roomNum: room.room, donation: false, 
+        donationAmount: 0}); 
         setMessage(""); 
     }; 
     
@@ -167,7 +167,7 @@ const Messages = () => {
                                 />
                             </div>
                             
-                            {/* for the name and location */}
+                            {/* for the name and location  DFONG--> Backend fix*/}
                             <div className="name-location">
                                 <p className="id">
                                     {() => getFriendName(true)}
@@ -193,7 +193,7 @@ const Messages = () => {
                             room.messages.map(msg => {
                                 return (
                                     <div className="message">  
-                                        <Message key={msg._id} message={msg}/>
+                                        <Message key={msg._id} userID={msg.userID} _id={user._id}  message={msg.message} donation={msg.donation} donationAmount={msg.donationAmount} />
                                     </div>
                                 );
                             })

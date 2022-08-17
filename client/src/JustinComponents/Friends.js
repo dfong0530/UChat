@@ -16,6 +16,26 @@ const Friends = ({socket}) => {
 
     const handleSwitch = async(aFriend) => {
         const ret = await GetRoomData(aFriend.roomID, user.username, user.password);
+
+        //ADDED below
+        const userTwo = ret.userTwo;
+
+        if(userTwo._id !== user._id && userTwo.name !== aFriend.name){
+            let friends = user.friends;
+
+            friends = friends.map(friend => {
+                if(friend.roomID === aFriend.roomID){
+                    friend.name = userTwo.name;
+                }
+                return friend;
+            });
+
+            setUser({...user, friends});
+        }
+
+        delete ret.userTwo;
+        //ADDED Above
+
         socket.emit('leave-room', room.room);
         socket.emit('switch-room', ret.room); 
         setRoom(ret); 
