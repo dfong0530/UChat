@@ -32,7 +32,7 @@ const Login = () => {
             <section className="login-page">
                 <SmsIcon 
                     className="logo"
-                    sx={{fontSize: 65}}
+                    sx={{fontSize: 120}}
                 />
 
                 <p className="title">

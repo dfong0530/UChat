@@ -1,4 +1,74 @@
+/* ===setting up the side=== */
+.sidebar {
+  background-color: #4f677d;
+  color: white;
+  font-size: 30px;
+}
+
+.friends div,
+.add-friend, 
+.profile-pic {
+  align-items: center; 
+}
+
 /* the section for each single friend */
+/* setting up the add feature */
+.add-friend {
+  display: flex; 
+  height: 15.25%;
+  border-bottom: 2px solid #cecece;
+  justify-content: space-evenly;
+}
+
+.add-friend p {
+  font-size: 28px;
+}
+
+.add-button {
+  filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.15));
+}
+
+.friends {
+  height: 84.75%; 
+  overflow-y: auto; 
+}
+
+.add-button:hover,
+.add-button:active {
+  transition: 0.2s;
+}
+
+.add-button:hover,
+.friends::-webkit-scrollbar-thumb:hover {
+  opacity: 0.85; 
+}
+
+.add-button:active, 
+.friends::-webkit-scrollbar-thumb:active {
+  opacity: 0.65;
+}
+
+.single-friend, 
+.friends::-webkit-scrollbar {
+  transition: 0.2s;
+}
+
+
+.friends::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.friends::-webkit-scrollbar-thumb {
+  background-color: rgb(32, 50, 68); 
+  border: none; 
+  border-radius: 20px; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); 
+}
+
+.friends::-webkit-scrollbar-track {
+  background-color: #435463;
+}
+
 .single-friend {
     height: 16.67%; 
     border-bottom: 1px solid white; 
@@ -31,5 +101,4 @@
   width: 68px;
   margin-left: 25px;
   justify-content: center;
-  align-items: center;
 }
