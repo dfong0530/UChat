@@ -46,16 +46,19 @@ const DonationBox = () => {
           <h4 className="textUSD">USD</h4>
         </article>
         <div className="donationClickNote">
-          <form>
-            <input
-              type="text"
-              id="donationNote"
-              name="donationNote"
-              value={donationNote}
-              onChange={(e) => setDonationNote(e.target.value)}
-              onClick={clickOnce}
-            />
-          </form>
+          <textarea
+            className="clickNoteArea"
+            name="donationNote"
+            id="donationNote"
+            value={donationNote}
+            onChange={(e) => setDonationNote(e.target.value)}
+            onClick={clickOnce}
+          />
+        </div>
+        <div className="donationDonateButton">
+          <button className="donateButton" onClick={handleClickDonate}>
+            Donate
+          </button>
         </div>
       </section>
     </>
