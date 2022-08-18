@@ -22,11 +22,9 @@
     background-color: white;
 }
 
-.CloseButton {
-}
-
 .btnCloseButton:hover {
     color: #878787;
+    transition: 0.2s;
 }
 
 .donationHeading {
@@ -62,6 +60,7 @@
 
 .amountBtn:hover {
     opacity: 0.3;
+    transition: 0.2s;
 }
 
 .donationUSD {
@@ -77,3 +76,41 @@
     color: #5887FF;
 }
 
+.donationClickNote {
+    margin: 10% 0 0 0;
+}
+
+.clickNoteArea {
+    border-style: solid none solid none;
+    border-color: #EAEAEA;
+    width: 80%;
+    padding-bottom: 75px;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 0.85rem;
+    line-height: 1.1rem;
+    color: #747474;
+    resize: none;
+}
+
+.donationDonateButton {
+    margin-top: 7.5%;
+}
+
+.donateButton {
+    background-color: #70D367;
+    width: 250px;
+    height: 35px;
+    border-radius: 40px;
+    border-style: none;
+    color: #FFFFFF;
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+.donateButton:hover {
+    filter: brightness(110%);
+    transition: 0.3s;
+}
