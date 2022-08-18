@@ -62,7 +62,6 @@ const Friends = ({socket}) => {
                         return (
                             <div 
                                 className={friend.roomID === room.roomID ? "light" : "regular"}
-
                                 onClick={() => handleSwitch(friend)}>
                                 <div className="profile-pic">
                                     <PersonIcon 
