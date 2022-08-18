@@ -69,7 +69,11 @@
   background-color: #435463;
 }
 
+<<<<<<< HEAD
 .single-friend {
+=======
+.single-friend, .light, .regular {
+>>>>>>> 27c23b80e6301a53bfafdb1fcc9412ce8e82b304
     height: 16.67%; 
     border-bottom: 1px solid white; 
     column-gap: 6%; 
