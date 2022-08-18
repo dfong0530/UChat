@@ -12,7 +12,7 @@
 
 Create Account - When link clicked, user redirected to the create account page.
 
-Login -
+Login - If user's credentials are corrrect --> HTTP Request to GetUserData and GetFirstRoomData --> Update state variables --> redirect to the messages page.
 
 ### Create Account Page
 
