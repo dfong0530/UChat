@@ -1,5 +1,5 @@
 import "./CSS/Initial.css";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import React from "react";
 import SmsIcon from "@mui/icons-material/Sms";
 import DonationBox from "../TashiComponents/DonationBox";

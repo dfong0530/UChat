@@ -2,7 +2,7 @@ import "./CSS/DonationBox.css";
 import React, { useState, useEffect, useContext } from "react";
 import XIcon from "@mui/icons-material/Close";
 import CloseIcon from "@mui/icons-material/Close";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import MoneyIcon from "@mui/icons-material/AttachMoney";
 
 const DonationBox = () => {
   var clicked = false;
@@ -35,7 +35,7 @@ const DonationBox = () => {
         </div>
         <h2 className="donationHeading">Donate money to a friend</h2>
         <div className="donationMoneyIcon">
-          <AttachMoneyIcon className="MoneyIcon" sx={{ fontSize: 22 }} />
+          <MoneyIcon className="MoneyIcon" sx={{ fontSize: 22 }} />
         </div>
         <div className="donationClickAmount">
           <button className="amountBtn" onClick={handleClickAmount}>
