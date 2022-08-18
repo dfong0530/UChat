@@ -22,15 +22,14 @@ const Messages = () => {
     //When your calling this function make sure that thre is more than one
     //friend. --> Could cause bugs if coditions aren't met
     const getFriendName = (condition) => {
-        let friendName = user.friends.filter(aFriend => {
-            return aFriend.roomID === room.roomID
-        }); 
+        const aFriend = user.friends.find(friend => friend.roomID == room.roomID); 
         
         if (condition) {
-            return friendName[0].name;
-        } else {
-            return friendName[0].location; 
+            return aFriend.name; 
+        } else { 
+            return aFriend.location; 
         }
+        
     };
 
     // TASHI 
