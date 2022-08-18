@@ -13,7 +13,11 @@ function App() {
   //navigate("/messages")
   const navigate = useNavigate(); 
   //{_id, username, password, name, location, inUkraine, friends: [{ roomID: string, name: string, location: string}]}
+<<<<<<< HEAD
   const [user, setUser] = useState({_id: '', username: '', password: '', name: '', friends: []}); 
+=======
+  const [user, setUser] = useState({_id: '', username: '', password: '', location: '', name: '', friends: []}); 
+>>>>>>> 27c23b80e6301a53bfafdb1fcc9412ce8e82b304
   //{roomID: str, room: str, messages: [{_id: str, userID, message: string, donation: 
   // bool, donationAmount: int}]}
   const [room, setRoom] = useState({roomID: "", room: "", messages: []}); 

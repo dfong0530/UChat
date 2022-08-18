@@ -2,10 +2,16 @@ import "./CSS/Initial.css";
 import { useContext } from "react";
 import React from "react";
 import SmsIcon from "@mui/icons-material/Sms";
+<<<<<<< HEAD
 import DonationBox from "../TashiComponents/DonationBox";
 import GlobalContext from "../GlobalContext";
 
 const Initial = () => { 
+=======
+import GlobalContext from "../GlobalContext";
+
+const Initial = () => {
+>>>>>>> 27c23b80e6301a53bfafdb1fcc9412ce8e82b304
 
   const {navigate} = useContext(GlobalContext);
 
