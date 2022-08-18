@@ -10,7 +10,7 @@ export const GetLocation = async(lat, lng) => {
 
 
 
-export const Login = async(auth) => {
+export const LoginRequest = async(auth) => {
     try{
         const res = await axios.post('http://localhost:5000/api/v1/auth/login', {
             username: auth.username,
@@ -26,7 +26,7 @@ export const Login = async(auth) => {
 }
 
 
-export const CreateAccount = async(auth) => {
+export const CreateAccountRequest = async(auth) => {
     try{
         const res = await axios.post('http://localhost:5000/api/v1/auth/create-account', {
             username: auth.username,
@@ -47,21 +47,22 @@ export const CreateAccount = async(auth) => {
 // when you swtich users
 export const GetRoomData = async(roomID, username, password) => {
         try{
-        const URL = `http://localhost:5000/api/v1/rooms/${roomID}`;
 
-        const ret = await axios.get(URL, {
-            headers: {
-                username,
-                password
+            const URL = `http://localhost:5000/api/v1/rooms/${roomID}`;
+
+            const ret = await axios.get(URL, {
+                headers: {
+                    username,
+                    password
+                }
+            });
+            const room = await ret.data;
+
+            if(room.status !== 200){
+                throw room.status;
             }
-        });
-        const room = await ret.data;
-
-        if(room.status !== 200){
-            throw room.status;
-        }
-        
-        return {roomID, room: room.data.roomNum, messages: room.data.messages, userTwo: room.data.userTwo};
+            
+            return {roomID, room: room.data.roomNum, messages: room.data.messages, userTwo: room.data.userTwo};
     }
     catch(e){
         console.log(e);

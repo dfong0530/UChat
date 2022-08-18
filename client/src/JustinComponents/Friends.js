@@ -10,7 +10,7 @@ const Friends = ({socket}) => {
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
 
     const handleFriend = () => {
-        socket.emit('join-room', {_id: user._id, name: user.name, 
+        socket.emit('join-room', {userID: user._id, name: user.name, 
         inUkraine: user.inUkraine, location: user.location}); 
     };
 
@@ -39,6 +39,7 @@ const Friends = ({socket}) => {
 
         socket.emit('leave-room', room.room);
         socket.emit('switch-room', ret.room); 
+        console.log(ret);
         setRoom(ret); 
     };
 
@@ -62,8 +63,8 @@ const Friends = ({socket}) => {
                         return (
                             <div 
                                 className={friend.roomID === room.roomID ? "light" : "regular"}
-
-                                onClick={() => handleSwitch(friend)}>
+                                onClick={() => handleSwitch(friend)}
+                                key={friend.roomID}>
                                 <div className="profile-pic">
                                     <PersonIcon 
                                     sx={{fontSize: 50}} 

@@ -30,6 +30,7 @@ io.on('connection', socket => {
 
     socket.on('join-room', async({ userID, name, inUkraine, location }) => {
         console.log("join room");
+    
         const ret = await JoinRoom(userID, name, inUkraine ? '*' : 'Ukraine', inUkraine ? 'Ukraine' : '*', location);
 
         if(ret.secondUser){
@@ -48,7 +49,6 @@ io.on('connection', socket => {
         console.log("leave-room");
         socket.leave(room);
     })
-
     socket.on('message', async({ userID, roomID, message, roomNum, donation, donationAmount }) => {
         console.log('message');
         const _id = uuid.v1();

@@ -8,7 +8,7 @@ import GlobalContext from "../GlobalContext";
 import SendIcon from '@mui/icons-material/Send';
 import PersonIcon from '@mui/icons-material/Person';
 
-const socket = io();
+const socket = io("http://localhost:5000");
 
 const Messages = () => {
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
@@ -39,6 +39,7 @@ const Messages = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
+ 
         socket.emit('message', {userID: user._id, roomID: room.roomID, 
         message: message, roomNum: room.room, donation: false, 
         donationAmount: 0}); 
@@ -117,9 +118,11 @@ const Messages = () => {
         //First user updates friendUsername The website should update anonymous 
         // with new username
         const friendJoinedHandler = ({name, roomID, location}) => {
-            let updatedUserFriend = user.friend; 
+    
+            let updatedUserFriend = user.friends; 
             updatedUserFriend.map((friend) => {
                 if (friend.roomID === roomID) {
+           
                     friend.name = name; 
                     friend.location = location;
                 } 
@@ -196,8 +199,8 @@ const Messages = () => {
                         {
                             room.messages.map(msg => {
                                 return (
-                                    <div className="message">  
-                                        <Message key={msg._id} userID={msg.userID} _id={user._id}  message={msg.message} donation={msg.donation} donationAmount={msg.donationAmount} />
+                                    <div key={msg._id} className="message">  
+                                        <Message userID={msg.userID} _id={user._id}  message={msg.message} donation={msg.donation} donationAmount={msg.donationAmount} />
                                     </div>
                                 );
                             })
