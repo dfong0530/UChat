@@ -8,18 +8,18 @@
   text-align: center;
 }
 
-.logo {
+.logoUChat {
   color: #5BA3E4; 
 }
 
-h1 {
+.initialTitle {
   color: #6ab1f0;
   font-size: 40px;
   font-family: Poppins;
   font-weight: 800;
 }
 
-h2 {
+.initialHeading {
   color: #a9d3f9;
   font-size: 1.1rem;
   font-family: Poppins;
