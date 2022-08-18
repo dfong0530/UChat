@@ -19,7 +19,6 @@ const Friends = ({socket}) => {
         socket.emit('leave-room', room.room);
         socket.emit('switch-room', ret.room); 
         setRoom(ret); 
-        {aFriend.roomID === room.roomID ? "light" : "regular"}
     };
     
     return (
@@ -40,7 +39,8 @@ const Friends = ({socket}) => {
                 {   
                     user.friends.map(friend => {
                         return (
-                            <div className="single-friend"
+                            <div 
+                                className={aFriend.roomID === room.roomID ? "light" : "regular"}
                                 onClick={() => handleSwitch(friend)}>
                                 <div className="profile-pic">
                                     <PersonIcon 
