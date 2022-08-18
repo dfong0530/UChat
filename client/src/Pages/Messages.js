@@ -21,16 +21,16 @@ const Messages = () => {
 
     //When your calling this function make sure that thre is more than one
     //friend. --> Could cause bugs if coditions aren't met
-    const getFriendName = (condition) => {
-        const aFriend = user.friends.find(friend => friend.roomID == room.roomID); 
+    // const getFriendName = (condition) => {
+    //     const aFriend = user.friends.find(friend => friend.roomID === room.roomID); 
         
-        if (condition) {
-            return aFriend.name; 
-        } else { 
-            return aFriend.location; 
-        }
+    //     if (condition) {
+    //         return aFriend.name; 
+    //     } else { 
+    //         return aFriend.location; 
+    //     }
         
-    };
+    // };
 
     // TASHI 
     const handleDonation = () => {
@@ -174,12 +174,12 @@ const Messages = () => {
                             {/* for the name and location  DFONG--> Backend fix*/}
                             <div className="name-location">
                                 <p className="id">
-                                    {() => getFriendName(true)}
+                                    {/* {() => getFriendName(true)} */}
                                     Veevek
                                 </p>
 
                                 <p className="location">
-                                    {() => getFriendName(false)}
+                                    {/* {() => getFriendName(false)} */}
                                     From Kyiv
                                 </p>
                             </div>

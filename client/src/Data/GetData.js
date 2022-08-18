@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 export const GetLocation = async(lat, lng) => {
-    const ret = await axios.get(http://localhost:5000/api/v1/maps/get-location?lat=${lat}&lng=${lng});
+    const ret = await axios.get(`http://localhost:5000/api/v1/maps/get-location?lat=${lat}&lng=${lng}`);
     const data = await ret.data;
 
     return data;
@@ -47,7 +47,7 @@ export const CreateAccount = async(auth) => {
 // when you swtich users
 export const GetRoomData = async(roomID, username, password) => {
         try{
-        const URL = http://localhost:5000/api/v1/rooms/${roomID};
+        const URL = `http://localhost:5000/api/v1/rooms/${roomID}`;
 
         const ret = await axios.get(URL, {
             headers: {
