@@ -1,19 +1,12 @@
 import "./CSS/Messages.css";
 import io from 'socket.io-client';
-import handleFriend from "../JustinComponents/Friends.js";
-import handleSwitch from "../JustinComponents/Friends.js";
-import getFriendName from "../JustinComponents/Friends.js";  
-// import getFriendLocation from "../JustinComponents/Friend.js";
 import Friends from "../JustinComponents/Friends.js";
 import Message from "../VeevekComponents/Message.js";
 import { GetRoomData } from "../Data/GetData";
-
 import {useState, useEffect, useContext, useRef} from "react";
 import GlobalContext from "../GlobalContext";
 import SendIcon from '@mui/icons-material/Send';
 import PersonIcon from '@mui/icons-material/Person';
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-
 
 const socket = io();
 
@@ -26,7 +19,20 @@ const Messages = () => {
     const inputRef = useRef(null);
     const msgSecRef = useRef(null);
 
-   
+    //When your calling this function make sure that thre is more than one
+    //friend. --> Could cause bugs if coditions aren't met
+    const getFriendName = (condition) => {
+        let friendName = user.friends.filter(aFriend => {
+            return aFriend.roomID === room.roomID
+        }); 
+        
+        if (condition) {
+            return friendName[0].name;
+        } else {
+            return friendName[0].location; 
+        }
+    };
+
     // TASHI 
     const handleDonation = () => {
         
@@ -35,15 +41,8 @@ const Messages = () => {
     const handleSubmit = (e) => {
         e.preventDefault(); 
         socket.emit('message', {userID: user._id, roomID: room.roomID, 
-        message: message, roomNum: room.room, donation: room.donation, 
-        donationAmount: room.donationAmount}); 
-        setMessage(""); 
-    }; 
-
-    const handleMessage = () => {
-        socket.emit('message', {userID: user._id, roomID: room.roomID, 
-        message: message, roomNum: room.room, donation: room.donation, 
-        donationAmount: room.donationAmount});
+        message: message, roomNum: room.room, donation: false, 
+        donationAmount: 0}); 
         setMessage(""); 
     }; 
     
@@ -89,15 +88,19 @@ const Messages = () => {
         
         //Sent from Backend --> After backend finishes procesing adding a new room 
         //The website should add a new friend to the top of the side bar
-        const joinRoomHandler = async({friendName, roomID, roomNum}) => {   
-            let incomingFriend = {roomID: roomID, name: friendName}; 
+        const joinRoomHandler = async({friendName, roomID, roomNum, location}) => {  
+            
+            socket.emit("leave-room", room.room); 
+            socket.emit("switch-room", roomNum);
+            
+            let incomingFriend = {roomID: roomID, name: friendName, location: location}; 
             let newFriends = user.friends;
             newFriends.unshift(incomingFriend); 
             setUser({...user, friends: newFriends}); 
 
-            const ret = await GetRoomData(roomID, friendName, roomNum); 
-            socket.emit("leave-room", room.room); 
-            socket.emit("switch-room", ret.room);
+            const ret = await GetRoomData(roomID, user.username, user.password); 
+
+            delete ret.userTwo;
             setRoom(ret); 
         }
 
@@ -114,11 +117,12 @@ const Messages = () => {
         //Sent from Backend --> After second user wants to add a friend. 
         //First user updates friendUsername The website should update anonymous 
         // with new username
-        const friendJoinedHandler = ({name, roomID}) => {
+        const friendJoinedHandler = ({name, roomID, location}) => {
             let updatedUserFriend = user.friend; 
             updatedUserFriend.map((friend) => {
                 if (friend.roomID === roomID) {
                     friend.name = name; 
+                    friend.location = location;
                 } 
                 return friend; 
             }); 
@@ -146,56 +150,18 @@ const Messages = () => {
         <> 
             {/* a css grid that represents the whole page */}
             <section className="page">
-                {/* the side part of the page that displays
-                 the add friend button along with the friends */}
-                <div className="sidebar">
-                    {/* the add feature of the side */}
-                    <div className="add-friend">
-                        {/* the app name */}
-                        <p>
-                            UChat   
-                        </p>
-
-                        <PersonAddAlt1Icon 
-                            className="add-button"
-                            onClick={<handleFriend 
-                                socket={socket} user={user}
-                            />}
-                            sx={{fontSize: 50}}
-                        />
-                    </div>
-
-    
-                    {/* the friends feature of the side */}
-                    <div className="friends">
-                        {/* there is a friend with a profile pic and their name */}
-                        {   
-                            user.friends.map(friend => {
-                                return <Friends
-                                    key={friend.roomID} 
-                                    friend={friend} 
-                                    onClick={<handleSwitch 
-                                        key={friend.roomID} socket={socket}
-                                        aFriend={friend} user={user}
-                                        room={room} GetRoomData={GetRoomData}
-                                    />}
-                                />; 
-                            })
-                        }
-                    </div>
-                </div>
-
-
+                <Friends socket={socket} />
+                     
                 {/* now for the main part of the messages page 
                 that includes the head, the chat UI, and the 
-                messages input feature */}
+                messages input feature */} 
                 <div className="main">
                     <div className="header">
                         {/* the information regarding the friend w/
                         their profile picture, where they are from 
                         and their name */}
                         <section className="information">
-                            {/* the profile picture */}
+                            {/*the profile picture */}
                             <div className="profile-pic">
                                 <PersonIcon 
                                     className="icon"
@@ -206,18 +172,15 @@ const Messages = () => {
                                 />
                             </div>
                             
-                            {/* for the name and location */}
+                            {/* for the name and location  DFONG--> Backend fix*/}
                             <div className="name-location">
                                 <p className="id">
-                                    <getFriendName 
-                                        user={user}
-                                        room={room}
-                                    />
+                                    {() => getFriendName(true)}
                                     Veevek
                                 </p>
 
                                 <p className="location">
-                                    <getFriendLocation /> 
+                                    {() => getFriendName(false)}
                                     From Kyiv
                                 </p>
                             </div>
@@ -229,15 +192,13 @@ const Messages = () => {
                         </button>
                     </div>
 
-
-
                     {/* the CHAT PART */}
                     <div className="messages-chat" ref={msgSecRef}>
                         {
                             room.messages.map(msg => {
                                 return (
                                     <div className="message">  
-                                        <Message key={msg._id} message={msg}/>
+                                        <Message key={msg._id} userID={msg.userID} _id={user._id}  message={msg.message} donation={msg.donation} donationAmount={msg.donationAmount} />
                                     </div>
                                 );
                             })
@@ -256,9 +217,7 @@ const Messages = () => {
                             onChange={(e) => setMessage(e.target.value)}
                             ref={inputRef}
                         />
-                        {/* api request return value from getRoomData is used 
-                        as onClick handler */}
-                        <div className="enter-button" onClick={handleMessage}>
+                        <div className="enter-button" onClick={handleSubmit}>
                             <SendIcon 
                                 sx={{
                                     color: "white", 

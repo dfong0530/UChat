@@ -7,11 +7,12 @@ import {useState} from "react";
 import GlobalContext from './GlobalContext';
 import {Routes, Route, useNavigate} from "react-router"
 
+
 function App() {
 
   //navigate("/messages")
   const navigate = useNavigate(); 
-  //{_id, username, password, name, friends: [{ roomID: string, name: string}]}
+  //{_id, username, password, name, location, inUkraine, friends: [{ roomID: string, name: string, location: string}]}
   const [user, setUser] = useState({_id: '', username: '', password: '', name: '', friends: []}); 
   //{roomID: str, room: str, messages: [{_id: str, userID, message: string, donation: 
   // bool, donationAmount: int}]}
@@ -29,6 +30,7 @@ function App() {
         </Routes>
       </GlobalContext.Provider>
     </>
+    
   );
 }
 

@@ -1,49 +1,82 @@
 import "./CSS/Friends.css";
-import PersonIcon from '@mui/icons-material/Person';
 import {useContext} from "react";
 import GlobalContext from "../GlobalContext";
+import { GetRoomData } from "../Data/GetData";
+import PersonIcon from '@mui/icons-material/Person';
+import PersonAddAlt1 from "@mui/icons-material/PersonAddAlt1";
 
-const Friends = ({roomID, name}) => {
+const Friends = ({socket}) => {
 
-    const {setRoom} = useContext(GlobalContext);
+    const {user, setUser, room, setRoom} = useContext(GlobalContext);
 
-    const handleFriend = ({socket, user}) => {
-    socket.emit('join-room', {_id: user._id, name: user.name, 
-    inUkraine: user.inUkraine}); 
+    const handleFriend = () => {
+        socket.emit('join-room', {_id: user._id, name: user.name, 
+        inUkraine: user.inUkraine, location: user.location}); 
     };
 
-    const handleSwitch = async({socket, aFriend, user, room, GetRoomData}) => {
+    const handleSwitch = async(aFriend) => {
         const ret = await GetRoomData(aFriend.roomID, user.username, user.password);
+
+        //ADDED below
+        const userTwo = ret.userTwo;
+
+        if(userTwo._id !== user._id && userTwo.name !== aFriend.name){
+            let friends = user.friends;
+
+            friends = friends.map(friend => {
+                if(friend.roomID === aFriend.roomID){
+                    friend.name = userTwo.name;
+                    friend.location = userTwo.location;
+                }
+                return friend;
+            });
+
+            setUser({...user, friends});
+        }
+
+        delete ret.userTwo;
+        //ADDED Above
+
         socket.emit('leave-room', room.room);
         socket.emit('switch-room', ret.room); 
         setRoom(ret); 
     };
 
-    //When your calling this function make sure that thre is more than one
-    //friend. --> Could cause bugs if coditions aren't met
-    const getFriendName = ({user, room}) => {
-        let friendName = user.friends.filter(aFriend => {
-            return aFriend.roomID === room.roomID
-        }); 
-        return friendName[0];
-    };
-
-    const getFriendLocation = () => {
-
-    };
-
     return (
-        <div className="single-friend">
-                <div className="profile-pic">
-                    <PersonIcon
-                        sx={{fontSize: 50}}
-                    />
-                </div>
-
+        <section className="sidebar">
+            <div className="add-friend"> 
                 <p>
-                    {name}
-                </p> 
-        </div>
+                    UChat   
+                </p>
+
+                <PersonAddAlt1
+                    className="add-button"
+                    onClick={handleFriend}
+                    sx={{fontSize: 50}}
+                />
+            </div> 
+
+            <div className="friends">
+                {   
+                    user.friends.map(friend => {
+                        return (
+                            <div className="single-friend"
+                                onClick={() => handleSwitch(friend)}>
+                                <div className="profile-pic">
+                                    <PersonIcon 
+                                    sx={{fontSize: 50}} 
+                                    />
+                                </div>
+
+                                <p>
+                                    {friend.name}
+                                </p>
+                            </div>
+                        ); 
+                    })
+                }
+            </div> 
+        </section>
     );
 }; 
 

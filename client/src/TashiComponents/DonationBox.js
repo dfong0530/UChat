@@ -55,9 +55,6 @@ const DonationBox = () => {
               onChange={(e) => setDonationNote(e.target.value)}
               onClick={clickOnce}
             />
-            {/* <button className="donationNoteBtn" onClick={{ handleClickNote }}>
-            {donationNote}
-          </button> */}
           </form>
         </div>
       </section>
