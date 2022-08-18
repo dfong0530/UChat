@@ -1,116 +1,123 @@
 .containerDonationBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 387px;
-    height: 445px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
-    text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 387px;
+  height: 445px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
 }
 
 .donationCloseButton {
-    position: absolute;
-    margin: 1% 0 0 90%; 
+  position: absolute;
+  margin: 1% 0 0 90%;
 }
 
 .btnCloseButton {
-    border: none;
-    color: #D2D2D2;
-    background-color: white;
+  border: none;
+  color: #d2d2d2;
+  background-color: white;
 }
 
 .btnCloseButton:hover {
-    color: #878787;
-    transition: 0.2s;
+  color: #878787;
+  transition: 0.2s;
 }
 
 .donationHeading {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.05rem;
-    margin-top: 7%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-top: 7%;
 }
 
 .donationMoneyIcon {
-    position: absolute;
-    margin: 10% 0 0 25%;
-    color: #454545;
+  position: absolute;
+  margin: 10% 0 0 25%;
+  color: #454545;
 }
 
 .donationClickAmount {
-    padding: 10% 0 0 0;
+  padding: 10% 0 0 0;
 }
 
 .donationAmount {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 52px;
-    line-height: 70px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 52px;
+  line-height: 70px;
 }
 
 .amountBtn {
-    border: none;
-    background-color: white;
+  border: none;
+  background-color: white;
 }
 
 .amountBtn:hover {
-    opacity: 0.3;
-    transition: 0.2s;
+  opacity: 0.7;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 .donationUSD {
-    margin: 5% 0 0 0;
+  margin: 5% 0 0 0;
 }
 
 .textUSD {
-    font-family: 'Inter';
-    font-weight: 500;
-    font-style: normal;
-    font-size: 0.8rem;
-    font-height: 1rem;
-    color: #5887FF;
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.8rem;
+  font-height: 1rem;
+  color: #5887ff;
 }
 
 .donationClickNote {
-    margin: 10% 0 0 0;
+  margin: 10% 0 0 0;
 }
 
 .clickNoteArea {
-    border-style: solid none solid none;
-    border-color: #EAEAEA;
-    width: 80%;
-    padding-bottom: 75px;
-    font-family: "Inter";
-    font-weight: 500;
-    font-size: 0.85rem;
-    line-height: 1.1rem;
-    color: #747474;
-    resize: none;
+  border-style: solid none solid none;
+  border-color: #eaeaea;
+  width: 80%;
+  padding-bottom: 75px;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 0.85rem;
+  line-height: 1.1rem;
+  color: #747474;
+  resize: none;
 }
 
 .donationDonateButton {
-    margin-top: 7.5%;
+  margin-top: 7.5%;
 }
 
 .donateButton {
-    background-color: #70D367;
-    width: 250px;
-    height: 35px;
-    border-radius: 40px;
-    border-style: none;
-    color: #FFFFFF;
-    font-family: Poppins;
-    font-weight: 400;
-    font-size: 1.1rem;
-    line-height: 2rem;
+  background-color: #70d367;
+  width: 250px;
+  height: 35px;
+  border-radius: 40px;
+  border-style: none;
+  color: #ffffff;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 2rem;
 }
 
 .donateButton:hover {
-    filter: brightness(110%);
-    transition: 0.3s;
+  filter: brightness(110%);
+  transition: 0.3s;
+}
+
+@media (max-width: 1100px) {
+  body {
+    background-color: red;
+  }
 }
