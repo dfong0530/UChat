@@ -46,7 +46,7 @@ const DonationBox = () => {
           <h4 className="textUSD">USD</h4>
         </article>
         <div className="donationClickNote">
-          <form className = "donationForm">
+          <form>
             <input
               type="text"
               id="donationNote"
