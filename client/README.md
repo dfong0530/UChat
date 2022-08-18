@@ -2,11 +2,11 @@
 
 <img width="800" alt="Screen Shot 2022-08-18 at 12 47 10 AM" src="https://user-images.githubusercontent.com/68403991/185296033-635606b4-d84c-458c-be08-59b64e797145.png">
 
-### Intial Page
+## Intial Page
 
 ###### Actions:
 
-### Login Page
+## Login Page
 
 ###### Actions: Login, Create Account
 
@@ -14,10 +14,10 @@ Create Account - When link clicked, user redirected to the create account page.
 
 Login - If user's credentials are corrrect --> HTTP Request to GetUserData and GetFirstRoomData --> Update state variables --> redirect to the messages page.
 
-### Create Account Page
+## Create Account Page
 
 ###### Actions:
 
-### Messages Page
+## Messages Page
 
 ###### Actions:
