@@ -1,6 +1,6 @@
 # UChat
 
-### <pre>[Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)              [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
+### <pre>[Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)         [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
 
 GIF
 
