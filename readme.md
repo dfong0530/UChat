@@ -1,4 +1,6 @@
-# UChat [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client) [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)
+# UChat
+
+## [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client) [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)
 
 GIF
 
