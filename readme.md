@@ -73,8 +73,6 @@ Gabby is located in "Ukraine" and David is located in "New York". In order for u
 
 We used Mongodb, Express, React, and Node.js to build out this application. We also used socket.io for messaging between users.
 
-#### Software Architecture of frontend and backend located in the readme of /client and /server
-
 ### Installation
 
 1. git clone
