@@ -1,12 +1,10 @@
-# UChat
+# UChat [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client) [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)
 
 GIF
 
 ### Demo Video: LINK
 
 ### Project Link: LINK
-
-[Frontend Architecture] (https://github.com/dfong0530/UChat/tree/main/client) [Backend Architecture] (https://github.com/dfong0530/UChat/tree/main/server)
 
 ###### Frontend Developers: David Fong, Justin Tran, Veevek Dave, Tashi Sherpa
 
