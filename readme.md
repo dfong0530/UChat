@@ -32,7 +32,8 @@ Users outside of Ukraine have options to donate to the person they are speaking 
 
 #### David Fong
 
-    I was the project lead. I worked on building out the backend, designing the architecture of the frontend, and assisted my teamates wherever needed.
+    I was the project lead. I worked on building out the backend, designing the architecture of
+    the frontend, and assisted my teamates wherever needed.
 
     I learned a lot about various backend technologies like socket.io, node.js, and express, mongoDB.
 
