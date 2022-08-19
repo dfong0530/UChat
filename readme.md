@@ -1,12 +1,12 @@
 # UChat
 
-### <pre>[Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)         [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
+
 
 GIF
 
-### Demo Video: LINK
 
-### Project Link: LINK
+### <pre>[Demo Video](https://www.google.com/)     [Project Link](https://www.google.com/)     [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)     [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
+
 
 ###### Frontend Developers: David Fong, Justin Tran, Veevek Dave, Tashi Sherpa
 
@@ -76,8 +76,6 @@ Gabby is located in "Ukraine" and David is located in "New York". In order for u
 ### Tech Stack (MERN)
 
 We used Mongodb, Express, React, and Node.js to build out this application. We also used socket.io for messaging between users.
-
-#### Software Architecture of frontend and backend located in the readme of /client and /server
 
 ### Installation
 
