@@ -51,6 +51,10 @@ Users outside of Ukraine have options to donate to the person they are speaking 
 
 #### Tashi Sherpa
 
+    I worked on building the frontend portion of the project for the landing page and the donation 
+    functionality on the messaging page through the use of React.js, HTML, CSS, and Javascript.
+
+    To do this, I adjusted multiple media queries for 
 ---
 
 ### How to test

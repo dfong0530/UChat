@@ -1,12 +1,12 @@
 import "./CSS/Messages.css";
-import io from 'socket.io-client';
+import io from "socket.io-client";
 import Friends from "../JustinComponents/Friends.js";
 import Message from "../VeevekComponents/Message.js";
 import { GetRoomData } from "../Data/GetData";
-import {useState, useEffect, useContext, useRef} from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import GlobalContext from "../GlobalContext";
-import SendIcon from '@mui/icons-material/Send';
-import PersonIcon from '@mui/icons-material/Person';
+import SendIcon from "@mui/icons-material/Send";
+import PersonIcon from "@mui/icons-material/Person";
 
 const socket = io("http://localhost:5000");
 
@@ -60,8 +60,8 @@ const Messages = () => {
     }, [room]);
 
 
-    useEffect(() => {
-         /* This is where I will adding socket event listeners. 
+  useEffect(() => {
+    /* This is where I will adding socket event listeners. 
 
             These even listeners will help me send data from the backend to
             the frontend. Once the data is retrieved on the front end state variables will be updated
@@ -82,55 +82,71 @@ const Messages = () => {
             4. 'message' { userID: string, roomID: string, message: string, roomNum: string, donation: bool, donationAmount: int } 
             --> USED WHEN NEW MESSAGE ENTERED
         */
-        
-        //Sent from Backend --> After backend finishes procesing adding a new room 
-        //The website should add a new friend to the top of the side bar
-        const joinRoomHandler = async({friendName, roomID, roomNum, location}) => {  
-            
-            socket.emit("leave-room", room.room); 
-            socket.emit("switch-room", roomNum);
-            
-            let incomingFriend = {roomID: roomID, name: friendName, location: location}; 
-            let newFriends = user.friends;
-            newFriends.unshift(incomingFriend); 
-            setUser({...user, friends: newFriends}); 
 
-            const ret = await GetRoomData(roomID, user.username, user.password); 
+    //Sent from Backend --> After backend finishes procesing adding a new room
+    //The website should add a new friend to the top of the side bar
+    const joinRoomHandler = async ({
+      friendName,
+      roomID,
+      roomNum,
+      location,
+    }) => {
+      socket.emit("leave-room", room.room);
+      socket.emit("switch-room", roomNum);
 
-            delete ret.userTwo;
-            setRoom(ret); 
+      let incomingFriend = {
+        roomID: roomID,
+        name: friendName,
+        location: location,
+      };
+      let newFriends = user.friends;
+      newFriends.unshift(incomingFriend);
+      setUser({ ...user, friends: newFriends });
+
+      const ret = await GetRoomData(roomID, user.username, user.password);
+
+      delete ret.userTwo;
+      setRoom(ret);
+    };
+
+    //Sent from Backend --> After backend finishes procesing adding a new message
+    //The website should add a mesage to the screen
+    const messageHandler = ({
+      userID,
+      message,
+      _id,
+      donation,
+      donationAmount,
+    }) => {
+      let incomingMessage = {
+        _id: _id,
+        userID: userID,
+        message: message,
+        donation: donation,
+        donationAmount: donationAmount,
+      };
+      let newMessages = room.messages;
+      newMessages.push(incomingMessage);
+      setRoom({ ...room, messages: newMessages });
+    };
+
+    //Sent from Backend --> After second user wants to add a friend.
+    //First user updates friendUsername The website should update anonymous
+    // with new username
+    const friendJoinedHandler = ({ name, roomID, location }) => {
+      let updatedUserFriend = user.friends;
+      updatedUserFriend.map((friend) => {
+        if (friend.roomID === roomID) {
+          friend.name = name;
+          friend.location = location;
         }
+        return friend;
+      });
+      setUser({ ...user, friends: updatedUserFriend });
+    };
 
-        //Sent from Backend --> After backend finishes procesing adding a new message
-        //The website should add a mesage to the screen 
-        const messageHandler = ({userID, message, _id, donation, donationAmount}) => {
-            let incomingMessage = {_id: _id, userID: userID, message: message, 
-            donation: donation, donationAmount: donationAmount}; 
-            let newMessages = room.messages; 
-            newMessages.push(incomingMessage); 
-            setRoom({...room, messages: newMessages}); 
-        }
-
-        //Sent from Backend --> After second user wants to add a friend. 
-        //First user updates friendUsername The website should update anonymous 
-        // with new username
-        const friendJoinedHandler = ({name, roomID, location}) => {
-    
-            let updatedUserFriend = user.friends; 
-            updatedUserFriend.map((friend) => {
-                if (friend.roomID === roomID) {
-           
-                    friend.name = name; 
-                    friend.location = location;
-                } 
-                return friend; 
-            }); 
-            setUser({...user, friends: updatedUserFriend}); 
-        }
-        
-
-        //Update user, make api request to update currentMessages
-        socket.on('join-room', joinRoomHandler);
+    //Update user, make api request to update currentMessages
+    socket.on("join-room", joinRoomHandler);
 
         socket.on('message', messageHandler);
 
