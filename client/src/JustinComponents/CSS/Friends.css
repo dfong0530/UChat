@@ -89,12 +89,10 @@
   transition: 0.2s;
 }
 
-.light:hover,
 .regular:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.light:active,
 .regular:active {
   background-color: rgba(0, 0, 0, 0.18);
 }
