@@ -98,8 +98,8 @@ the name of the friend and a donation button */
 .donate {
   background-color: #70D367; 
   color: white; 
-  width: 220px; 
-  height: 58px; 
+  width: 195px; 
+  height: 55px; 
   font-size: 25px; 
   font-family: "Poppins"; 
   border-style: none; 
@@ -110,6 +110,7 @@ the name of the friend and a donation button */
 
 .messages-chat {
   height: 72.7%;
+  overflow-y: auto;
 }
 
 .message {

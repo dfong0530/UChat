@@ -65,9 +65,9 @@ const Friends = ({socket}) => {
                                 className={friend.roomID === room.roomID ? "light" : "regular"}
                                 onClick={() => handleSwitch(friend)}
                                 key={friend.roomID}>
-                                <div className="profile-pic">
+                                <div className="user-pic">
                                     <PersonIcon 
-                                    sx={{fontSize: 50}} 
+                                    sx={{fontSize: 30}} 
                                     />
                                 </div>
 

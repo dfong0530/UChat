@@ -12,25 +12,13 @@ const socket = io("http://localhost:5000");
 
 const Messages = () => {
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
-    const [message, setMessage] = useState(""); 
+    const [message, setMessage] = useState("");     
+    const [info, setInfo] = useState({name: "", location: ""}); 
 
     //These are refs to make sure the input msg box is focused on refresh
     //and that the msg scrolls down when messages are sent
     const inputRef = useRef(null);
     const msgSecRef = useRef(null);
-
-    //When your calling this function make sure that thre is more than one
-    //friend. --> Could cause bugs if coditions aren't met
-    // const getFriendName = (condition) => {
-    //     const aFriend = user.friends.find(friend => friend.roomID === room.roomID); 
-        
-    //     if (condition) {
-    //         return aFriend.name; 
-    //     } else { 
-    //         return aFriend.location; 
-    //     }
-        
-    // };
 
     // TASHI 
     const handleDonation = () => {
@@ -45,7 +33,16 @@ const Messages = () => {
         donationAmount: 0}); 
         setMessage(""); 
     }; 
-    
+
+    useEffect(() => {
+        user.friends.map(aFriend => {
+            if (aFriend.roomID === room.roomID) {
+                setInfo({name: aFriend.name, location: aFriend.location});
+            };
+        });
+
+    }, [room]); 
+
     //When web page loads focus the cursor on the input message box.
     //If the user has friends join the room of the first friend
     useEffect(() => {
@@ -60,7 +57,7 @@ const Messages = () => {
     //Every time messages are added make sure it automatically scrolls to bottom.
     useEffect(() => {
         msgSecRef.current.n = msgSecRef.current.scrollHeight;
-    }, [room])
+    }, [room]);
 
 
     useEffect(() => {
@@ -177,13 +174,11 @@ const Messages = () => {
                             {/* for the name and location  DFONG--> Backend fix*/}
                             <div className="name-location">
                                 <p className="id">
-                                    {/* {() => getFriendName(true)} */}
-                                    Veevek
+                                    {info.name}
                                 </p>
 
                                 <p className="location">
-                                    {/* {() => getFriendName(false)} */}
-                                    From Kyiv
+                                    {info.location}
                                 </p>
                             </div>
                         </section>
