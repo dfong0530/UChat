@@ -39,7 +39,6 @@ const Friends = ({socket}) => {
 
         socket.emit('leave-room', room.room);
         socket.emit('switch-room', ret.room); 
-        console.log(ret);
         setRoom(ret); 
     };
 

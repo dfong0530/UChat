@@ -11,11 +11,16 @@
   align-items: center;
 }
 
-.add-friend, 
-.user-pic, 
-.light, 
+.add-friend,
+.user-pic,
+.light,
 .regular {
-  display: flex; 
+  display: flex;
+}
+
+.light:hover,
+.regular:hover {
+  cursor: pointer;
 }
 
 /* the section for each single friend */
@@ -32,6 +37,7 @@
 
 .add-button {
   filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.15));
+  cursor: pointer;
 }
 
 .friends {
@@ -80,14 +86,16 @@
   height: 16.67%;
   border-bottom: 1px solid white;
   column-gap: 6%;
-  transition: 0.2s; 
+  transition: 0.2s;
 }
 
-.light:hover, .regular:hover {
+.light:hover,
+.regular:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.light:active, .regular:active {
+.light:active,
+.regular:active {
   background-color: rgba(0, 0, 0, 0.18);
 }
 

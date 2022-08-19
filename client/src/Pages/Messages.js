@@ -39,9 +39,11 @@ const Messages = () => {
             if (aFriend.roomID === room.roomID) {
                 setInfo({name: aFriend.name, location: aFriend.location});
             };
+
+            return aFriend;
         });
 
-    }, [room]); 
+    }, [room, user.friends]); 
 
     //When web page loads focus the cursor on the input message box.
     //If the user has friends join the room of the first friend
@@ -56,7 +58,7 @@ const Messages = () => {
 
     //Every time messages are added make sure it automatically scrolls to bottom.
     useEffect(() => {
-        msgSecRef.current.n = msgSecRef.current.scrollHeight;
+        msgSecRef.current.scrollTop = msgSecRef.current.scrollHeight;
     }, [room]);
 
 
