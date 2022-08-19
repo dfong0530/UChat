@@ -5,7 +5,7 @@
 GIF
 
 
-### <pre>[Demo Video](https://www.google.com/)      [Project Link](https://www.google.com/)      [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)      [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
+### <pre>[Demo Video](https://www.google.com/)     [Project Link](https://www.google.com/)     [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)     [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
 
 
 ###### Frontend Developers: David Fong, Justin Tran, Veevek Dave, Tashi Sherpa
