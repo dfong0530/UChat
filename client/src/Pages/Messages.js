@@ -11,57 +11,56 @@ import PersonIcon from "@mui/icons-material/Person";
 const socket = io("http://localhost:5000");
 
 const Messages = () => {
-  const { user, setUser, room, setRoom } = useContext(GlobalContext);
-  const [message, setMessage] = useState("");
+    const {user, setUser, room, setRoom} = useContext(GlobalContext);
+    const [message, setMessage] = useState("");     
+    const [info, setInfo] = useState({name: "", location: ""}); 
 
-  //These are refs to make sure the input msg box is focused on refresh
-  //and that the msg scrolls down when messages are sent
-  const inputRef = useRef(null);
-  const msgSecRef = useRef(null);
+    //These are refs to make sure the input msg box is focused on refresh
+    //and that the msg scrolls down when messages are sent
+    const inputRef = useRef(null);
+    const msgSecRef = useRef(null);
 
-  //When your calling this function make sure that thre is more than one
-  //friend. --> Could cause bugs if coditions aren't met
-  // const getFriendName = (condition) => {
-  //     const aFriend = user.friends.find(friend => friend.roomID === room.roomID);
+    // TASHI 
+    const handleDonation = () => {
+        
+    };
 
-  //     if (condition) {
-  //         return aFriend.name;
-  //     } else {
-  //         return aFriend.location;
-  //     }
+    const handleSubmit = (e) => {
+        e.preventDefault(); 
+ 
+        socket.emit('message', {userID: user._id, roomID: room.roomID, 
+        message: message, roomNum: room.room, donation: false, 
+        donationAmount: 0}); 
+        setMessage(""); 
+    }; 
 
-  // };
+    useEffect(() => {
+        user.friends.map(aFriend => {
+            if (aFriend.roomID === room.roomID) {
+                setInfo({name: aFriend.name, location: aFriend.location});
+            };
 
-  // TASHI
-  const handleDonation = () => {};
+            return aFriend;
+        });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    }, [room, user.friends]); 
 
-    socket.emit("message", {
-      userID: user._id,
-      roomID: room.roomID,
-      message: message,
-      roomNum: room.room,
-      donation: false,
-      donationAmount: 0,
-    });
-    setMessage("");
-  };
+    //When web page loads focus the cursor on the input message box.
+    //If the user has friends join the room of the first friend
+    useEffect(() => {
+        inputRef.current.focus();
+        if(user.friends.length !== 0){
 
-  //When web page loads focus the cursor on the input message box.
-  //If the user has friends join the room of the first friend
-  useEffect(() => {
-    inputRef.current.focus();
-    if (user.friends.length !== 0) {
-      socket.emit("switch-room", room.room);
-    }
-  }, [room.room, user.friends.length]);
+            socket.emit('switch-room', room.room);
+        }
+    }, [room.room, user.friends.length]);
 
-  //Every time messages are added make sure it automatically scrolls to bottom.
-  useEffect(() => {
-    msgSecRef.current.n = msgSecRef.current.scrollHeight;
-  }, [room]);
+
+    //Every time messages are added make sure it automatically scrolls to bottom.
+    useEffect(() => {
+        msgSecRef.current.scrollTop = msgSecRef.current.scrollHeight;
+    }, [room]);
+
 
   useEffect(() => {
     /* This is where I will adding socket event listeners. 
@@ -176,37 +175,35 @@ const Messages = () => {
             {/* the information regarding the friend w/
                         their profile picture, where they are from 
                         and their name */}
-            <section className="information">
-              {/*the profile picture */}
-              <div className="profile-pic">
-                <PersonIcon
-                  className="icon"
-                  sx={{
-                    color: "white",
-                    fontSize: 40,
-                  }}
-                />
-              </div>
+                        <section className="information">
+                            {/*the profile picture */}
+                            <div className="profile-pic">
+                                <PersonIcon 
+                                    className="icon"
+                                    sx={{
+                                        color: "white", 
+                                        fontSize: 40
+                                    }}
+                                />
+                            </div>
+                            
+                            {/* for the name and location  DFONG--> Backend fix*/}
+                            <div className="name-location">
+                                <p className="id">
+                                    {info.name}
+                                </p>
 
-              {/* for the name and location  DFONG--> Backend fix*/}
-              <div className="name-location">
-                <p className="id">
-                  {/* {() => getFriendName(true)} */}
-                  Veevek
-                </p>
-
-                <p className="location">
-                  {/* {() => getFriendName(false)} */}
-                  From Kyiv
-                </p>
-              </div>
-            </section>
-
-            {/* this is the donate button for TASHI*/}
-            <button className="donate" onClick={handleDonation}>
-              Donate Now
-            </button>
-          </div>
+                                <p className="location">
+                                    {info.location}
+                                </p>
+                            </div>
+                        </section>
+                        
+                        {/* this is the donate button for TASHI*/}
+                        <button className="donate" onClick={handleDonation}> 
+                            Donate Now 
+                        </button>
+                    </div>
 
           {/* the CHAT PART */}
           <div className="messages-chat" ref={msgSecRef}>

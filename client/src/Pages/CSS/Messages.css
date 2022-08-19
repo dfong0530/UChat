@@ -10,13 +10,13 @@
 .header,
 .information,
 .name-location,
-.profile-pic, 
-.message-input, 
+.profile-pic,
+.message-input,
 .enter-button {
   display: flex;
 }
 
-.profile-pic, 
+.profile-pic,
 .message-input,
 .enter-button {
   justify-content: center;
@@ -25,8 +25,8 @@
 .header,
 .information,
 .name-location,
-.profile-pic, 
-.message-input, 
+.profile-pic,
+.message-input,
 .enter-button {
   align-items: center;
 }
@@ -43,21 +43,26 @@
   opacity: 0.85;
 }
 
+.donate:hover,
+.enter-button:hover {
+  cursor: pointer;
+}
+
 .donate:active,
-.message-box:active, 
+.message-box:active,
 .enter-button:active {
   opacity: 0.65;
 }
 
 /* ===now the main part of the messages page=== */
 .main {
-  height: 97vh; 
+  height: 97vh;
 }
 
 /* this is on top of the messaging chat UI that displays
 the name of the friend and a donation button */
 .header {
-  height: 15.75%; 
+  height: 15.75%;
   border-bottom: 6px solid #dddddd;
   justify-content: space-between;
 }
@@ -96,24 +101,25 @@ the name of the friend and a donation button */
 }
 
 .donate {
-  background-color: #70D367; 
-  color: white; 
-  width: 220px; 
-  height: 58px; 
-  font-size: 25px; 
-  font-family: "Poppins"; 
-  border-style: none; 
+  background-color: #70d367;
+  color: white;
+  width: 195px;
+  height: 55px;
+  font-size: 25px;
+  font-family: "Poppins";
+  border-style: none;
   border-radius: 15px;
   margin-right: 12%;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25); 
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
 }
 
 .messages-chat {
   height: 72.7%;
+  overflow-y: auto;
 }
 
 .message {
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .message-input {
@@ -123,16 +129,16 @@ the name of the friend and a donation button */
 }
 
 .message-box {
-    background-color:#E8E8E8;
-    color:#949494; 
-    width: 70%;
-    height: 50%; 
-    font-size: 20px; 
-    border: none; 
-    border-radius: 30px;  
-    vertical-align: middle; 
-    padding-left: 4%; 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #e8e8e8;
+  color: #575757;
+  width: 70%;
+  height: 50%;
+  font-size: 20px;
+  border: none;
+  border-radius: 30px;
+  vertical-align: middle;
+  padding-left: 3.4%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .message-box:focus {

@@ -7,14 +7,25 @@
 
 .friends div,
 .add-friend,
-.profile-pic {
+.user-pic {
   align-items: center;
+}
+
+.add-friend,
+.user-pic,
+.light,
+.regular {
+  display: flex;
+}
+
+.light:hover,
+.regular:hover {
+  cursor: pointer;
 }
 
 /* the section for each single friend */
 /* setting up the add feature */
 .add-friend {
-  display: flex;
   height: 15.25%;
   border-bottom: 2px solid #cecece;
   justify-content: space-evenly;
@@ -26,9 +37,11 @@
 
 .add-button {
   filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.15));
+  cursor: pointer;
 }
 
 .friends {
+  font-size: 20px;
   height: 84.75%;
   overflow-y: auto;
 }
@@ -68,19 +81,21 @@
   background-color: #435463;
 }
 
-.single-friend,
 .light,
 .regular {
   height: 16.67%;
   border-bottom: 1px solid white;
   column-gap: 6%;
+  transition: 0.2s;
 }
 
-.single-friend:hover {
+.light:hover,
+.regular:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.single-friend:active {
+.light:active,
+.regular:active {
   background-color: rgba(0, 0, 0, 0.18);
 }
 
@@ -92,14 +107,14 @@
   background: rgba(255, 255, 255, 0.18);
 }
 
-.profile-pic {
+.user-pic {
   background-color: #5ba3e4;
   border-radius: 100px;
 }
 
-.profile-pic {
-  height: 65px;
-  width: 68px;
+.user-pic {
+  height: 55px;
+  width: 57px;
   margin-left: 25px;
   justify-content: center;
 }

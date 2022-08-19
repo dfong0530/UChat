@@ -19,14 +19,14 @@
 }
 
 .btnCloseButton {
-    border: none;
-    color: #D2D2D2;
-    background-color: white;
+  border: none;
+  color: #d2d2d2;
+  background-color: white;
 }
 
 .btnCloseButton:hover {
-    color: #878787;
-    transition: 0.2s;
+  color: #878787;
+  transition: 0.2s;
 }
 
 .donationHeading {
@@ -44,9 +44,9 @@
 }
 
 .donationClickAmount {
-    padding: 10% 0 0 0;
+  padding: 10% 0 0 0;
 }
-/*
+
 .donationAmount {
     font-family: 'Inter';
     font-style: normal;
@@ -82,8 +82,9 @@
 }
 
 .amountBtn:hover {
-    opacity: 0.3;
-    transition: 0.2s;
+  opacity: 0.7;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 .donationUSD {
@@ -91,12 +92,12 @@
 }
 
 .textUSD {
-    font-family: 'Inter';
-    font-weight: 500;
-    font-style: normal;
-    font-size: 0.8rem;
-    font-height: 1rem;
-    color: #5887FF;
+  font-family: "Inter";
+  font-weight: 500;
+  font-style: normal;
+  font-size: 0.8rem;
+  font-height: 1rem;
+  color: #5887ff;
 }
 
 .donationClickNote {
@@ -104,39 +105,39 @@
 }
 
 .clickNoteArea {
-    border-style: solid none solid none;
-    border-color: #EAEAEA;
-    width: 85%;
-    padding-bottom: 75px;
-    font-family: "Inter";
-    font-weight: 500;
-    font-size: 0.85rem;
-    line-height: 1.1rem;
-    color: #747474;
-    resize: none;
+  border-style: solid none solid none;
+  border-color: #eaeaea;
+  width: 85%;
+  padding-bottom: 75px;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 0.85rem;
+  line-height: 1.1rem;
+  color: #747474;
+  resize: none;
     outline: none;
 }
 
 .donationDonateButton {
-    margin-top: 8%;
+  margin-top: 8%;
 }
 
 .donateButton {
-    background-color: #70D367;
-    width: 315px;
-    height:45px;
-    border-radius: 40px;
-    border-style: none;
-    color: #FFFFFF;
-    font-family: Poppins;
-    font-weight: 400;
-    font-size: 1.35rem;
-    line-height: 2rem;
+  background-color: #70d367;
+  width: 315px;
+  height:45px;
+  border-radius: 40px;
+  border-style: none;
+  color: #ffffff;
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 1.35rem;
+  line-height: 2rem;
 }
 
 .donateButton:hover {
-    filter: brightness(110%);
-    transition: 0.3s;
+  filter: brightness(110%);
+  transition: 0.3s;
 }
 
 .amountInput:hover,

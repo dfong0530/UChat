@@ -1,5 +1,7 @@
 # UChat
 
+### <pre>[Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)         [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
+
 GIF
 
 ### Demo Video: LINK
@@ -20,7 +22,7 @@ This software connects those who need support and those who are generous enough 
 
 ### What is does
 
-Our chat application allows the rest of the world to communicate with people in Ukraine. When a user is loaded in, they create an account specifying their username, password, and location (through geo location notification).
+Our chat application allows the rest of the world to communicate with people in Ukraine. When a user is loaded in, they create an account specifying their username, password, and location (through the navigator.geolocation function and google maps api).
 
 The user is then directed to the chat application where they have options to add friends and chat with people in Ukraine or the rest of the world depending on where they reside.
 
@@ -32,18 +34,18 @@ Users outside of Ukraine have options to donate to the person they are speaking 
 
 #### David Fong
 
-    I worked on building out the backend portion of this project with Mongo.db, Node.js, Express, and
-    socket.io. I also designed the frontend architecture of the application and oversaw the project as a whole.
+    I was the project lead. I worked on building out the backend, designing the architecture of
+    the frontend, and assisted my teamates wherever needed.
 
-    I learned a lot about various backend technologies like socket.io, node.js, and express.
+    I learned a lot about various backend technologies like socket.io, node.js, and express, mongoDB.
 
 #### Justin Tran
 
-    I worked on building the frontend portion of the project for the login and messaging page using 
-    React Javascript, HTML and CSS. I also worked on integrating the functionality from the backend to reflect 
-    it on the frontend by updating the views and incorporating interactive UIs for the user. 
+    I worked on building the frontend portion of the project for the login and messaging page using
+    React Javascript, HTML and CSS. I also worked on integrating the functionality from the backend to reflect
+    it on the frontend by updating the views and incorporating interactive UIs for the user.
 
-    Overall, I developed my understanding of React JS and reinforced my skills for HTML and CSS.  
+    Overall, I developed my understanding of React JS and reinforced my skills for HTML and CSS.
 
 #### Veevek Dave
 
