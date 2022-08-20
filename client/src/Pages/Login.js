@@ -32,7 +32,13 @@ const Login = () => {
             setRoom(roomData);
 
             ////id, username, password, rooms
-            setUser({_id: data.User._id, username: data.User.username, password: data.User.password, name: data.User.name, location: data.User.location, inUkraine: data.User.inUkraine, friends: data.User.rooms});
+            setUser({_id: data.User._id, 
+                username: data.User.username, 
+                password: data.User.password, 
+                name: data.User.name, 
+                location: data.User.location, 
+                inUkraine: data.User.inUkraine, 
+                friends: data.User.rooms});
             navigate('/messages');
         }
         catch(e){
@@ -54,6 +60,7 @@ const Login = () => {
                 <p className="title">
                     UChat
                 </p>
+                
                 <form className="info" onSubmit={handleSubmit}>
                     <input 
                         className="name"
@@ -77,10 +84,13 @@ const Login = () => {
                         Login
                     </button>
                 </form>
-                <p className="create-account">
-                    or <Link className="create-account-link" to="/create-account">create an account</Link>
-                </p>
 
+                <p className="create-account">
+                    or 
+                    <Link className="create-account-link" to="/create-account">
+                        create an account
+                    </Link>
+                </p>
             </section>
         </>
     );

@@ -4,7 +4,9 @@ const Message = ({userID, _id, message, donation, donationAmount}) => { //DFONG 
     return (
         <div className= {userID === _id ? "grey-msg" : "blue-msg"} >
             {donation && <p className="donate-msg">Donated ${donationAmount}</p>}
-            <p>{message}</p>
+            <p className="word">
+                {message}
+            </p>
         </div>
     );
 }

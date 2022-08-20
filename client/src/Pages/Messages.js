@@ -46,10 +46,8 @@ const Messages = () => {
             if (aFriend.roomID === room.roomID) {
                 setInfo({name: aFriend.name, location: aFriend.location});
             };
-
             return aFriend;
         });
-
     }, [room, user.friends]); 
 
     //When web page loads focus the cursor on the input message box.
@@ -157,31 +155,26 @@ const Messages = () => {
     //Update user, make api request to update currentMessages
     socket.on("join-room", joinRoomHandler);
 
-    socket.on("message", messageHandler);
+        socket.on('message', messageHandler);
 
-    socket.on("friend-joined", friendJoinedHandler);
+        socket.on('friend-joined', friendJoinedHandler);
 
-    return () => {
-      socket.off("join-room", joinRoomHandler);
-      socket.off("message", messageHandler);
-      socket.off("friend-joined", friendJoinedHandler);
-    };
-  }, [room, setRoom, setUser, user]);
+        return () => {
+            socket.off('join-room', joinRoomHandler);
+            socket.off('message',messageHandler);
+            socket.off('friend-joined', friendJoinedHandler)
+        }
 
-  return (
-    <>
-      {/* a css grid that represents the whole page */}
-      <section className="page">
-        <Friends socket={socket} />
+    }, [room, setRoom, setUser, user]);
 
-        {/* now for the main part of the messages page 
-                that includes the head, the chat UI, and the 
-                messages input feature */}
-        <div className="main">
-          <div className="header">
-            {/* the information regarding the friend w/
-                        their profile picture, where they are from 
-                        and their name */}
+
+    return (
+        <> 
+            <section className="page">
+                <Friends socket={socket} />
+                     
+                <div className="main">
+                    <div className="header">
                         <section className="information">
                             {/*the profile picture */}
                             <div className="profile-pic">
@@ -194,7 +187,6 @@ const Messages = () => {
                                 />
                             </div>
                             
-                            {/* for the name and location  DFONG--> Backend fix*/}
                             <div className="name-location">
                                 <p className="id">
                                     {info.name}
@@ -212,47 +204,46 @@ const Messages = () => {
                         </button>
                     </div>
 
-          {/* the CHAT PART */}
-          <div className="messages-chat" ref={msgSecRef}>
-            {room.messages.map((msg) => {
-              return (
-                <div key={msg._id} className="message">
-                  <Message
-                    userID={msg.userID}
-                    _id={user._id}
-                    message={msg.message}
-                    donation={msg.donation}
-                    donationAmount={msg.donationAmount}
-                  />
-                </div>
-              );
-            })}
-          </div>
+                    <div className="messages-chat" ref={msgSecRef}>
+                        {
+                            room.messages.map(msg => {
+                                return (
+                                    <div key={msg._id} className="message">  
+                                        <Message 
+                                            userID={msg.userID} 
+                                            _id={user._id}  
+                                            message={msg.message} 
+                                            donation={msg.donation} 
+                                            donationAmount={msg.donationAmount} 
+                                        />
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
 
-          {/* THE INPUT PART WHERE YOU COLLECT THE DATA AND 
-                    MANIPULATE IT*/}
-          <form className="message-input" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              className="message-box"
-              placeholder="Type your message here..."
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              ref={inputRef}
-            />
-            <div className="enter-button" onClick={handleSubmit}>
-              <SendIcon
-                sx={{
-                  color: "white",
-                  fontSize: 25,
-                }}
-              />
-            </div>
-          </form>
-        </div>
-      </section>
-    </>
-  );
-};
+                    <form className="message-input" onSubmit={handleSubmit}>
+                        <input 
+                            type="text"
+                            className="message-box"
+                            placeholder="Type your message here..."
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            ref={inputRef}
+                        />
+                        <div className="enter-button" onClick={handleSubmit}>
+                            <SendIcon 
+                                sx={{
+                                    color: "white", 
+                                    fontSize: 25 
+                                }}
+                            />
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </>
+    );
+}
 
 export default Messages;
