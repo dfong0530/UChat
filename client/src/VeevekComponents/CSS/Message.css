@@ -5,22 +5,24 @@
   padding: 14px 14px 14px 14px;
 }
 
-.blue-msg{
+.blue-msg {
   background-color: #5BA3E4;
   color: white;
   border-radius: 20px 20px 20px 0;
 }
 
-.grey-msg{
+.grey-msg {
   background-color: #D8D8D8;
   color: black;
   border-radius: 20px 20px 0 20px;
+  margin-right: 0; 
+  margin-left: auto; 
 }
 
 .donate-msg {
   color: #20D111;
-  font-weight: bold;
   font-size: medium;
+  font-weight: bold;
 }
 
 .word {

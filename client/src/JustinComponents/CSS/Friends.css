@@ -1,14 +1,7 @@
-/* ===setting up the side=== */
+/* the setup for the navbar to the left of the messages page */
 .sidebar {
   background-color: #4f677d;
   color: white;
-  font-size: 30px;
-}
-
-.friends div,
-.add-friend,
-.user-pic {
-  align-items: center;
 }
 
 .add-friend,
@@ -18,13 +11,13 @@
   display: flex;
 }
 
-.light:hover,
-.regular:hover {
-  cursor: pointer;
+.add-friend,
+.user-pic, 
+.friends div {
+  align-items: center;
 }
 
-/* the section for each single friend */
-/* setting up the add feature */
+/* the add friend feature where it adds a div to the navbar under it */
 .add-friend {
   height: 15.25%;
   border-bottom: 2px solid #cecece;
@@ -32,42 +25,62 @@
 }
 
 .add-friend p {
-  font-size: 28px;
+  font-size: 25px;
+}
+
+.add-button, 
+.light, 
+.regular {
+  cursor: pointer; 
 }
 
 .add-button {
   filter: drop-shadow(1px 5px 5px rgba(0, 0, 0, 0.15));
-  cursor: pointer;
 }
 
+/* the navbar with all of the friend divs */
 .friends {
-  font-size: 20px;
   height: 84.75%;
+  font-size: 20px;
   overflow-y: auto;
 }
 
 .add-button:hover,
-.add-button:active {
-  transition: 0.2s;
-}
-
-.add-button:hover,
-.friends::-webkit-scrollbar-thumb:hover {
-  opacity: 0.85;
-}
-
-.add-button:active,
-.friends::-webkit-scrollbar-thumb:active {
-  opacity: 0.65;
-}
-
-.single-friend,
+.add-button:active, 
+.light, 
+.regular, 
 .friends::-webkit-scrollbar {
   transition: 0.2s;
 }
 
+/* the specific divs specified for when a friend is currently chatting 
+with the user and when they are not */
+.light,
+.regular {
+  height: 16.67%;
+  border-bottom: 1px solid white;
+  column-gap: 6%;
+}
+
+/* displays an opacity over when the user is currently chatting with x friend */
+.light {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.user-pic {
+  background-color: #5ba3e4;
+  height: 55px;
+  width: 57px;
+  border-radius: 100px;
+  margin-left: 25px;
+  justify-content: center;
+}
+
+
+/* fix up the scroll bar */
 .friends::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
+  transition: 0.2s;
 }
 
 .friends::-webkit-scrollbar-thumb {
@@ -81,12 +94,15 @@
   background-color: #435463;
 }
 
-.light,
-.regular {
-  height: 16.67%;
-  border-bottom: 1px solid white;
-  column-gap: 6%;
-  transition: 0.2s;
+/* pseudoclasses */
+.add-button:hover,
+.friends::-webkit-scrollbar-thumb:hover {
+  opacity: 0.85;
+}
+
+.add-button:active,
+.friends::-webkit-scrollbar-thumb:active {
+  opacity: 0.65;
 }
 
 .regular:hover {
@@ -95,24 +111,4 @@
 
 .regular:active {
   background-color: rgba(0, 0, 0, 0.18);
-}
-
-.regular {
-  background-color: #4f677d;
-}
-
-.light {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.user-pic {
-  background-color: #5ba3e4;
-  border-radius: 100px;
-}
-
-.user-pic {
-  height: 55px;
-  width: 57px;
-  margin-left: 25px;
-  justify-content: center;
 }

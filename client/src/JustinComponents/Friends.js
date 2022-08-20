@@ -9,15 +9,18 @@ const Friends = ({socket}) => {
 
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
 
+    // handler to sent data whenever the clicks on the add button 
+    // to add a friend  
     const handleFriend = () => {
         socket.emit('join-room', {userID: user._id, name: user.name, 
         inUkraine: user.inUkraine, location: user.location}); 
     };
 
+    // handler for when the user wants to switch chatting rooms to another friend 
+    // information regarding the user will be sent to the backend and then 
+    // the eventlistener will handle updating the views 
     const handleSwitch = async(aFriend) => {
         const ret = await GetRoomData(aFriend.roomID, user.username, user.password);
-
-        //ADDED below
         const userTwo = ret.userTwo;
 
         if(userTwo._id !== user._id && userTwo.name !== aFriend.name){
@@ -33,9 +36,7 @@ const Friends = ({socket}) => {
 
             setUser({...user, friends});
         }
-
         delete ret.userTwo;
-        //ADDED Above
 
         socket.emit('leave-room', room.room);
         socket.emit('switch-room', ret.room); 
@@ -45,14 +46,12 @@ const Friends = ({socket}) => {
     return (
         <section className="sidebar">
             <div className="add-friend"> 
-                <p>
-                    UChat   
-                </p>
+                <p>UChat</p>
 
                 <PersonAddAlt1
                     className="add-button"
                     onClick={handleFriend}
-                    sx={{fontSize: 50}}
+                    sx={{fontSize: 45}}
                 />
             </div> 
 
@@ -61,7 +60,8 @@ const Friends = ({socket}) => {
                     user.friends.map(friend => {
                         return (
                             <div 
-                                className={friend.roomID === room.roomID ? "light" : "regular"}
+                                className={friend.roomID === room.roomID ? 
+                                    "light" : "regular"}
                                 onClick={() => handleSwitch(friend)}
                                 key={friend.roomID}>
                                 <div className="user-pic">
@@ -70,9 +70,7 @@ const Friends = ({socket}) => {
                                     />
                                 </div>
 
-                                <p>
-                                    {friend.name}
-                                </p>
+                                <p>{friend.name}</p>
                             </div>
                         ); 
                     })
