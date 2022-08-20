@@ -35,8 +35,10 @@ const Messages = () => {
   };
 
   useEffect(() => {
+    console.log("Heyyy");
     user.friends.map((aFriend) => {
       if (aFriend.roomID === room.roomID) {
+        console.log(aFriend.name, aFriend.location);
         setInfo({ name: aFriend.name, location: aFriend.location });
       }
       return aFriend;
@@ -115,6 +117,8 @@ const Messages = () => {
         if (friend.roomID === roomID) {
           friend.name = name;
           friend.location = location;
+
+          setInfo({ name: name, location: location });
         }
         return friend;
       });
@@ -138,7 +142,7 @@ const Messages = () => {
   return (
     <>
       <section className="page">
-        <Friends socket={socket} />
+        <Friends socket={socket} setInfo={setInfo}/>
 
         <div className="main">
           <div className="header">
