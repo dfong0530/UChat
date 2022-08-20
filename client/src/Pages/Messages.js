@@ -7,13 +7,15 @@ import { useState, useEffect, useContext, useRef } from "react";
 import GlobalContext from "../GlobalContext";
 import SendIcon from "@mui/icons-material/Send";
 import PersonIcon from "@mui/icons-material/Person";
+import DonationBox from "../TashiComponents/DonationBox";
 
 const socket = io("http://localhost:5000");
 
 const Messages = () => {
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
     const [message, setMessage] = useState("");     
-    const [info, setInfo] = useState({name: "", location: ""}); 
+    const [info, setInfo] = useState({name: "", location: ""});
+    const [donationBoxDisplay, setDonationBoxDisplay] = useState({donationBox: false, darkOverlay: false})
 
     //These are refs to make sure the input msg box is focused on refresh
     //and that the msg scrolls down when messages are sent
@@ -21,8 +23,13 @@ const Messages = () => {
     const msgSecRef = useRef(null);
 
     // TASHI 
-    const handleDonation = () => {
-        
+    const handleDonation = (e) => {
+        if (donationBoxDisplay.donationBox === false) {
+            e.preventDefault();
+            donationBoxDisplay.donationBox = true;
+            donationBoxDisplay.darkOverlay = true;
+            <DonationBox className="donationZAxis"/>
+        }
     };
 
     const handleSubmit = (e) => {
