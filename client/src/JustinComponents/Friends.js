@@ -5,7 +5,7 @@ import { GetRoomData } from "../Data/GetData";
 import PersonIcon from '@mui/icons-material/Person';
 import PersonAddAlt1 from "@mui/icons-material/PersonAddAlt1";
 
-const Friends = ({socket}) => {
+const Friends = ({socket, setInfo}) => {
 
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
 
@@ -30,6 +30,8 @@ const Friends = ({socket}) => {
                 if(friend.roomID === aFriend.roomID){
                     friend.name = userTwo.name;
                     friend.location = userTwo.location;
+
+                    setInfo({ name: userTwo.name, location: userTwo.location })
                 }
                 return friend;
             });

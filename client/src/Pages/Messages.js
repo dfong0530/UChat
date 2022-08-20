@@ -40,8 +40,10 @@ const Messages = () => {
   // renders everytime a friend is clicked on it will display their 
   // name and location 
   useEffect(() => {
+    console.log("Heyyy");
     user.friends.map((aFriend) => {
       if (aFriend.roomID === room.roomID) {
+        console.log(aFriend.name, aFriend.location);
         setInfo({ name: aFriend.name, location: aFriend.location });
       }
       return aFriend;
@@ -122,6 +124,8 @@ const Messages = () => {
         if (friend.roomID === roomID) {
           friend.name = name;
           friend.location = location;
+
+          setInfo({ name: name, location: location });
         }
         return friend;
       });
@@ -146,7 +150,7 @@ const Messages = () => {
     <>
       <section className="page">
         {/* the navbar component for the friends and the add button */}
-        <Friends socket={socket} />
+        <Friends socket={socket} setInfo={setInfo}/>
 
         {/* the main part of the messages with the chat UI */}
         <section className="main">
