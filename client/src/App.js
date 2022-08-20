@@ -26,7 +26,7 @@ function App() {
           <Route path="/" element={<Initial />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/messages" element={user._id !== '' ? <Messages /> : <Login />} />
+          <Route path="/messages" element={<Messages />} />
         </Routes>
       </GlobalContext.Provider>
     </>
