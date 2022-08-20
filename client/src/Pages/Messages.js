@@ -12,60 +12,60 @@ import DonationBox from "../TashiComponents/DonationBox";
 const socket = io("http://localhost:5000");
 
 const Messages = () => {
-    const {user, setUser, room, setRoom} = useContext(GlobalContext);
-    const [message, setMessage] = useState("");     
-    const [info, setInfo] = useState({name: "", location: ""});
-    const [donationBoxDisplay, setDonationBoxDisplay] = useState({donationBox: false, darkOverlay: false})
+  const { user, setUser, room, setRoom } = useContext(GlobalContext);
+  const [message, setMessage] = useState("");
+  const [info, setInfo] = useState({ name: "", location: "" });
+  const [donationBoxDisplay, setDonationBoxDisplay] = useState({
+    donationBox: false,
+    darkOverlay: false,
+  });
 
-    //These are refs to make sure the input msg box is focused on refresh
-    //and that the msg scrolls down when messages are sent
-    const inputRef = useRef(null);
-    const msgSecRef = useRef(null);
+  //These are refs to make sure the input msg box is focused on refresh
+  //and that the msg scrolls down when messages are sent
+  const inputRef = useRef(null);
+  const msgSecRef = useRef(null);
 
-    // TASHI 
-    const handleDonation = (e) => {
-        if (donationBoxDisplay.donationBox === false) {
-            e.preventDefault();
-            donationBoxDisplay.donationBox = true;
-            donationBoxDisplay.darkOverlay = true;
-            <DonationBox className="donationZAxis"/>
-        }
-    };
+  // TASHI
+  const handleDonation = () => {
+    setDonationBoxDisplay({ donationBox: true, darkOverlay: true });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault(); 
- 
-        socket.emit('message', {userID: user._id, roomID: room.roomID, 
-        message: message, roomNum: room.room, donation: false, 
-        donationAmount: 0}); 
-        setMessage(""); 
-    }; 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    useEffect(() => {
-        user.friends.map(aFriend => {
-            if (aFriend.roomID === room.roomID) {
-                setInfo({name: aFriend.name, location: aFriend.location});
-            };
-            return aFriend;
-        });
-    }, [room, user.friends]); 
+    socket.emit("message", {
+      userID: user._id,
+      roomID: room.roomID,
+      message: message,
+      roomNum: room.room,
+      donation: false,
+      donationAmount: 0,
+    });
+    setMessage("");
+  };
 
-    //When web page loads focus the cursor on the input message box.
-    //If the user has friends join the room of the first friend
-    useEffect(() => {
-        inputRef.current.focus();
-        if(user.friends.length !== 0){
+  useEffect(() => {
+    user.friends.map((aFriend) => {
+      if (aFriend.roomID === room.roomID) {
+        setInfo({ name: aFriend.name, location: aFriend.location });
+      }
+      return aFriend;
+    });
+  }, [room, user.friends]);
 
-            socket.emit('switch-room', room.room);
-        }
-    }, [room.room, user.friends.length]);
+  //When web page loads focus the cursor on the input message box.
+  //If the user has friends join the room of the first friend
+  useEffect(() => {
+    inputRef.current.focus();
+    if (user.friends.length !== 0) {
+      socket.emit("switch-room", room.room);
+    }
+  }, [room.room, user.friends.length]);
 
-
-    //Every time messages are added make sure it automatically scrolls to bottom.
-    useEffect(() => {
-        msgSecRef.current.scrollTop = msgSecRef.current.scrollHeight;
-    }, [room]);
-
+  //Every time messages are added make sure it automatically scrolls to bottom.
+  useEffect(() => {
+    msgSecRef.current.scrollTop = msgSecRef.current.scrollHeight;
+  }, [room]);
 
   useEffect(() => {
     /* This is where I will adding socket event listeners. 
@@ -155,95 +155,89 @@ const Messages = () => {
     //Update user, make api request to update currentMessages
     socket.on("join-room", joinRoomHandler);
 
-        socket.on('message', messageHandler);
+    socket.on("message", messageHandler);
 
-        socket.on('friend-joined', friendJoinedHandler);
+    socket.on("friend-joined", friendJoinedHandler);
 
-        return () => {
-            socket.off('join-room', joinRoomHandler);
-            socket.off('message',messageHandler);
-            socket.off('friend-joined', friendJoinedHandler)
-        }
+    return () => {
+      socket.off("join-room", joinRoomHandler);
+      socket.off("message", messageHandler);
+      socket.off("friend-joined", friendJoinedHandler);
+    };
+  }, [room, setRoom, setUser, user]);
 
-    }, [room, setRoom, setUser, user]);
+  return (
+    <>
+      <section className="page">
+        <Friends socket={socket} />
 
+        <div className="main">
+          <div className="header">
+            <section className="information">
+              {/*the profile picture */}
+              <div className="profile-pic">
+                <PersonIcon
+                  className="icon"
+                  sx={{
+                    color: "white",
+                    fontSize: 40,
+                  }}
+                />
+              </div>
 
-    return (
-        <> 
-            <section className="page">
-                <Friends socket={socket} />
-                     
-                <div className="main">
-                    <div className="header">
-                        <section className="information">
-                            {/*the profile picture */}
-                            <div className="profile-pic">
-                                <PersonIcon 
-                                    className="icon"
-                                    sx={{
-                                        color: "white", 
-                                        fontSize: 40
-                                    }}
-                                />
-                            </div>
-                            
-                            <div className="name-location">
-                                <p className="id">
-                                    {info.name}
-                                </p>
+              <div className="name-location">
+                <p className="id">{info.name}</p>
 
-                                <p className="location">
-                                    {info.location}
-                                </p>
-                            </div>
-                        </section>
-                        
-                        {/* this is the donate button for TASHI*/}
-                        <button className="donate" onClick={handleDonation}> 
-                            Donate Now 
-                        </button>
-                    </div>
-
-                    <div className="messages-chat" ref={msgSecRef}>
-                        {
-                            room.messages.map(msg => {
-                                return (
-                                    <div key={msg._id} className="message">  
-                                        <Message 
-                                            userID={msg.userID} 
-                                            _id={user._id}  
-                                            message={msg.message} 
-                                            donation={msg.donation} 
-                                            donationAmount={msg.donationAmount} 
-                                        />
-                                    </div>
-                                );
-                            })
-                        }
-                    </div>
-
-                    <form className="message-input" onSubmit={handleSubmit}>
-                        <input 
-                            type="text"
-                            className="message-box"
-                            placeholder="Type your message here..."
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            ref={inputRef}
-                        />
-                        <div className="enter-button" onClick={handleSubmit}>
-                            <SendIcon 
-                                sx={{
-                                    color: "white", 
-                                    fontSize: 25 
-                                }}
-                            />
-                        </div>
-                    </form>
-                </div>
+                <p className="location">{info.location}</p>
+              </div>
             </section>
-        </>
-    );
-}
+
+            {/* this is the donate button for TASHI*/}
+            <button className="donate" onClick={handleDonation}>
+              Donate Now
+            </button>
+          </div>
+
+          <div className="messages-chat" ref={msgSecRef}>
+            {room.messages.map((msg) => {
+              return (
+                <div key={msg._id} className="message">
+                  <Message
+                    userID={msg.userID}
+                    _id={user._id}
+                    message={msg.message}
+                    donation={msg.donation}
+                    donationAmount={msg.donationAmount}
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          <form className="message-input" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              className="message-box"
+              placeholder="Type your message here..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              ref={inputRef}
+            />
+            <div className="enter-button" onClick={handleSubmit}>
+              <SendIcon
+                sx={{
+                  color: "white",
+                  fontSize: 25,
+                }}
+              />
+            </div>
+          </form>
+        </div>
+      </section>
+      {donationBoxDisplay.darkOverlay && <div className="dark-overlay"></div>}
+      {donationBoxDisplay.donationBox && <DonationBox setDonationBoxDisplay={setDonationBoxDisplay} socket={socket} />}
+    </>
+  );
+};
 
 export default Messages;
