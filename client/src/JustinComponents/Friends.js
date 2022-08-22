@@ -1,13 +1,17 @@
 import "./CSS/Friends.css";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
+import { useState } from "react"; 
 import GlobalContext from "../GlobalContext";
 import { GetRoomData } from "../Data/GetData";
 import PersonIcon from '@mui/icons-material/Person';
 import PersonAddAlt1 from "@mui/icons-material/PersonAddAlt1";
+import CloseIcon from '@mui/icons-material/Close';
 
-const Friends = ({socket, setInfo}) => {
+
+const Friends = ({socket, setInfo, menu, handleMenu}) => {
 
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
+    const [show, setShow] = useState(false); 
 
     // handler to sent data whenever the clicks on the add button 
     // to add a friend  
@@ -44,16 +48,22 @@ const Friends = ({socket, setInfo}) => {
         socket.emit('switch-room', ret.room); 
         setRoom(ret); 
     };
+    console.log(close); 
 
     return (
-        <section className="sidebar">
+        <section className={menu ? "sidemenu" : "sidebar"}>
             <div className="add-friend"> 
                 <p>UChat</p>
 
                 <PersonAddAlt1
-                    className="add-button"
+                    className={show ? "add-button" : "no-button"}
                     onClick={handleFriend}
                     sx={{fontSize: 45}}
+                />
+
+                <CloseIcon 
+                    className="close-menu"
+                    onClick={handleMenu}
                 />
             </div> 
 
