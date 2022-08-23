@@ -4,9 +4,12 @@ import XIcon from "@mui/icons-material/Close";
 import CloseIcon from "@mui/icons-material/Close";
 import MoneyIcon from "@mui/icons-material/AttachMoney";
 import { fontSize } from "@mui/system";
+import GlobalContext from "../GlobalContext";
 
 const DonationBox = ({ setDonationBoxDisplay, socket }) => {
   //USE E PREVENT DEFAULT INPUT
+
+  const {user, room} = useContext(GlobalContext);
 
   const [donationAmount, setDonationAmount] = useState(100); //CHECK IF PROBLEM
   const [donationNote, setDonationNote] = useState("");
@@ -19,14 +22,16 @@ const DonationBox = ({ setDonationBoxDisplay, socket }) => {
     setDonationAmount("");
   };
 
-  const handleClickDonate = () => {
-    
+  const handleClickDonate = (e) => {
+    e.preventDefault();
+    socket.emit("message", {userID: user._id, roomID: room.roomID, message: donationNote, roomNum: room.room, donation: true, donationAmount: Number(donationAmount)});
+    setDonationBoxDisplay({ donationBox: false, darkOverlay: false });
   }
 
   return (
     <>
       <div className="zIndexDonate">
-        <form>
+        <form onSubmit={handleClickDonate}>
           <section className="containerDonationBox">
             <div className="donationCloseButton">
               <button className="btnCloseButton" onClick={handleClickClose}>
@@ -83,7 +88,7 @@ const DonationBox = ({ setDonationBoxDisplay, socket }) => {
               />
             </div>
             <div className="donationDonateButton">
-              <button type="submit" className="donateButton" onClick={handleClickDonate}>
+              <button type="submit" className="donateButton">
                 Donate
               </button>
             </div>

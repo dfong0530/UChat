@@ -30,13 +30,7 @@ io.on("connection", (socket) => {
   socket.on("join-room", async ({ userID, name, inUkraine, location }) => {
     console.log("join room");
 
-    const ret = await JoinRoom(
-      userID,
-      name,
-      inUkraine ? "*" : "Ukraine",
-      inUkraine ? "Ukraine" : "*",
-      location
-    );
+    const ret = await JoinRoom(userID, name, inUkraine ? "*" : "Ukraine", inUkraine ? "Ukraine" : "*", location);
 
     if (ret.secondUser) {
       socket.broadcast
@@ -44,37 +38,26 @@ io.on("connection", (socket) => {
         .emit("friend-joined", { name, roomID: ret.roomID, location });
     }
 
-    socket.emit("join-room", {
-      friendName: ret.friendName,
-      roomID: ret.roomID,
-      roomNum: ret.roomNum,
-      location: ret.location,
-    });
+    socket.emit("join-room", {friendName: ret.friendName, roomID: ret.roomID, roomNum: ret.roomNum, location: ret.location});
   });
 
   socket.on("switch-room", (room) => {
     console.log("switch room");
     socket.join(room);
   });
+  
 
   socket.on("leave-room", (room) => {
     console.log("leave-room");
     socket.leave(room);
   });
-  socket.on(
-    "message",
-    async ({ userID, roomID, message, roomNum, donation, donationAmount }) => {
+
+  socket.on("message", async ({ userID, roomID, message, roomNum, donation, donationAmount }) => {
       console.log("message");
       const _id = uuid.v1();
 
       await AddMessage(roomID, userID, message, _id, donation, donationAmount);
-      io.in(roomNum).emit("message", {
-        _id,
-        userID,
-        message,
-        donation,
-        donationAmount,
-      });
+      io.in(roomNum).emit("message", {_id, userID, message, donation, donationAmount});
     }
   );
 });

@@ -40,7 +40,6 @@ const CreateAccount = () => {
 //         </>
 //     )
 // }
-// >>>>>>> 391ae54790f864953acf14217642e174e425b808
 
     const inputs = [
         {
@@ -71,7 +70,6 @@ const CreateAccount = () => {
     
     const handleSubmit = (e) =>{
         e.preventDefault();
-        const data = new FormData(e.target);
     }
 
     const onChange = (e) => {

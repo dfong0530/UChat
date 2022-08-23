@@ -2,7 +2,6 @@ import "./CSS/Initial.css";
 import { useContext } from "react";
 import React from "react";
 import SmsIcon from "@mui/icons-material/Sms";
-import DonationBox from "../TashiComponents/DonationBox";
 import GlobalContext from "../GlobalContext";
 
 const Initial = () => { 

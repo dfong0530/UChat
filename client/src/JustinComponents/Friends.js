@@ -1,5 +1,5 @@
 import "./CSS/Friends.css";
-import {useContext, useEffect} from "react";
+import {useContext} from "react";
 import { useState } from "react"; 
 import GlobalContext from "../GlobalContext";
 import { GetRoomData } from "../Data/GetData";

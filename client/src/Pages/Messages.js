@@ -35,22 +35,13 @@ const Messages = () => {
   // and then cleared for the eventlistener to update the views
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    socket.emit("message", {
-      userID: user._id,
-      roomID: room.roomID,
-      message: message,
-      roomNum: room.room,
-      donation: false,
-      donationAmount: 0,
-    });
+    socket.emit("message", {userID: user._id, roomID: room.roomID, message: message, roomNum: room.room, donation: false, donationAmount: 0});
     setMessage("");
   };
 
   // renders everytime a friend is clicked on it will display their
   // name and location
   useEffect(() => {
-    console.log("Heyyy");
     user.friends.map((aFriend) => {
       if (aFriend.roomID === room.roomID) {
         console.log(aFriend.name, aFriend.location);
