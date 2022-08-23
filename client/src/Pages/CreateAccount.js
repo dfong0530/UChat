@@ -1,31 +1,93 @@
+import { useState } from "react";
 import "./CSS/CreateAccount.css";
-import Message from "../VeevekComponents/Message"
-import {useState, useEffect, useContext} from "react";
-import GlobalContext from "../GlobalContext";
-import { GetLocation, CreateAccountRequest } from "../Data/GetData";
+import FormInput from "./formInput";
 
 const CreateAccount = () => {
+    const [values, setValues] = useState({
+        username:"",
+        email: "",
+        birthday: "",
+        password: "",
+        confirmPassword: ""
+    });
+// =======
+// import Message from "../VeevekComponents/Message"
+// import {useState, useEffect, useContext} from "react";
+// import GlobalContext from "../GlobalContext";
+// import { GetLocation, CreateAccountRequest } from "../Data/GetData";
 
-    const {} = useContext(GlobalContext); //VEEVEK --> Write any global variables you need here
-    const [form, setForm] = useState({name: "", username: "", password: "", location: ""});
+// const CreateAccount = () => {
+
+//     const {} = useContext(GlobalContext); //VEEVEK --> Write any global variables you need here
+//     const [form, setForm] = useState({name: "", username: "", password: "", location: ""});
 
 
-    useEffect(() => {
+//     useEffect(() => {
 
-        // usernameRef.current.focus();
-        navigator.geolocation.getCurrentPosition(async function(position) {
-            const location = await GetLocation(position.coords.latitude, position.coords.longitude);
-            setForm({...form, location: `${location.city}, ${location.country}`});
-        });
+//         // usernameRef.current.focus();
+//         navigator.geolocation.getCurrentPosition(async function(position) {
+//             const location = await GetLocation(position.coords.latitude, position.coords.longitude);
+//             setForm({...form, location: `${location.city}, ${location.country}`});
+//         });
 
-    }, []);
+//     }, []);
 
 
+
+//     return (
+//         <>
+//             <Message />
+//         </>
+//     )
+// }
+
+    const inputs = [
+        {
+            id: 1,
+            name: "name",
+            type: "text",
+            placeholder: "Name",
+            errorMessage: "",
+            label: "Name"
+        },
+        {
+            id: 2,
+            name: "username",
+            type: "text",
+            placeholder: "Username",
+            errorMessage: "",
+            label: "Username"
+        },
+        {
+            id: 3,
+            name: "password",
+            type: "text",
+            placeholder: "Password",
+            errorMessage: "",
+            label: "Password"
+        }
+    ]
+    
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+    }
+
+    const onChange = (e) => {
+        setValues({...values, [e.target.name]: e.target.value})
+    };
 
     return (
-        <>
-            <Message />
-        </>
+        <div className="app">
+            <form onSubmit={handleSubmit}>
+                {inputs.map((input) => (
+                  <FormInput 
+                  key={input.id} {...input} 
+                  value={values[input.name]} 
+                  onChange = {onChange} />
+                ))}
+                <button>Submit</button>
+            </form>
+        </div>
     )
 }
 
