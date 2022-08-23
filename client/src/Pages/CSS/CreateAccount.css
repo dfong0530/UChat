@@ -1,9 +1,15 @@
-* {
-	background-color: #787878;
-}
+
 .app {
 	display:flex;
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
+	background-color: #787878;
+}
+
+h1 {
+
+}
+button {
+
 }

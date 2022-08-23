@@ -45,6 +45,14 @@ const CreateAccount = () => {
     const inputs = [
         {
             id: 1,
+            name: "name",
+            type: "text",
+            placeholder: "Name",
+            errorMessage: "",
+            label: "Name"
+        },
+        {
+            id: 2,
             name: "username",
             type: "text",
             placeholder: "Username",
@@ -52,32 +60,12 @@ const CreateAccount = () => {
             label: "Username"
         },
         {
-            id: 2,
-            name: "email",
-            type: "text",
-            placeholder: "Email",
-            label: "Email"
-        },
-        {
             id: 3,
-            name: "birthday",
-            type: "text",
-            placeholder: "Birthday",
-            label: "Birthday"
-        },
-        {
-            id: 4,
             name: "password",
-            type: "password",
+            type: "text",
             placeholder: "Password",
+            errorMessage: "",
             label: "Password"
-        },
-        {
-            id: 5,
-            name: "confirmPassword",
-            type: "password",
-            placeholder: "ConfirmPassword",
-            label: "ConfirmPassword"
         }
     ]
     
@@ -92,7 +80,6 @@ const CreateAccount = () => {
 
     return (
         <div className="app">
-            <h1>UChat</h1>
             <form onSubmit={handleSubmit}>
                 {inputs.map((input) => (
                   <FormInput 
@@ -105,3 +92,5 @@ const CreateAccount = () => {
         </div>
     )
 }
+
+export default CreateAccount;
