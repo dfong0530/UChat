@@ -8,7 +8,7 @@ import { fontSize } from "@mui/system";
 const DonationBox = ({ setDonationBoxDisplay, socket }) => {
   //USE E PREVENT DEFAULT INPUT
 
-  const [donationAmount, setDonationAmount] = useState("10.00"); //CHECK IF PROBLEM
+  const [donationAmount, setDonationAmount] = useState(100); //CHECK IF PROBLEM
   const [donationNote, setDonationNote] = useState("");
 
   const handleClickClose = () => {
@@ -17,8 +17,12 @@ const DonationBox = ({ setDonationBoxDisplay, socket }) => {
 
   const handleClickAmount = () => {
     setDonationAmount("");
+  };
+
+  const handleClickDonate = () => {
+    
   }
-  
+
   return (
     <>
       <div className="zIndexDonate">
@@ -33,7 +37,7 @@ const DonationBox = ({ setDonationBoxDisplay, socket }) => {
                     "@media (max-width: 850px)": { fontSize: 35 },
                     "@media (max-width: 700px)": { fontSize: 32 },
                     "@media (max-width: 550px)": { fontSize: 25 },
-                    "@media (max-width: 300px)": {fontSize: 23},
+                    "@media (max-width: 300px)": { fontSize: 23 },
                   }}
                 />
               </button>
@@ -47,7 +51,7 @@ const DonationBox = ({ setDonationBoxDisplay, socket }) => {
                   "@media (max-width: 850px)": { fontSize: 32 },
                   "@media (max-width: 700px)": { fontSize: 30 },
                   "@media (max-width: 550px)": { fontSize: 22 },
-                  "@media (max-width: 300px)": {fontSize: 20},
+                  "@media (max-width: 300px)": { fontSize: 20 },
                 }}
               />
             </div>
@@ -56,7 +60,7 @@ const DonationBox = ({ setDonationBoxDisplay, socket }) => {
                 type="number"
                 min="1"
                 max="100000"
-                step="0.01"
+                step="1"
                 className="amountInput"
                 name="amountInput"
                 value={donationAmount}
@@ -79,7 +83,7 @@ const DonationBox = ({ setDonationBoxDisplay, socket }) => {
               />
             </div>
             <div className="donationDonateButton">
-              <button type="submit" className="donateButton">
+              <button type="submit" className="donateButton" onClick={handleClickDonate}>
                 Donate
               </button>
             </div>
