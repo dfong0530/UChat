@@ -8,6 +8,7 @@ import GlobalContext from "../GlobalContext";
 import SendIcon from "@mui/icons-material/Send";
 import PersonIcon from "@mui/icons-material/Person";
 import DonationBox from "../TashiComponents/DonationBox";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const socket = io("http://localhost:5000");
 
@@ -17,6 +18,9 @@ const Messages = () => {
   const [info, setInfo] = useState({ name: "", location: "" });
   const [donationBoxDisplay, setDonationBoxDisplay] = 
   useState({donationBox: false, darkOverlay: false});
+  const [menu, setMenu] = useState(false); 
+
+  const handleMenu = () => setMenu(!menu); 
 
   //These are refs to make sure the input msg box is focused on refresh
   //and that the msg scrolls down when messages are sent
@@ -150,16 +154,25 @@ const Messages = () => {
     <>
       <section className="page">
         {/* the navbar component for the friends and the add button */}
-        <Friends socket={socket} setInfo={setInfo}/>
+        <Friends socket={socket} setInfo={setInfo} menu={menu} handleMenu={handleMenu}/>
 
         {/* the main part of the messages with the chat UI */}
-        <section className="main">
+        <section className={menu ? "background" : "main"}>
           {/* the element above the chat UI */}
           <div className="header">
+            <MenuIcon 
+              className="menu-item"
+              onClick={handleMenu}
+              sx={{
+                color: "#D9D9D9", 
+                fontSize: 30
+              }}
+            />
             {/* about the user and where they are from */}
             <section className="information">
               <div className="profile-pic">
                 <PersonIcon
+                  className="icon"
                   sx={{
                     color: "white",
                     fontSize: 35,
