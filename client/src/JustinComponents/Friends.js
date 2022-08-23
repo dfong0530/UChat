@@ -48,7 +48,6 @@ const Friends = ({socket, setInfo, menu, handleMenu}) => {
         socket.emit('switch-room', ret.room); 
         setRoom(ret); 
     };
-    console.log(close); 
 
     return (
         <section className={menu ? "sidemenu" : "sidebar"}>
