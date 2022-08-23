@@ -170,6 +170,7 @@ buttons and input boxes throughout the messages UI */
   outline: none;
 }
 
+/* adjusting elements based on the different widths */
 @media (max-width: 1327px) {
   .information {
     column-gap: 20px;
@@ -672,7 +673,7 @@ buttons and input boxes throughout the messages UI */
 
   .messages-chat {
     height: 75%;
-    padding: 0 25px 0 25px;  
+    padding: 0 100px 0 25px;  
   }
 
   .message-input {
@@ -693,6 +694,7 @@ buttons and input boxes throughout the messages UI */
   }
 }
 
+/* donation overlay */
 #dark-overlay {
   width: 100vw;
   height: 100vh;

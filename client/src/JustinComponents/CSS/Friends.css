@@ -116,6 +116,7 @@ can fit the screen */
   background-color: rgba(0, 0, 0, 0.18);
 }
 
+/* width responsiveness */
 @media (max-width: 1327px) {
   .friends {
     font-size: 19px; 
@@ -338,10 +339,12 @@ can fit the screen */
   .add-friend {
     height: 7.5%;
     border-bottom: 1px solid #cecece;
+    margin-left: -25px; 
   }
 
   .add-friend p {
     font-size: 20px; 
+    margin-right: -40px; 
   }
 
   .close-menu {
