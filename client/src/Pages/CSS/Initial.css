@@ -8,69 +8,398 @@
   text-align: center;
 }
 
-.logo {
+.logoUChat {
   color: #5ba3e4;
-}
-
-.initialPage h1 {
-  color: #6ab1f0;
-  font-size: 40px;
-  font-family: Poppins;
-  font-weight: 800;
-}
-
-.initialPage h2 {
-  color: #a5d1fa;
-  font-size: 1.1rem;
-  font-family: Poppins;
-  font-weight: 500;
 }
 
 /* NOTE! These are all based on full-screen Macbook view! */
 
-.logoTitle {
-  padding: 0 0 20px 0;
+@media (max-width: 2000px) {
+
+  .initialPage h1 {
+    color: #6ab1f0;
+    font-size: 40px;
+    font-family: Poppins;
+    font-weight: 800;
+  }
+  
+    .initialPage h2 {
+    color: #a5d1fa;
+    font-size: 1.1rem;
+    font-family: Poppins;
+    font-weight: 500;
+  }
+
+  .logoTitle {
+    padding: 0 0 20px 0;
+  }
+
+  .buttonDiv {
+    margin: 85px 0 0 0;
+  }
+
+  .btnLogin {
+    background: #ffffff;
+    border: 3px solid #5ba3e4;
+    border-radius: 50px;
+    width: 350px;
+    height: 48px;
+    color: #5ba3e4;
+    font-size: 1.3rem;
+    font-family: Poppins;
+    font-weight: 500;
+  }
+
+  .btnLogin-div {
+    padding: 0 0 25px 0;
+  }
+
+  .btnSignUp {
+    background: #5ba3e4;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    width: 350px;
+    height: 48px;
+    border: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-family: Poppins;
+    font-weight: 500;
+  }
+
+  .btnLogin:hover {
+    filter: brightness(115%);
+    transition: 0.4s;
+  }
+
+  .btnSignUp:hover {
+    filter: brightness(110%);
+    transition: 0.4s;
+  }
 }
 
-.buttonDiv {
-  margin: 85px 0 0 0;
+@media (max-width: 750px)
+{
+
+  .initialPage h1 {
+      color: #6ab1f0;
+      font-size: 35px;
+      font-family: Poppins;
+      font-weight: 800;
+    }
+  
+    .initialPage h2 {
+      color: #a5d1fa;
+      font-size: 1rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+
+  .logoTitle {
+      padding: 0 0 22px 0;
+    }
+  
+    .buttonDiv {
+      margin: 75px 0 0 0;
+    }
+  
+    .btnLogin {
+      background: #ffffff;
+      border: 3px solid #5ba3e4;
+      border-radius: 50px;
+      width: 300px;
+      height: 42px;
+      color: #5ba3e4;
+      font-size: 1.1rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+  
+    .btnLogin-div {
+      padding: 0 0 30px 0;
+    }
+  
+    .btnSignUp {
+      background: #5ba3e4;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+      border-radius: 50px;
+      width: 300px;
+      height: 42px;
+      border: none;
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+  
+    .btnLogin:hover {
+      filter: brightness(115%);
+      transition: 0.4s;
+    }
+  
+    .btnSignUp:hover {
+      filter: brightness(110%);
+      transition: 0.4s;
+    }
+  }
+
+@media (max-width: 550px) {
+  
+  .initialPage h1 {
+      color: #6ab1f0;
+      font-size: 32px;
+      font-family: Poppins;
+      font-weight: 800;
+    }
+  
+    .initialPage h2 {
+      color: #a5d1fa;
+      font-size: 0.8rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+  
+    .logoTitle {
+      padding: 0 0 25px 0;
+    }
+  
+    .buttonDiv {
+      margin: 65px 0 0 0;
+    }
+  
+    .btnLogin {
+      background: #ffffff;
+      border: 3px solid #5ba3e4;
+      border-radius: 50px;
+      width: 270px;
+      height: 38px;
+      color: #5ba3e4;
+      font-size: 1.05rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+  
+    .btnLogin-div {
+      padding: 0 0 32px 0;
+    }
+  
+    .btnSignUp {
+      background: #5ba3e4;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+      border-radius: 50px;
+      width: 270px;
+      height: 38px;
+      border: none;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+  
+    .btnLogin:hover {
+      filter: brightness(115%);
+      transition: 0.4s;
+    }
+  
+    .btnSignUp:hover {
+      filter: brightness(110%);
+      transition: 0.4s;
+    }
+  }
+
+@media (max-width: 450px) {
+  
+  .initialPage h1 {
+      color: #6ab1f0;
+      font-size: 28px;
+      font-family: Poppins;
+      font-weight: 800;
+    }
+  
+    .initialPage h2 {
+      color: #a5d1fa;
+      font-size: 0.8rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+  
+    .logoTitle {
+      padding: 0 0 27px 0;
+    }
+  
+    .buttonDiv {
+      margin: 60px 0 0 0;
+    }
+  
+    .btnLogin {
+      background: #ffffff;
+      border: 3px solid #5ba3e4;
+      border-radius: 50px;
+      width: 230px;
+      height: 38px;
+      color: #5ba3e4;
+      font-size: 0.98rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+  
+    .btnLogin-div {
+      padding: 0 0 32px 0;
+    }
+  
+    .btnSignUp {
+      background: #5ba3e4;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+      border-radius: 50px;
+      width: 230px;
+      height: 38px;
+      border: none;
+      color: #ffffff;
+      font-size: 0.98rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+  
+    .btnLogin:hover {
+      filter: brightness(115%);
+      transition: 0.4s;
+    }
+  
+    .btnSignUp:hover {
+      filter: brightness(110%);
+      transition: 0.4s;
+    } 
+  }
+
+@media (max-width: 400px) {
+
+  .initialPage h1 {
+      color: #6ab1f0;
+      font-size: 28px;
+      font-family: Poppins;
+      font-weight: 800;
+    }
+  
+    .initialPage h2 {
+      color: #a5d1fa;
+      font-size: 0.7rem;
+      font-family: Poppins;
+      font-weight: 500;
+    }
+
+  .logoTitle {
+    padding-top: 30px;
+  }
+
+  .buttonDiv {
+    margin: 62px 0 0 0;
+  }
+
+  .btnLogin {
+    background: #ffffff;
+    border: 3px solid #5ba3e4;
+    border-radius: 50px;
+    width: 200px;
+    height: 35px;
+    color: #5ba3e4;
+    font-size: 0.95rem;
+    font-family: Poppins;
+    font-weight: 500;
+  }
+
+  .btnLogin-div {
+    padding: 0 0 40px 0;
+  }
+
+  .btnSignUp {
+    background: #5ba3e4;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    width: 200px;
+    height: 35px;
+    border: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-family: Poppins;
+    font-weight: 500;
+  }
+
+  .btnLogin:hover {
+    filter: brightness(115%);
+    transition: 0.4s;
+  }
+
+  .btnSignUp:hover {
+    filter: brightness(110%);
+    transition: 0.4s;
+  }
 }
 
-.btnLogin {
-  background: #ffffff;
-  border: 3px solid #5ba3e4;
-  border-radius: 50px;
-  width: 350px;
-  height: 48px;
-  color: #5ba3e4;
-  font-size: 1.3rem;
-  font-family: Poppins;
-  font-weight: 500;
+@media (max-width: 250px) {
+
+  .initialPage h1 {
+    color: #6ab1f0;
+    font-size: 25px;
+    font-family: Poppins;
+    font-weight: 800;
+  }
+
+  .initialPage h2 {
+    color: #a5d1fa;
+    font-size: 0.6rem;
+    font-family: Poppins;
+    font-weight: 500;
+  }
+
+  .logoTitle {
+    padding-top: 20px;
+  }
+
+  .buttonDiv {
+    margin: 40px 0 0 0;
+  }
+
+  .btnLogin {
+    background: #ffffff;
+    border: 3px solid #5ba3e4;
+    border-radius: 50px;
+    width: 170px;
+    height: 35px;
+    color: #5ba3e4;
+    font-size: 0.9rem;
+    font-family: Poppins;
+    font-weight: 500;
+  }
+
+  .btnLogin-div {
+    padding: 0 0 30px 0;
+  }
+
+  .btnSignUp {
+    background: #5ba3e4;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    width: 170px;
+    height: 35px;
+    border: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-family: Poppins;
+    font-weight: 500;
+  }
+
+  .btnLogin:hover {
+    filter: brightness(115%);
+    transition: 0.4s;
+  }
+
+  .btnSignUp:hover {
+    filter: brightness(110%);
+    transition: 0.4s;
+  }
 }
 
-.btnLogin-div {
-  padding: 0 0 25px 0;
-}
-
-.btnSignUp {
-  background: #5ba3e4;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
-  width: 350px;
-  height: 48px;
-  border: none;
-  color: #ffffff;
-  font-size: 1.3rem;
-  font-family: Poppins;
-  font-weight: 500;
-}
-
-.btnLogin:hover {
-  filter: brightness(115%);
-  transition: 0.4s;
-}
-
+.btnLogin:hover,
 .btnSignUp:hover {
-  filter: brightness(110%);
-  transition: 0.4s;
+  cursor: pointer;
 }

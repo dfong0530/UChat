@@ -1,10 +1,8 @@
-# UChat
+# UChat - a Ukrainian support chat application
 
-GIF
+https://user-images.githubusercontent.com/68403991/185759497-8fe9bf8b-9027-4282-86d1-ca8bbae83e98.mov
 
-### Demo Video: LINK
-
-### Project Link: LINK
+### <pre>[Demo Video](https://www.google.com/)     [Project Link](https://www.google.com/)     [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)     [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
 
 ###### Frontend Developers: David Fong, Justin Tran, Veevek Dave, Tashi Sherpa
 
@@ -20,7 +18,7 @@ This software connects those who need support and those who are generous enough 
 
 ### What is does
 
-Our chat application allows the rest of the world to communicate with people in Ukraine. When a user is loaded in, they create an account specifying their username, password, and location (through geo location notification).
+Our chat application allows the rest of the world to communicate with people in Ukraine. When a user is loaded in, they create an account specifying their username, password, and location (through the navigator.geolocation function and google maps api).
 
 The user is then directed to the chat application where they have options to add friends and chat with people in Ukraine or the rest of the world depending on where they reside.
 
@@ -32,23 +30,27 @@ Users outside of Ukraine have options to donate to the person they are speaking 
 
 #### David Fong
 
-    I worked on building out the backend portion of this project with Mongo.db, Node.js, Express, and
-    socket.io. I also designed the frontend architecture of the application and oversaw the project as a whole.
+    I was the project lead. I worked on building out the backend, designing the architecture of
+    the frontend, and assisted my teamates wherever needed.
 
-    I learned a lot about various backend technologies like socket.io, node.js, and express.
+    I learned a lot about various backend technologies like socket.io, node.js, and express, mongoDB.
 
 #### Justin Tran
 
-    I worked on building the frontend portion of the project for the login and messaging page using 
-    React Javascript, HTML and CSS. I also worked on integrating the functionality from the backend to reflect 
-    it on the frontend by updating the views and incorporating interactive UIs for the user. 
+    I worked on building the frontend portion of the project for the login and messaging page using
+    React Javascript, HTML and CSS. I also worked on integrating the functionality from the backend to reflect
+    it on the frontend by updating the views and incorporating interactive UIs for the user.
 
-    Overall, I developed my understanding of React JS and reinforced my skills for HTML and CSS.  
+    Overall, I developed my understanding of React JS and reinforced my skills for HTML and CSS.
 
 #### Veevek Dave
 
 #### Tashi Sherpa
 
+    I worked on building the frontend portion of the project for the landing page and the donation 
+    functionality on the messaging page through the use of React.js, HTML, CSS, and Javascript.
+
+    To do this, I adjusted multiple media queries for 
 ---
 
 ### How to test
@@ -70,8 +72,6 @@ Gabby is located in "Ukraine" and David is located in "New York". In order for u
 ### Tech Stack (MERN)
 
 We used Mongodb, Express, React, and Node.js to build out this application. We also used socket.io for messaging between users.
-
-#### Software Architecture of frontend and backend located in the readme of /client and /server
 
 ### Installation
 

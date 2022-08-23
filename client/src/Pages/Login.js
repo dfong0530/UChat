@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import {useState, useContext, useRef, useEffect} from "react";
 import GlobalContext from "../GlobalContext";
 import SmsIcon from '@mui/icons-material/Sms';
+import { LoginRequest, GetRoomData } from "../Data/GetData";
 
 
 const Login = () => {
 
+    const {setRoom, setUser, navigate} = useContext(GlobalContext);
 
     const [form, setForm] = useState({username: '', password: ''})
     const usernameRef = useRef(null);
@@ -16,15 +18,35 @@ const Login = () => {
     }, []);
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
 
         e.preventDefault();
 
-        console.log(form.username)
-        console.log(form.password);
+        try{
+            const data = await LoginRequest(form);
+            let roomData = {roomID: "", room: "", messages: []}
+            console.log(data);
+            if(data.User.rooms.length !== 0){
+                roomData = await GetRoomData(data.User.rooms[0].roomID, data.User.username, data.User.password);   
+            }
+            setRoom(roomData);
 
-        setForm({username: '', password: ''});
-        usernameRef.current.focus();
+            ////id, username, password, rooms
+            setUser({_id: data.User._id, 
+                username: data.User.username, 
+                password: data.User.password, 
+                name: data.User.name, 
+                location: data.User.location, 
+                inUkraine: data.User.inUkraine, 
+                friends: data.User.rooms});
+            navigate('/messages');
+        }
+        catch(e){
+            console.log(e);
+            //if not valid
+            setForm({username: '', password: ''});
+            usernameRef.current.focus();
+        }
     }
 
     return (
@@ -38,6 +60,7 @@ const Login = () => {
                 <p className="title">
                     UChat
                 </p>
+                
                 <form className="info" onSubmit={handleSubmit}>
                     <input 
                         className="name"
@@ -61,10 +84,13 @@ const Login = () => {
                         Login
                     </button>
                 </form>
-                <p className="create-account">
-                    or <Link className="create-account-link" to="/create-account">create an account</Link>
-                </p>
 
+                <p className="create-account">
+                    or 
+                    <Link className="create-account-link" to="/create-account">
+                        create an account
+                    </Link>
+                </p>
             </section>
         </>
     );

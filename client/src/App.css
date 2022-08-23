@@ -1,19 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&family=Poppins:wght@400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* 
-@media (min-width: 1440px) {
+
+/* @media (min-width: 1440px) {
   body {
     background-color: red;
   }
-}  */
-/* 
+}   */
 
-@media (min-height: 710px) {
+
+/* @media (min-height: 710px) {
   body {
     background-color: red;
   }

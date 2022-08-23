@@ -1,23 +1,30 @@
 import "./CSS/Friends.css";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
+import { useState } from "react"; 
 import GlobalContext from "../GlobalContext";
 import { GetRoomData } from "../Data/GetData";
 import PersonIcon from '@mui/icons-material/Person';
 import PersonAddAlt1 from "@mui/icons-material/PersonAddAlt1";
+import CloseIcon from '@mui/icons-material/Close';
 
-const Friends = ({socket}) => {
+
+const Friends = ({socket, setInfo, menu, handleMenu}) => {
 
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
+    const [show, setShow] = useState(false); 
 
+    // handler to sent data whenever the clicks on the add button 
+    // to add a friend  
     const handleFriend = () => {
-        socket.emit('join-room', {_id: user._id, name: user.name, 
+        socket.emit('join-room', {userID: user._id, name: user.name, 
         inUkraine: user.inUkraine, location: user.location}); 
     };
 
+    // handler for when the user wants to switch chatting rooms to another friend 
+    // information regarding the user will be sent to the backend and then 
+    // the eventlistener will handle updating the views 
     const handleSwitch = async(aFriend) => {
         const ret = await GetRoomData(aFriend.roomID, user.username, user.password);
-
-        //ADDED below
         const userTwo = ret.userTwo;
 
         if(userTwo._id !== user._id && userTwo.name !== aFriend.name){
@@ -27,15 +34,15 @@ const Friends = ({socket}) => {
                 if(friend.roomID === aFriend.roomID){
                     friend.name = userTwo.name;
                     friend.location = userTwo.location;
+
+                    setInfo({ name: userTwo.name, location: userTwo.location })
                 }
                 return friend;
             });
 
             setUser({...user, friends});
         }
-
         delete ret.userTwo;
-        //ADDED Above
 
         socket.emit('leave-room', room.room);
         socket.emit('switch-room', ret.room); 
@@ -43,16 +50,19 @@ const Friends = ({socket}) => {
     };
 
     return (
-        <section className="sidebar">
+        <section className={menu ? "sidemenu" : "sidebar"}>
             <div className="add-friend"> 
-                <p>
-                    UChat   
-                </p>
+                <p>UChat</p>
 
                 <PersonAddAlt1
-                    className="add-button"
+                    className={show ? "add-button" : "no-button"}
                     onClick={handleFriend}
-                    sx={{fontSize: 50}}
+                    sx={{fontSize: 45}}
+                />
+
+                <CloseIcon 
+                    className="close-menu"
+                    onClick={handleMenu}
                 />
             </div> 
 
@@ -61,17 +71,17 @@ const Friends = ({socket}) => {
                     user.friends.map(friend => {
                         return (
                             <div 
-                                className={aFriend.roomID === room.roomID ? "light" : "regular"}
-                                onClick={() => handleSwitch(friend)}>
-                                <div className="profile-pic">
+                                className={friend.roomID === room.roomID ? 
+                                    "light" : "regular"}
+                                onClick={() => handleSwitch(friend)}
+                                key={friend.roomID}>
+                                <div className="user-pic">
                                     <PersonIcon 
-                                    sx={{fontSize: 50}} 
+                                    sx={{fontSize: 30}} 
                                     />
                                 </div>
 
-                                <p>
-                                    {friend.name}
-                                </p>
+                                <p>{friend.name}</p>
                             </div>
                         ); 
                     })
