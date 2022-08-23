@@ -1,4 +1,4 @@
-import "./formInput.css"
+import "./CSS/formInput.css"
 
 const FormInput = (props) => {
 	const { label, onChange, id, ...inputProps} = props;
@@ -6,7 +6,7 @@ const FormInput = (props) => {
 		<div className="formInput">
 			<label>{label}</label>
 			<input {...inputProps} onChange={onChange}/>
-			<span>{errorMessage}</span>
+			<span>Error</span>
 		</div>
 	)
 }

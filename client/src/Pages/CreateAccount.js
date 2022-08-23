@@ -105,3 +105,5 @@ const CreateAccount = () => {
         </div>
     )
 }
+
+export default CreateAccount;
