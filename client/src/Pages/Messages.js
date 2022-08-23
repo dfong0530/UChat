@@ -36,13 +36,19 @@ const Messages = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    socket.emit("message", {userID: user._id, roomID: room.roomID, 
-      message: message, roomNum: room.room, donation: false, donationAmount: 0});
+    socket.emit("message", {
+      userID: user._id,
+      roomID: room.roomID,
+      message: message,
+      roomNum: room.room,
+      donation: false,
+      donationAmount: 0,
+    });
     setMessage("");
   };
 
-  // renders everytime a friend is clicked on it will display their 
-  // name and location 
+  // renders everytime a friend is clicked on it will display their
+  // name and location
   useEffect(() => {
     console.log("Heyyy");
     user.friends.map((aFriend) => {
@@ -94,11 +100,20 @@ const Messages = () => {
 
     //Sent from Backend --> After backend finishes procesing adding a new room
     //The website should add a new friend to the top of the side bar
-    const joinRoomHandler = async ({friendName, roomID, roomNum, location}) => {
+    const joinRoomHandler = async ({
+      friendName,
+      roomID,
+      roomNum,
+      location,
+    }) => {
       socket.emit("leave-room", room.room);
       socket.emit("switch-room", roomNum);
 
-      let incomingFriend = { roomID: roomID, name: friendName, location: location};
+      let incomingFriend = {
+        roomID: roomID,
+        name: friendName,
+        location: location,
+      };
       let newFriends = user.friends;
       newFriends.unshift(incomingFriend);
       setUser({ ...user, friends: newFriends });
@@ -111,9 +126,20 @@ const Messages = () => {
 
     //Sent from Backend --> After backend finishes procesing adding a new message
     //The website should add a mesage to the screen
-    const messageHandler = ({ userID, message, _id, donation, donationAmount}) => {
-      let incomingMessage = { _id: _id, userID: userID, message: message, 
-        donation: donation, donationAmount: donationAmount};
+    const messageHandler = ({
+      userID,
+      message,
+      _id,
+      donation,
+      donationAmount,
+    }) => {
+      let incomingMessage = {
+        _id: _id,
+        userID: userID,
+        message: message,
+        donation: donation,
+        donationAmount: donationAmount,
+      };
       let newMessages = room.messages;
       newMessages.push(incomingMessage);
       setRoom({ ...room, messages: newMessages });
@@ -191,15 +217,15 @@ const Messages = () => {
               Donate Now
             </button>
           </div>
-          
+
           {/* the section containing the messages */}
           <div className="messages-chat" ref={msgSecRef}>
             {room.messages.map((msg) => {
               return (
-                // each message is surrounded by a div 
-                // to ensure that the background bubble 
+                // each message is surrounded by a div
+                // to ensure that the background bubble
                 // is adapted based on the amount of text sent
-                // as well as aligning the messaging properly 
+                // as well as aligning the messaging properly
                 <div key={msg._id} className="message">
                   <Message
                     userID={msg.userID}
@@ -212,7 +238,7 @@ const Messages = () => {
               );
             })}
           </div>
-          
+
           <form className="message-input" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -234,9 +260,15 @@ const Messages = () => {
         </section>
       </section>
       {/* when the donation button is clicked on */}
-      {donationBoxDisplay.darkOverlay && <div className="dark-overlay"></div>}
-      {donationBoxDisplay.donationBox && 
-      <DonationBox setDonationBoxDisplay={setDonationBoxDisplay} socket={socket} />}
+      {donationBoxDisplay.darkOverlay && (
+        <div id="dark-overlay"></div>
+      )}
+      {donationBoxDisplay.donationBox && (
+        <DonationBox
+          setDonationBoxDisplay={setDonationBoxDisplay}
+          socket={socket}
+        />
+      )}
     </>
   );
 };
