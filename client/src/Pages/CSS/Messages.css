@@ -122,7 +122,7 @@ the donation button */
 so the message bubble width is adjusted based on the amount of text */
 .message {
   width: 100%; 
-  margin-bottom: 45px;
+  margin-bottom: 45px; 
 }
 
 /* a div surrounding the user message input box so the dimensions
@@ -169,6 +169,443 @@ buttons and input boxes throughout the messages UI */
 .message-box:focus {
   outline: none;
 }
+
+@media (max-width: 1327px) {
+  .information {
+    column-gap: 20px;
+  }
+  
+  .profile-pic {
+    width: 60px; 
+    height: 58px; 
+  }
+
+  .name-location {
+    line-height: 26px; 
+  }
+
+  .id {
+    font-size: 24px; 
+  }
+
+  .location {
+    font-size: 14px; 
+  }
+
+  .donate-button {
+    width: 190px; 
+    height: 50px; 
+    font-size: 17px; 
+  }
+
+  .message-box {
+    width: 65%; 
+    height: 48%; 
+    font-size: 17px;
+  }
+
+  .message-input div {
+    width: 3.75%; 
+    height: 40%; 
+  }
+}
+
+@media (max-width: 1272px) {
+  .information {
+    column-gap: 18px; 
+  }
+
+  .profile-pic {
+    width: 58px; 
+    height: 56px; 
+  }
+
+  .name-location { 
+    line-height: 25px; 
+  }
+
+  .id {
+    font-size: 23px; 
+  }
+
+  .location {
+    font-size: 13px; 
+  }
+
+  .donate-button {
+    width: 180px; 
+    height: 46px; 
+    font-size: 16px; 
+  }
+
+  .message-box {
+    width: 62%; 
+    height: 45%; 
+  }
+
+  .message-input div {
+    width: 3.75%; 
+    height: 36%; 
+    font-size: 16px; 
+  }
+}
+
+@media (max-width: 1218px) {
+  .information {
+    column-gap: 17.5px; 
+  }
+
+  .profile-pic {
+    width: 57px; 
+    height: 55px; 
+  }
+
+  .name-location { 
+    line-height: 24px; 
+  }
+
+  .id {
+    font-size: 21px; 
+  }
+
+  .location {
+    font-size: 12px; 
+  }
+
+  .donate-button {
+    width: 175px; 
+    height: 44px;
+    font-size: 15.5px;
+  }
+
+  .message-box {
+    width: 60%; 
+    height: 43%; 
+    font-size: 15.5px; 
+  }
+
+  .message-input div {
+    width: 3.65%; 
+    height: 35%; 
+  }
+}
+
+@media (max-width: 1192px) {
+  .information {
+    column-gap: 17px; 
+  }
+
+  .profile-pic {
+    width: 54px; 
+    height: 52px; 
+  }
+
+  .name-location { 
+    line-height: 23px; 
+  }
+
+  .id {
+    font-size: 20px; 
+  }
+
+  .location {
+    font-size: 11.5px; 
+  }
+
+  .donate-button {
+    width: 170px; 
+    height: 42px;
+    font-size: 15px; 
+  }
+
+  .message-box {
+    width: 58%; 
+    height: 41%; 
+  }
+
+  .message-input div {
+    width: 3.55%; 
+    height: 35%; 
+  }
+}
+
+@media (max-width: 1164px) {
+  .message-input div {
+    width: 3.5%; 
+    height: 34%; 
+  }
+}
+
+@media (max-width: 1137px) {
+  .message-box {
+    width: 58%; 
+    height: 39%; 
+    font-size: 15px; 
+  }
+
+  .message-input div {
+    width: 3.45%; 
+    height: 33%; 
+  }
+}
+
+
+@media (max-width: 1110px) {
+  .donate-button {
+    width: 165px; 
+    height: 41px;
+    font-size: 14px; 
+  }
+
+  .message-box {
+    width: 57%; 
+    height: 37%; 
+    font-size: 14.5px; 
+  }
+
+  .message-input div {
+    width: 3.4%; 
+    height: 31%; 
+  }
+}
+
+@media (max-width: 1056px) {
+  .message-box {
+    width: 56%; 
+    height: 33%; 
+    font-size: 14px; 
+  }
+
+  .message-input div {
+    width: 3.3%; 
+    height: 30%; 
+  }
+}
+
+@media (max-width: 1029px) {
+  .message-input div {
+    width: 3.75%; 
+    height: 30%; 
+  }
+}
+
+@media (max-width: 988px) {
+  .donate-button {
+    width: 160px; 
+    height: 40px;
+    font-size: 13.5px; 
+  }
+
+  .message-box {
+    width: 56%; 
+    height: 37%; 
+    font-size: 14px; 
+  }
+
+  .message-input div {
+    width: 3.8%; 
+    height: 32%; 
+  }
+}
+
+@media (max-width: 946px) {
+  .message-input div {
+    width: 4%; 
+    height: 32%; 
+  }
+}
+
+@media (max-width: 934px) {
+  .information {
+    column-gap: 15px; 
+  }
+
+  .profile-pic {
+    width: 52px; 
+    height: 50px; 
+  }
+
+  .name-location { 
+    line-height: 22px; 
+  }
+
+  .id {
+    font-size: 18px; 
+  }
+
+  .location {
+    font-size: 10.5px; 
+  }
+
+  .donate-button {
+    width: 155px; 
+    height: 38px;
+    font-size: 13px; 
+  }
+
+  .message-input div {
+    width: 4%; 
+    height: 32%; 
+  }
+}
+
+@media (max-width: 893px) {
+  .message-box {
+    font-size: 13px; 
+  }
+
+  .message-input div {
+    width: 4.3%; 
+  }
+}
+
+@media (max-width: 838px) {
+  .message-input div {
+    width: 4.5%; 
+  }
+}
+
+@media (max-width: 785px) {
+  .donate-button {
+    width: 145px; 
+    font-size: 12px; 
+  }
+
+  .message-box {
+    font-size: 12px; 
+  }
+
+  .message-input div {
+    width: 5%; 
+  }
+}
+
+@media (max-width: 731px) {
+  .information {
+    column-gap: 14px;
+  }
+
+  .profile-pic {
+    width: 50px; 
+    height: 48px; 
+  }
+
+  .name-location { 
+    line-height: 21px; 
+  }
+
+  .id {
+    font-size: 17px; 
+  }
+
+  .location {
+    font-size: 10px; 
+  }
+
+  .donate-button {
+    width: 135px;
+    height: 35px; 
+    font-size: 11px; 
+  }
+
+  .message-box {
+    font-size: 11px; 
+  }
+
+  .message-input div {
+    width: 5.5%; 
+  }
+}
+
+@media (max-width: 702px) {
+  .donate-button {
+    width: 125px; 
+    font-size: 10.5px; 
+  }
+
+  .message-input div {
+    width: 6%; 
+  }
+}
+
+@media (max-width: 620px) {
+  .information {
+    column-gap: 12px;
+  }
+
+  .profile-pic {
+    width: 46px; 
+    height: 44px; 
+  }
+
+  .name-location {
+    line-height: 18px; 
+  }
+
+  .id {
+    font-size: 15px; 
+  }
+
+  .location {
+    font-size: 8px; 
+  }
+
+  .donate-button {
+    width: 110px; 
+    font-size: 9px; 
+  }
+
+  .message-box {
+    font-size: 10px; 
+  }
+
+  .message-input div {
+    width: 6.5%; 
+  }
+}
+
+@media (max-width: 582px) {
+  .information {
+    column-gap: 11px;
+  }
+
+  .profile-pic {
+    width: 44px; 
+    height: 42px; 
+  }
+
+  .name-location {
+    line-height: 17px; 
+  }
+
+  .id {
+    font-size: 14px; 
+  }
+
+  .location {
+    font-size: 7px; 
+  }
+
+  .donate-button {
+    width: 100px; 
+    font-size: 8px; 
+  }
+
+  .message-box {
+    font-size: 9px; 
+  }
+
+  .message-input div {
+    width: 7%; 
+  }
+}
+
+@media (max-width: 550px) {
+  .message-input div {
+    width: 7.5%; 
+  }
+}
+
 
 @media (max-width: 360px) and (max-height: 800px) {
   .main {

@@ -11,7 +11,6 @@ import CloseIcon from '@mui/icons-material/Close';
 const Friends = ({socket, setInfo, menu, handleMenu}) => {
 
     const {user, setUser, room, setRoom} = useContext(GlobalContext);
-    const [show, setShow] = useState(false); 
 
     // handler to sent data whenever the clicks on the add button 
     // to add a friend  
@@ -48,7 +47,6 @@ const Friends = ({socket, setInfo, menu, handleMenu}) => {
         socket.emit('switch-room', ret.room); 
         setRoom(ret); 
     };
-    console.log(close); 
 
     return (
         <section className={menu ? "sidemenu" : "sidebar"}>
@@ -56,7 +54,7 @@ const Friends = ({socket, setInfo, menu, handleMenu}) => {
                 <p>UChat</p>
 
                 <PersonAddAlt1
-                    className={show ? "add-button" : "no-button"}
+                    className="add-button"
                     onClick={handleFriend}
                     sx={{fontSize: 45}}
                 />

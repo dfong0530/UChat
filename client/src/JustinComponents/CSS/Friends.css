@@ -19,6 +19,7 @@
 
 /* the add friend feature where it adds a div to the navbar under it */
 .add-friend {
+  width: 125%; 
   height: 15.25%;
   border-bottom: 2px solid #cecece;
   justify-content: space-evenly;
@@ -52,8 +53,7 @@
 .add-button:hover,
 .add-button:active, 
 .light, 
-.regular, 
-.friends::-webkit-scrollbar {
+.regular {
   transition: 0.2s;
 }
 
@@ -80,33 +80,32 @@ with the user and when they are not */
   justify-content: center;
 }
 
-
-/* fix up the scroll bar */
+/* scrollbar customization for the friends if the user has more friends than 
+can fit the screen */
 .friends::-webkit-scrollbar {
-  width: 15px;
-  transition: 0.2s;
+  background-color: #485a69;
+  width: 10px;
 }
 
 .friends::-webkit-scrollbar-thumb {
-  background-color: rgb(32, 50, 68);
-  border: none;
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-.friends::-webkit-scrollbar-track {
-  background-color: #435463;
+  background-color: #303d4b;
 }
 
 /* pseudoclasses */
-.add-button:hover,
-.friends::-webkit-scrollbar-thumb:hover {
+.add-button:hover {
   opacity: 0.85;
 }
 
-.add-button:active,
-.friends::-webkit-scrollbar-thumb:active {
+.add-button:active {
   opacity: 0.65;
+}
+
+.friends::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.35); 
+}
+
+.friends::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .regular:hover {
@@ -116,6 +115,202 @@ with the user and when they are not */
 .regular:active {
   background-color: rgba(0, 0, 0, 0.18);
 }
+
+@media (max-width: 1327px) {
+  .friends {
+    font-size: 19px; 
+  }
+  
+  .add-friend p {
+    font-size: 24px; 
+  }
+
+  .user-pic {
+    width: 56px;
+    height: 54px; 
+  }
+}
+
+@media (max-width: 1272px) {
+  .friends {
+    font-size: 18px; 
+  }
+
+  .add-friend p {
+    font-size: 23px; 
+  }
+
+  .user-pic {
+    width: 54px;
+    height: 52px; 
+  }
+}
+
+@media (max-width: 1218px) {
+  .friends {
+    font-size: 17.5px; 
+  }
+
+  .add-friend p {
+    font-size: 22.75px; 
+  }
+
+  .user-pic {
+    width: 53px; 
+    height: 51px;
+  }
+}
+
+@media (max-width: 1192px) {
+  .friends {
+    font-size: 16px; 
+  }
+
+  .add-friend p {
+    font-size: 22.25px; 
+  }
+
+  .user-pic {
+    width: 51px; 
+    height: 49px; 
+  }
+}
+
+@media (max-width: 1029px) {
+  .friends {
+    font-size: 15px; 
+  }
+
+  .add-friend p {
+    font-size: 22px; 
+  }
+
+  .user-pic {
+    width: 49px; 
+    height: 47px; 
+  }
+}
+
+@media (max-width: 946px) {
+  .friends {
+    font-size: 14px; 
+  }
+
+  .add-friend p {
+    font-size: 20px;
+  }
+
+  .user-pic {
+    width: 49px; 
+    height: 47px; 
+  }
+}
+
+@media (max-width: 893px) {
+  .friends {
+    font-size: 12px; 
+  }
+
+  .add-friend p {
+    font-size: 18px; 
+  }
+
+  .user-pic {
+    width: 47px; 
+    height: 45px; 
+  }
+}
+
+@media (max-width: 838px) {
+  .friends {
+    font-size: 11px; 
+  }
+
+  .add-friend p {
+    font-size: 17px; 
+  }
+
+  .user-pic {
+    width: 45px; 
+    height: 43px; 
+  }
+}
+
+@media (max-width: 785px) {
+  .friends {
+    font-size: 10.5px; 
+  }
+
+  .add-friend p {
+    font-size: 16px; 
+  }
+
+  .user-pic {
+    width: 43px; 
+    height: 41px; 
+  }
+}
+
+@media (max-width: 731px) {
+  .friends {
+    font-size: 10px; 
+  }
+
+  .add-friend p {
+    font-size: 15px;
+  }
+
+  .user-pic {
+    width: 41px; 
+    height: 39px; 
+  }
+}
+
+@media (max-width: 702px) {
+  .friends {
+    font-size: 9px; 
+  }
+
+  .add-friend p {
+    font-size: 14px; 
+  }
+
+  .user-pic {
+    width: 39px; 
+    height: 37px; 
+  }
+}
+
+@media (max-width: 620px) {
+  .friends {
+    font-size: 7px;
+  }
+
+  .add-friend p {
+    font-size: 11px; 
+  }
+
+  .user-pic {
+    width: 35px; 
+    height: 33px; 
+  }
+}
+
+@media (max-width: 582px) {
+  .friends {
+    font-size: 6px; 
+  }
+
+  .add-friend p {
+    font-size: 10px; 
+  }
+
+  .user-pic {
+    width: 33px; 
+    height: 31px; 
+  }
+}
+
 
 @media (max-width: 360px) and (max-height: 800px) {  
   .sidebar, 
