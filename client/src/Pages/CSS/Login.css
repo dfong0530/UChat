@@ -9,54 +9,376 @@
   font-family: "Poppins";
 }
 
+@media (max-width: 2000px) {
+
+  .login-page {
+    color: #6ab1f0;
+    height: 100%;
+    margin-top: 7.5%;
+    justify-content: top;
+    align-items: center;
+  }
+
+  .title {
+    font-weight: 800;
+    font-size: 40px;
+    margin-top: 0.3%;
+    margin-bottom: 40px;
+  }
+
+  .info {
+    width: 27%;
+    margin: 6px 0px;
+    row-gap: 32px;
+  }
+
+  .login-button,
+  .name,
+  .pass {
+    border: none;
+    border-radius: 50px;
+  }
+
+  .create-account,
+  .name,
+  .pass {
+    font-size: 16px;
+  }
+
+  .name,
+  .pass {
+    color: #787878;
+    height: 45px;
+    width: 100%;
+    padding-left: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+  }
+
+  .login-button {
+    background-color: #6ab1f0;
+    color: white;
+    height: 50px;
+    font-size: 22px;
+    transition: 0.25s;
+  }
+
+  .create-account {
+    color: rgb(70, 70, 70);
+    font-size: 15px;
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .create-account-link {
+    color: #0075ff;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: 38px;
+    text-decoration: none;
+    /* identical to box height */
+  }
+}
+
+@media (max-width: 1000px) {
 .login-page {
-  color: #6ab1f0;
-  height: 100%;
-  margin-top: 7.5%;
-  justify-content: top;
-  align-items: center;
+    color: #6ab1f0;
+    height: 100%;
+    margin-top: 17%;
+    justify-content: top;
+    align-items: center;
+  }
+
+  .title {
+    font-weight: 800;
+    font-size: 36px;
+    margin-top: 1%;
+    margin-bottom: 40px;
+  }
+
+  .info {
+    width: 35%;
+    margin: 6px 0px;
+    row-gap: 32px;
+  }
+
+  .login-button,
+  .name,
+  .pass {
+    border: none;
+    border-radius: 50px;
+  }
+
+  .create-account,
+  .name,
+  .pass {
+    font-size: 15px;
+  }
+
+  .name,
+  .pass {
+    color: #787878;
+    height: 42px;
+    width: 100%;
+    padding-left: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+  }
+
+  .login-button {
+    background-color: #6ab1f0;
+    color: white;
+    height: 45px;
+    font-size: 20px;
+    transition: 0.25s;
+  }
+
+  .create-account {
+    color: rgb(70, 70, 70);
+    font-size: 14px;
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .create-account-link {
+    color: #0075ff;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: 38px;
+    text-decoration: none;
+    /* identical to box height */
+  }
 }
 
-.title {
-  font-weight: 800;
-  font-size: 40px;
-  margin-top: 0.3%;
-  margin-bottom: 40px;
+@media (max-width: 800px) {
+.login-page {
+    color: #6ab1f0;
+    height: 100%;
+    margin-top: 25%;
+    justify-content: top;
+    align-items: center;
+  }
+
+  .title {
+    font-weight: 800;
+    font-size: 33px;
+    margin-top: 1%;
+    margin-bottom: 40px;
+  }
+
+  .info {
+    width: 40%;
+    margin: 6px 0px;
+    row-gap: 32px;
+  }
+
+  .login-button,
+  .name,
+  .pass {
+    border: none;
+    border-radius: 50px;
+  }
+
+  .create-account,
+  .name,
+  .pass {
+    font-size: 13px;
+  }
+
+  .name,
+  .pass {
+    color: #787878;
+    height: 38px;
+    width: 100%;
+    padding-left: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+  }
+
+  .login-button {
+    background-color: #6ab1f0;
+    color: white;
+    height: 41px;
+    font-size: 18px;
+    transition: 0.25s;
+  }
+
+  .create-account {
+    color: rgb(70, 70, 70);
+    font-size: 12.5px;
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .create-account-link {
+    color: #0075ff;
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: 38px;
+    text-decoration: none;
+    /* identical to box height */
+  }
 }
 
-.info {
-  width: 27%;
-  margin: 6px 0px;
-  row-gap: 32px;
+@media (max-width: 600px) {
+.login-page {
+    color: #6ab1f0;
+    height: 100%;
+    margin-top: 30%;
+    justify-content: top;
+    align-items: center;
+  }
+
+  .title {
+    font-weight: 800;
+    font-size: 28px;
+    margin-top: 3%;
+    margin-bottom: 40px;
+  }
+
+  .info {
+    width: 50%;
+    margin: 6px 0px;
+    row-gap: 32px;
+  }
+
+  .login-button,
+  .name,
+  .pass {
+    border: none;
+    border-radius: 50px;
+  }
+
+  .create-account,
+  .name,
+  .pass {
+    font-size: 11px;
+  }
+
+  .name,
+  .pass {
+    color: #787878;
+    height: 37px;
+    width: 100%;
+    padding-left: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+    margin: 5px 0 5px 0;
+  }
+
+  .login-button {
+    background-color: #6ab1f0;
+    color: white;
+    height: 35px;
+    font-size: 16px;
+    transition: 0.25s;
+  }
+
+  .create-account {
+    color: rgb(70, 70, 70);
+    font-size: 11px;
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .create-account-link {
+    color: #0075ff;
+    font-size: 10px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: 20px;
+    text-decoration: none;
+    /* identical to box height */
+  }
 }
 
-.login-button,
-.name,
-.pass {
-  border: none;
-  border-radius: 50px;
-}
+@media (max-width: 425px) {
+.login-page {
+    color: #6ab1f0;
+    height: 100%;
+    margin-top: 50%;
+    justify-content: top;
+    align-items: center;
+  }
 
-.create-account,
-.name,
-.pass {
-  font-size: 16px;
-}
+  .title {
+    font-weight: 800;
+    font-size: 25px;
+    margin-top: 3%;
+    margin-bottom: 40px;
+  }
 
-.name,
-.pass {
-  color: #787878;
-  height: 45px;
-  width: 100%;
-  padding-left: 40px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: 0.15s;
+  .info {
+    width: 70%;
+    margin: 6px 0px;
+    row-gap: 32px;
+  }
+
+  .login-button,
+  .name,
+  .pass {
+    border: none;
+    border-radius: 50px;
+  }
+
+  .create-account,
+  .name,
+  .pass {
+    font-size: 10px;
+  }
+
+  .name,
+  .pass {
+    color: #787878;
+    height: 34px;
+    width: 100%;
+    padding-left: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+  }
+
+  .login-button {
+    background-color: #6ab1f0;
+    color: white;
+    height: 33px;
+    font-size: 14px;
+    transition: 0.25s;
+  }
+
+  .create-account {
+    color: rgb(70, 70, 70);
+    font-size: 10px;
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .create-account-link {
+    color: #0075ff;
+    font-size: 8.5px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: 20px;
+    text-decoration: none;
+    /* identical to box height */
+  }
 }
 
 .name:hover,
 .pass:hover,
 .login-button:hover {
   opacity: 0.85;
+}
+
+.login-button:active {
+  opacity: 0.6;
 }
 
 .name:active,
@@ -67,36 +389,6 @@
 .name:focus,
 .pass:focus {
   outline: none;
-}
-
-.login-button {
-  background-color: #6ab1f0;
-  color: white;
-  height: 50px;
-  font-size: 22px;
-  transition: 0.25s;
-}
-
-.login-button:active {
-  opacity: 0.6;
-}
-
-.create-account {
-  color: rgb(70, 70, 70);
-  font-size: 15px;
-  margin-top: 0px;
-  margin-right: 10px;
-}
-
-.create-account-link {
-  color: #0075ff;
-  font-size: 13px;
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Poppins";
-  line-height: 38px;
-  text-decoration: none;
-  /* identical to box height */
 }
 
 .create-account-link:hover {
