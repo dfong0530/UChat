@@ -22,15 +22,14 @@ const Messages = () => {
     //When your calling this function make sure that thre is more than one
     //friend. --> Could cause bugs if coditions aren't met
     const getFriendName = (condition) => {
-        let friendName = user.friends.filter(aFriend => {
-            return aFriend.roomID === room.roomID
-        }); 
+        const aFriend = user.friends.find(friend => friend.roomID == room.roomID); 
         
         if (condition) {
-            return friendName[0].name;
-        } else {
-            return friendName[0].location; 
+            return aFriend.name; 
+        } else { 
+            return aFriend.location; 
         }
+        
     };
 
     // TASHI 
@@ -41,8 +40,8 @@ const Messages = () => {
     const handleSubmit = (e) => {
         e.preventDefault(); 
         socket.emit('message', {userID: user._id, roomID: room.roomID, 
-        message: message, roomNum: room.room, donation: room.donation, 
-        donationAmount: room.donationAmount}); 
+        message: message, roomNum: room.room, donation: false, 
+        donationAmount: 0}); 
         setMessage(""); 
     }; 
     
@@ -88,15 +87,19 @@ const Messages = () => {
         
         //Sent from Backend --> After backend finishes procesing adding a new room 
         //The website should add a new friend to the top of the side bar
-        const joinRoomHandler = async({friendName, roomID, roomNum}) => {   
-            let incomingFriend = {roomID: roomID, name: friendName}; 
+        const joinRoomHandler = async({friendName, roomID, roomNum, location}) => {  
+            
+            socket.emit("leave-room", room.room); 
+            socket.emit("switch-room", roomNum);
+            
+            let incomingFriend = {roomID: roomID, name: friendName, location: location}; 
             let newFriends = user.friends;
             newFriends.unshift(incomingFriend); 
             setUser({...user, friends: newFriends}); 
 
-            const ret = await GetRoomData(roomID, friendName, roomNum); 
-            socket.emit("leave-room", room.room); 
-            socket.emit("switch-room", ret.room);
+            const ret = await GetRoomData(roomID, user.username, user.password); 
+
+            delete ret.userTwo;
             setRoom(ret); 
         }
 
@@ -113,11 +116,12 @@ const Messages = () => {
         //Sent from Backend --> After second user wants to add a friend. 
         //First user updates friendUsername The website should update anonymous 
         // with new username
-        const friendJoinedHandler = ({name, roomID}) => {
+        const friendJoinedHandler = ({name, roomID, location}) => {
             let updatedUserFriend = user.friend; 
             updatedUserFriend.map((friend) => {
                 if (friend.roomID === roomID) {
                     friend.name = name; 
+                    friend.location = location;
                 } 
                 return friend; 
             }); 
@@ -167,7 +171,7 @@ const Messages = () => {
                                 />
                             </div>
                             
-                            {/* for the name and location */}
+                            {/* for the name and location  DFONG--> Backend fix*/}
                             <div className="name-location">
                                 <p className="id">
                                     {() => getFriendName(true)}
@@ -193,7 +197,7 @@ const Messages = () => {
                             room.messages.map(msg => {
                                 return (
                                     <div className="message">  
-                                        <Message key={msg._id} message={msg}/>
+                                        <Message key={msg._id} userID={msg.userID} _id={user._id}  message={msg.message} donation={msg.donation} donationAmount={msg.donationAmount} />
                                     </div>
                                 );
                             })

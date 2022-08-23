@@ -69,7 +69,7 @@
   background-color: #435463;
 }
 
-.single-friend {
+.single-friend, .light, .regular {
     height: 16.67%; 
     border-bottom: 1px solid white; 
     column-gap: 6%; 
