@@ -2,7 +2,7 @@
   font-family: "Poppins";
   padding: 15px;
   margin: 10px 0px;
-  color: white;
+
   border: none;
   border-radius: 50px;
   height: 45px;
@@ -10,4 +10,10 @@
   padding-left: 40px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: 0.15s;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
 }
