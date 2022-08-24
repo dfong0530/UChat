@@ -31,7 +31,7 @@ const Login = () => {
       }
       setRoom(roomData);
 
-      ////id, username, password, rooms
+      //id, username, password, rooms
       setUser({
         _id: data.User._id,
         username: data.User.username,
