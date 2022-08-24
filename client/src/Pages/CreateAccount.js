@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./CSS/CreateAccount.css";
-import FormInput from "./formInput";
 import SmsIcon from "@mui/icons-material/Sms";
 
 const CreateAccount = () => {
-    const [values, setValues] = useState({
-        username:"",
-        email: "",
-        password: ""
+    const [form, setForm] = useState({
+        name:"",
+        username: "",
+        password: "",
+        location: ""
     });
+    const usernameRef = useRef(null);
 // =======
 // import Message from "../VeevekComponents/Message"
 // import {useState, useEffect, useContext} from "react";
@@ -40,45 +41,10 @@ const CreateAccount = () => {
 //     )
 // }
 
-    const inputs = [
-        {
-            id: 1,
-            name: "name",
-            type: "text",
-            placeholder: "Name",
-            errorMessage: "Name should be greater than 0 characters",
-            label: "Name",
-            pattern: "^[A-Z-a-z0-9]{1,16}$",
-            required: true
-        },
-        {
-            id: 2,
-            name: "username",
-            type: "text",
-            placeholder: "Username",
-            errorMessage: "Username should be 3-16 characters",
-            label: "Username",
-            required: true
-        },
-        {
-            id: 3,
-            name: "password",
-            type: "text",
-            placeholder: "Password",
-            errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number, and 1 special character.",
-            label: "Password",
-            pattern:  `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
-            required: true
-        }
-    ]
-    
     const handleSubmit = (e) =>{
         e.preventDefault();
+        console.log(form);
     }
-
-    const onChange = (e) => {
-        setValues({...values, [e.target.name]: e.target.value})
-    };
 
     return (
         <div className="app">
@@ -94,14 +60,34 @@ const CreateAccount = () => {
             }}
             />
 
-            <h1>UChat</h1>
-                {inputs.map((input) => (
-                  <FormInput 
-                  key={input.id} {...input} 
-                  value={values[input.name]} 
-                  onChange = {onChange} />
-                ))}
-                <button>Submit</button>
+                <h1>UChat</h1>
+                <input
+                    className="input"
+                    placeholder="Username"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    required
+                    ref={usernameRef}
+                />
+
+                <input
+                    type="user"
+                    className="input"
+                    placeholder="Username"
+                    value={form.username}
+                    onChange={(e) => setForm({ ...form, username: e.target.value })}
+                    required
+                />
+
+                <input
+                    type="password"
+                    className="input"
+                    placeholder="Password"
+                    value={form.password}
+                    onChange={(e) => setForm({ ...form, password: e.target.value })}
+                    required
+                />
+                <button onClick = {handleSubmit}>Submit</button>
             </form>
         </div>
     )
