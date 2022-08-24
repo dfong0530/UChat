@@ -1,86 +1,56 @@
-import { useState } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import "./CSS/CreateAccount.css";
-import FormInput from "./formInput";
+import {CreateAccountRequest, GetLocation} from "../Data/GetData";
 import SmsIcon from "@mui/icons-material/Sms";
+import GlobalContext from "../GlobalContext";
 
 const CreateAccount = () => {
-    const [values, setValues] = useState({
-        username:"",
-        email: "",
-        password: ""
+    const [form, setForm] = useState({
+        name:"",
+        username: "",
+        password: "",
+        location: "",
+        inUkraine: false
     });
-// =======
-// import Message from "../VeevekComponents/Message"
-// import {useState, useEffect, useContext} from "react";
-// import GlobalContext from "../GlobalContext";
-// import { GetLocation, CreateAccountRequest } from "../Data/GetData";
 
-// const CreateAccount = () => {
-
-//     const {} = useContext(GlobalContext); //VEEVEK --> Write any global variables you need here
-//     const [form, setForm] = useState({name: "", username: "", password: "", location: ""});
+    const usernameRef = useRef(null);
+    const {navigate} = useContext(GlobalContext);
 
 
-//     useEffect(() => {
+    useEffect(() => {
+        usernameRef.current.focus();
+    }, [])
 
-//         // usernameRef.current.focus();
-//         navigator.geolocation.getCurrentPosition(async function(position) {
-//             const location = await GetLocation(position.coords.latitude, position.coords.longitude);
-//             setForm({...form, location: `${location.city}, ${location.country}`});
-//         });
+    useEffect(() => {
 
-//     }, []);
+        // usernameRef.current.focus();
+        navigator.geolocation.getCurrentPosition(async function(position) {
+            const location = await GetLocation(position.coords.latitude, position.coords.longitude);
+
+            if(location.country.toLowerCase() === "ukraine"){
+                setForm({...form, inUkraine: true})
+            }
+
+            setForm({...form, location: `${location.city}, ${location.country}`});
+        });
+
+    }, []);
 
 
-
-//     return (
-//         <>
-//             <Message />
-//         </>
-//     )
-// }
-
-    const inputs = [
-        {
-            id: 1,
-            name: "name",
-            type: "text",
-            placeholder: "Name",
-            errorMessage: "Name should be greater than 0 characters",
-            label: "Name",
-            pattern: "^[A-Z-a-z0-9]{1,16}$",
-            required: true
-        },
-        {
-            id: 2,
-            name: "username",
-            type: "text",
-            placeholder: "Username",
-            errorMessage: "Username should be 3-16 characters",
-            label: "Username",
-            required: true
-        },
-        {
-            id: 3,
-            name: "password",
-            type: "text",
-            placeholder: "Password",
-            errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number, and 1 special character.",
-            label: "Password",
-            pattern:  `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
-            required: true
-        }
-    ]
-    
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault();
-
         
-    }
+        //{status: int, user: }
+        const data = await CreateAccountRequest(form);
 
-    const onChange = (e) => {
-        setValues({...values, [e.target.name]: e.target.value})
-    };
+        if(data.status === 200){
+            navigate('/login');
+        }
+        else{
+            setForm({username: '', password: '', name: '', location: '', inUkraine: false});
+            usernameRef.current.focus();
+        }
+    }
 
     return (
         <div className="app">
@@ -96,14 +66,32 @@ const CreateAccount = () => {
             }}
             />
 
-            <h1>UChat</h1>
-                {inputs.map((input) => (
-                  <FormInput 
-                  key={input.id} {...input} 
-                  value={values[input.name]} 
-                  onChange = {onChange} />
-                ))}
-                <button />
+                <h1>UChat</h1>
+                <input
+                    className="input"
+                    placeholder="Username"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    required
+                    ref={usernameRef}
+                />
+
+                <input
+                    type="user"
+                    className="input"
+                    placeholder="Username"
+                    value={form.username}
+                    onChange={(e) => setForm({ ...form, username: e.target.value })}
+                    required
+                />
+                <input
+                    type="password"
+                    className="input"
+                    placeholder="Password"
+                    value={form.password}
+                    onChange={(e) => setForm({ ...form, password: e.target.value })}
+                    required
+                />
                 <button>Submit</button>
             </form>
         </div>

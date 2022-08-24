@@ -1,6 +1,6 @@
 import axios from 'axios'; 
 
-
+//city, country --> Given lat, lng
 export const GetLocation = async(lat, lng) => {
     const ret = await axios.get(`http://localhost:5000/api/v1/maps/get-location?lat=${lat}&lng=${lng}`);
     const data = await ret.data;
