@@ -4,7 +4,12 @@
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
-	background-color: #787878;
+	background-color: #F5F5F5;
+}
+
+.logo {
+	justify-content: top;
+	align-items: center;
 }
 
 form {
@@ -27,4 +32,10 @@ button {
 	font-size: 1.1rem;
 	font-family: Poppins;
 	font-weight: 500;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #4CAF50; /* Green */
+  color: white;
 }

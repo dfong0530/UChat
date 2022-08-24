@@ -1,14 +1,13 @@
 import { useState } from "react";
 import "./CSS/CreateAccount.css";
 import FormInput from "./formInput";
+import SmsIcon from "@mui/icons-material/Sms";
 
 const CreateAccount = () => {
     const [values, setValues] = useState({
         username:"",
         email: "",
-        birthday: "",
-        password: "",
-        confirmPassword: ""
+        password: ""
     });
 // =======
 // import Message from "../VeevekComponents/Message"
@@ -47,24 +46,29 @@ const CreateAccount = () => {
             name: "name",
             type: "text",
             placeholder: "Name",
-            errorMessage: "",
-            label: "Name"
+            errorMessage: "Name should be greater than 0 characters",
+            label: "Name",
+            pattern: "^[A-Z-a-z0-9]{1,16}$",
+            required: true
         },
         {
             id: 2,
             name: "username",
             type: "text",
             placeholder: "Username",
-            errorMessage: "",
-            label: "Username"
+            errorMessage: "Username should be 3-16 characters",
+            label: "Username",
+            required: true
         },
         {
             id: 3,
             name: "password",
             type: "text",
             placeholder: "Password",
-            errorMessage: "",
-            label: "Password"
+            errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number, and 1 special character.",
+            label: "Password",
+            pattern:  `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+            required: true
         }
     ]
     
@@ -79,6 +83,18 @@ const CreateAccount = () => {
     return (
         <div className="app">
             <form onSubmit={handleSubmit}>
+            <SmsIcon
+            className="logo"
+            sx={{
+                fontSize: 120,
+                "@media (max-width: 1000px)": { fontSize: 108 },
+                "@media (max-width: 800px)": { fontSize: 96 },
+                "@media (max-width: 600px)": { fontSize: 80 },
+                "@media (max-width: 425px)": { fontSize: 72 },
+            }}
+            />
+
+            <h1>UChat</h1>
                 {inputs.map((input) => (
                   <FormInput 
                   key={input.id} {...input} 
