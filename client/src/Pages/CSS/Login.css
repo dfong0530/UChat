@@ -10,7 +10,6 @@
 }
 
 @media (max-width: 2000px) {
-
   .login-page {
     color: #6ab1f0;
     height: 100%;
@@ -78,12 +77,13 @@
     font-family: "Poppins";
     line-height: 38px;
     text-decoration: none;
+    padding-left: 5px;
     /* identical to box height */
   }
 }
 
 @media (max-width: 1000px) {
-.login-page {
+  .login-page {
     color: #6ab1f0;
     height: 100%;
     margin-top: 17%;
@@ -155,7 +155,7 @@
 }
 
 @media (max-width: 800px) {
-.login-page {
+  .login-page {
     color: #6ab1f0;
     height: 100%;
     margin-top: 25%;
@@ -227,7 +227,7 @@
 }
 
 @media (max-width: 600px) {
-.login-page {
+  .login-page {
     color: #6ab1f0;
     height: 100%;
     margin-top: 30%;
@@ -300,7 +300,7 @@
 }
 
 @media (max-width: 425px) {
-.login-page {
+  .login-page {
     color: #6ab1f0;
     height: 100%;
     margin-top: 50%;
