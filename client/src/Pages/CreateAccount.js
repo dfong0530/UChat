@@ -74,6 +74,8 @@ const CreateAccount = () => {
     
     const handleSubmit = (e) =>{
         e.preventDefault();
+
+        
     }
 
     const onChange = (e) => {
@@ -101,6 +103,7 @@ const CreateAccount = () => {
                   value={values[input.name]} 
                   onChange = {onChange} />
                 ))}
+                <button />
                 <button>Submit</button>
             </form>
         </div>
