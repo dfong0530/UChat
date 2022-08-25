@@ -751,12 +751,11 @@ buttons and input boxes throughout the messages UI */
   }
 }
 
-@media (max-width: 837px) {
+@media (max-width: 826px) {
   .main, 
   .background {
-    width: 130%; 
-    height: 100vh; 
-    transform: translate(-175px); 
+    width: 128%; 
+    transform: translate(-180px); 
   }
 
   .background, 
@@ -764,78 +763,96 @@ buttons and input boxes throughout the messages UI */
     transition: 0.2s;
   }
 
-  .background {
-    background: rgba(0, 0, 0, 0.35);
+  .dark-page {
+    font-family: "Inter";
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 22% 78%;
+    background: rgba(0, 0, 0, 0.35); 
   }
 
   .header { 
-    height: 8%; 
     border-bottom: 2px solid #dddddd; 
   }
 
   .menu-item {
-    margin-left: 100px; 
+    margin-left: 10%; 
     visibility: visible; 
   }
 
   .information {
-    margin-left: 100px; 
-    column-gap: 8px;
-  }
-
-  .profile-pic {
-    width: 25px;
-    height: 23px;
-  }
-
-  .name-location {
-    line-height: 18px;
-  }
-
-  .id {
-    font-size: 13px;
-  }
-
-  .location {
-    font-size: 8px;
+    margin-left: 20%;  
   }
 
   .donate-button {
-    width: 75px;
-    height: 30px;
-    font-size: 7px;
-    margin-right: 20px;
-  }
-
-  .messages-chat {
-    height: 75%;
-    padding: 0 100px 0 25px;
-  }
-
-  .message-input {
-    height: 15%;
-  }
-
-  .message-box {
-    width: 290px;
-    height: 35px;
-    font-size: 13px;
-    padding-left: 15px;
-    margin-left: 16px;
-  }
-
-  .message-input div {
-    width: 32px;
-    height: 32px;
+    border-radius: 20px;
   }
 
   .menu-item:hover {
-    opacity: 0.85; 
+    opacity: 0.65; 
   }
 
   .menu-item:active {
-    opacity: 0.65;
+    opacity: 0.45;
+  }
+
+  .message-box, 
+  .message-input div {
+    margin-bottom: 15%; 
+  }
+
+  .message-input div {
+    width: 5.25%; 
   }
 }
 
+@media (max-width: 810px) {
+  .message-box {
+    width: 61.5%;
+  }
+
+  .message-input div {
+    width: 5.5%; 
+  }
+}
+
+@media (max-width: 769px) {
+  .donate-button, 
+  .message-box {
+    font-size: 13.75px; 
+  }
+
+  .donate-button {
+    width: 135px; 
+  }
+
+  .message-box {
+    width: 60%; 
+  }
+
+  .message-input div {
+    width: 5.75%; 
+  }
+}
+
+
+@media (max-width: 735px) {
+  .donate-button, 
+  .message-box {
+    font-size: 13.5px; 
+  }
+
+  .donate-button {
+    width: 130px; 
+  }
+
+  .message-box {
+    width: 58%; 
+  }
+
+  .message-input div {
+    width: 6%; 
+  }
+
+}
 

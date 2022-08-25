@@ -21,6 +21,13 @@ const Messages = () => {
   const [menu, setMenu] = useState(false); 
 
   const handleMenu = () => setMenu(!menu); 
+  const handleClick = () => {
+    let condition = false; 
+    if (window.innerWidth <= 826 && menu === true) {
+      condition = setMenu(!menu); 
+    }
+    return condition; 
+  }
 
   //These are refs to make sure the input msg box is focused on refresh
   //and that the msg scrolls down when messages are sent
@@ -38,6 +45,13 @@ const Messages = () => {
     socket.emit("message", {userID: user._id, roomID: room.roomID, message: message, roomNum: room.room, donation: false, donationAmount: 0});
     setMessage("");
   };
+
+  useEffect(() => {
+    if (window.innerWidth > 826) {
+      window.addEventListener('resize', handleMenu); 
+    } 
+    return () => window.removeEventListener('resize', handleMenu); 
+  }, [window.innerWidth]); 
 
   // renders everytime a friend is clicked on it will display their
   // name and location
@@ -169,12 +183,13 @@ const Messages = () => {
 
   return (
     <>
-      <section className="page">
+      <section className={menu ? "dark-page" : "page"}>
         {/* the navbar component for the friends and the add button */}
-        <Friends socket={socket} setInfo={setInfo} menu={menu} handleMenu={handleMenu}/>
+        <Friends socket={socket} setInfo={setInfo} menu={menu} 
+        handleMenu={handleMenu}/>
 
         {/* the main part of the messages with the chat UI */}
-        <section className={menu ? "background" : "main"}>
+        <section className="main">
           {/* the element above the chat UI */}
           <div className="header">
             <MenuIcon 
@@ -210,7 +225,7 @@ const Messages = () => {
           </div>
 
           {/* the section containing the messages */}
-          <div className="messages-chat" ref={msgSecRef}>
+          <div className="messages-chat" onClick={handleClick} ref={msgSecRef}>
             {room.messages.map((msg) => {
               return (
                 // each message is surrounded by a div
@@ -254,11 +269,11 @@ const Messages = () => {
       {donationBoxDisplay.darkOverlay && (
         <div id="dark-overlay"></div>
       )}
-      {donationBoxDisplay.donationBox && (
+      {donationBoxDisplay.donationBox  && (
         <DonationBox
           setDonationBoxDisplay={setDonationBoxDisplay}
           socket={socket}
-        />
+        /> 
       )}
     </>
   );
