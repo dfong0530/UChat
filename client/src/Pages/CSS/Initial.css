@@ -14,7 +14,7 @@
 
 /* NOTE! These are all based on full-screen Macbook view! */
 
-@media (max-width: 2000px) {
+@media (max-width: 10000px) {
 
   .initialPage h1 {
     color: #6ab1f0;
