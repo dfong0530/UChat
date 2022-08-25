@@ -84,6 +84,26 @@ span {
   display: none;
 }
 
+.login {
+	font-family: "Poppins";
+	color: rgb(70, 70, 70);
+	font-size: 15px;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.login-link {
+	color: #0075ff;
+	font-size: 13px;
+	font-weight: 400;
+	font-style: normal;
+	font-family: "Poppins";
+	line-height: 38px;
+	text-decoration: none;
+	padding-left: 5px;
+}
 
 .logo-comp {
 	text-align: center;

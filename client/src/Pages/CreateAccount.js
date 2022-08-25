@@ -92,7 +92,12 @@ const CreateAccount = () => {
                     />
                     <button>Create Account</button>
 
-                    <p> Already have an account? <a>Login</a></p>
+                    <p className="login"> 
+                        Already have account?           
+                        <a className="login-link" href='/Login' >
+                            Login
+                        </a>
+                    </p>
                 </div>
             </form>
         </div>
