@@ -49,7 +49,8 @@ const CreateAccount = () => {
     return (
         <div className="app">
             <form onSubmit={handleSubmit}>
-            <SmsIcon
+            <div className="logo-comp">
+                <SmsIcon
                 className="logo"
                 sx={{
                     fontSize: 120,
@@ -60,6 +61,7 @@ const CreateAccount = () => {
                 }}
                 />
                     <p className="title">UChat</p>
+            </div>
                             
             <div className = "flex">
                     <input
