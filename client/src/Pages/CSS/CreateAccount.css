@@ -155,7 +155,7 @@
   }
 
   .btnCreateAcc {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .loginDirect {
@@ -171,6 +171,137 @@
   .login-linkDirect {
     color: #0075ff;
     font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: 38px;
+    text-decoration: none;
+    padding-left: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+
+.appCreateAccount button {
+    background: #5ba3e4;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    width: 260px;
+    height: 42px;
+    border: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .titleCreateAccount {
+    font-weight: 800;
+    font-size: 34px;
+    padding: 0 0 25px 0;
+  }
+
+  .inputCreateAcc {
+    font-family: "Poppins";
+    padding: 15px;
+    margin: 23px 0px;
+    border: none;
+    border-radius: 50px;
+    width: 260px;
+    height: 42px;
+    padding-left: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+    margin-top: 20px;
+  }
+
+  .inputCreateAcc::-webkit-input-placeholder {
+    font-size: 13.5px;
+  }
+
+  .btnCreateAcc {
+    margin-top: 23px;
+  }
+
+  .loginDirect {
+    font-family: "Poppins";
+    color: rgb(70, 70, 70);
+    font-size: 13px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .login-linkDirect {
+    color: #0075ff;
+    font-size: 11.5px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: 38px;
+    text-decoration: none;
+    padding-left: 5px;
+  }
+} 
+
+@media (max-width: 370px) {
+.appCreateAccount button {
+    background: #5ba3e4;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    width: 230px;
+    height: 40px;
+    border: none;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .titleCreateAccount {
+    font-weight: 800;
+    font-size: 30px;
+    padding: 0 0 25px 0;
+  }
+
+  .inputCreateAcc {
+    font-family: "Poppins";
+    padding: 15px;
+    margin: 23px 0px;
+    border: none;
+    border-radius: 50px;
+    width: 230px;
+    height: 40px;
+    padding-left: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+    margin-top: 20px;
+  }
+
+  .inputCreateAcc::-webkit-input-placeholder {
+    font-size: 12.3px;
+  }
+
+  .btnCreateAcc {
+    margin-top: 23px;
+  }
+
+  .loginDirect {
+    font-family: "Poppins";
+    color: rgb(70, 70, 70);
+    font-size: 11.5px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .login-linkDirect {
+    color: #0075ff;
+    font-size: 10.5px;
     font-weight: 400;
     font-style: normal;
     font-family: "Poppins";
