@@ -47,11 +47,11 @@ const CreateAccount = () => {
     }
 
     return (
-        <div className="app">
+        <div className="appCreateAccount">
             <form onSubmit={handleSubmit}>
             <div className="logo-comp">
                 <SmsIcon
-                className="logo"
+                className="logoCreateAccount"
                 sx={{
                     fontSize: 120,
                     "@media (max-width: 1000px)": { fontSize: 108 },
@@ -60,12 +60,12 @@ const CreateAccount = () => {
                     "@media (max-width: 425px)": { fontSize: 72 },
                 }}
                 />
-                    <p className="title">UChat</p>
+                    <p className="titleCreateAccount">UChat</p>
             </div>
                             
-            <div className = "flex">
+            <div className = "flexCreateAcc">
                     <input
-                        className="input"
+                        className="inputCreateAcc"
                         placeholder="Name"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -75,7 +75,7 @@ const CreateAccount = () => {
 
                     <input
                         type="user"
-                        className="input"
+                        className="inputCreateAcc"
                         placeholder="Username"
                         value={form.username}
                         onChange={(e) => setForm({ ...form, username: e.target.value })}
@@ -84,17 +84,17 @@ const CreateAccount = () => {
 
                     <input
                         type="password"
-                        className="input"
+                        className="inputCreateAcc"
                         placeholder="Password"
                         value={form.password}
                         onChange={(e) => setForm({ ...form, password: e.target.value })}
                         required
                     />
-                    <button>Create Account</button>
+                    <button className="btnCreateAcc">Create Account</button>
 
-                    <p className="login"> 
+                    <p className="loginDirect"> 
                         Already have account?           
-                        <a className="login-link" href='/Login' >
+                        <a className="login-linkDirect" href='/Login' >
                             Login
                         </a>
                     </p>

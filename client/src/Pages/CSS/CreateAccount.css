@@ -1,4 +1,4 @@
-.app {
+.appCreateAccount {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,21 +6,21 @@
   background-color: #f5f5f5;
 }
 
-.logo {
+.logoCreateAccount {
   justify-content: top;
   align-items: center;
 }
 
-.app form {
+.appCreateAccount form {
   padding: 0px 60px;
   border-radius: 10px;
 }
 
-.app h1 {
+.appCreateAccount h1 {
   color: blue;
   text-align: center;
 }
-.app button {
+.appCreateAccount button {
   background: #5ba3e4;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
@@ -34,21 +34,21 @@
   cursor: pointer;
 }
 
-.app button:hover {
+.appCreateAccount button:hover {
 	transition: 0.2s;
   opacity: 0.85;
 }
 
-.title {
+.titleCreateAccount {
 	padding: 0 0 20px 0;
 }
 
-.logo, .title {
+.logoCreateAccount, .titleCreateAccount {
 	color: #5ba3e4;
 	font-family: Poppins;
 }
 
-.input {
+.inputCreateAcc {
   font-family: "Poppins";
   padding: 15px;
   margin: 10px 0px;
@@ -68,12 +68,12 @@
   width: 280px;
 }
 
-.flex {
+.flexCreateAcc {
 	display: flex;
   flex-direction: column;
 }
 
-button {
+.btnCreateAcc {
 	margin-top: 30px;
 }
 
@@ -84,7 +84,7 @@ span {
   display: none;
 }
 
-.login {
+.loginDirect {
 	font-family: "Poppins";
 	color: rgb(70, 70, 70);
 	font-size: 15px;
@@ -94,7 +94,7 @@ span {
 	text-align: center;
 }
 
-.login-link {
+.login-linkDirect {
 	color: #0075ff;
 	font-size: 13px;
 	font-weight: 400;
