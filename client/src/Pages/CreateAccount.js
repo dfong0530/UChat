@@ -1,49 +1,53 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import "./CSS/CreateAccount.css";
 import SmsIcon from "@mui/icons-material/Sms";
+import GlobalContext from "../GlobalContext";
+import { GetLocation, CreateAccountRequest } from "../Data/GetData";
 
 const CreateAccount = () => {
     const [form, setForm] = useState({
         name:"",
         username: "",
         password: "",
-        location: ""
-    });
+        location: "",
+        inUkraine: false
+    });;
     const usernameRef = useRef(null);
-// =======
-// import Message from "../VeevekComponents/Message"
-// import {useState, useEffect, useContext} from "react";
-// import GlobalContext from "../GlobalContext";
-// import { GetLocation, CreateAccountRequest } from "../Data/GetData";
-
-// const CreateAccount = () => {
-
-//     const {} = useContext(GlobalContext); //VEEVEK --> Write any global variables you need here
-//     const [form, setForm] = useState({name: "", username: "", password: "", location: ""});
+    const {navigate} = useContext(GlobalContext);
 
 
-//     useEffect(() => {
+    useEffect(() => {
+        usernameRef.current.focus();
+    }, [])
 
-//         // usernameRef.current.focus();
-//         navigator.geolocation.getCurrentPosition(async function(position) {
-//             const location = await GetLocation(position.coords.latitude, position.coords.longitude);
-//             setForm({...form, location: `${location.city}, ${location.country}`});
-//         });
+    useEffect(() => {
 
-//     }, []);
+        // usernameRef.current.focus();
+        navigator.geolocation.getCurrentPosition(async function(position) {
+            const location = await GetLocation(position.coords.latitude, position.coords.longitude);
+
+            if(location.country.toLowerCase() === "ukraine"){
+                setForm({...form, inUkraine: true})
+            }
+
+            setForm({...form, location: `${location.city}, ${location.country}`});
+        });
+
+    }, []);
 
 
 
-//     return (
-//         <>
-//             <Message />
-//         </>
-//     )
-// }
-
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault();
-        console.log(form);
+        const data = await CreateAccountRequest(form);
+
+        if(data.status === 200){
+            navigate('/login');
+        }
+        else{
+            setForm({username: '', password: '', name: '', location: '', inUkraine: false});
+            usernameRef.current.focus();
+        }
     }
 
     return (

@@ -9,6 +9,7 @@ import SendIcon from "@mui/icons-material/Send";
 import PersonIcon from "@mui/icons-material/Person";
 import DonationBox from "../TashiComponents/DonationBox";
 import MenuIcon from '@mui/icons-material/Menu';
+import { useCallback } from "react";
 
 const socket = io("http://localhost:5000");
 
@@ -20,7 +21,8 @@ const Messages = () => {
   useState({donationBox: false, darkOverlay: false});
   const [menu, setMenu] = useState(false); 
 
-  const handleMenu = () => setMenu(!menu); 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleMenu = useCallback(() => setMenu(!menu)); 
   const handleClick = () => {
     let condition = false; 
     if (window.innerWidth <= 826 && menu === true) {
@@ -46,12 +48,17 @@ const Messages = () => {
     setMessage("");
   };
 
-  useEffect(() => {
+  const conditionalHandleMenu = () => {
     if (window.innerWidth > 826) {
-      window.addEventListener('resize', handleMenu); 
+      setMenu(false);
     } 
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', conditionalHandleMenu);
+
     return () => window.removeEventListener('resize', handleMenu); 
-  }, [window.innerWidth]); 
+  }, [handleMenu]); 
 
   // renders everytime a friend is clicked on it will display their
   // name and location
@@ -219,9 +226,9 @@ const Messages = () => {
               </div>
             </section>
 
-            <button className="donate-button" onClick={handleDonation}>
+            {user.inUkraine && <button className="donate-button" onClick={handleDonation}>
               Donate Now
-            </button>
+            </button>}
           </div>
 
           {/* the section containing the messages */}

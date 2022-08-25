@@ -1,5 +1,6 @@
-.blue-msg, .grey-msg {
-  max-width: 40%; 
+.blue-msg,
+.grey-msg {
+  max-width: 40%;
   font-size: 18px;
   font-family: "Poppins";
   padding: 14px 14px 14px 14px;
@@ -7,52 +8,58 @@
 }
 
 .blue-msg {
-  background-color: #5BA3E4;
+  background-color: #5ba3e4;
   color: white;
   border-radius: 20px 20px 20px 0;
 }
 
 .grey-msg {
-  background-color: #D8D8D8;
+  background-color: #d8d8d8;
   color: black;
   border-radius: 20px 20px 0 20px;
-  margin-right: -10px; 
-  margin-left: auto; 
+  margin-right: -10px;
+  margin-left: auto;
 }
 
 .donate-msg {
-  color: #20D111;
+  color: #20d111;
   font-size: medium;
   font-weight: bold;
 }
 
 .word {
-  overflow-wrap: break-word; 
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 1327px) {
-  .blue-msg, .grey-msg {
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
     font-size: 17px;
   }
 
   .grey-msg {
-    margin-right: -15px; 
+    margin-right: -15px;
   }
 }
 
 @media (max-width: 1272px) {
-  .blue-msg, .grey-msg {
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
     font-size: 16px;
   }
 
   .grey-msg {
-    margin-right: -20px; 
+    margin-right: -20px;
   }
 }
 
 @media (max-width: 1218px) {
-  .blue-msg, .grey-msg {
-    font-size: 15.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 15.5px;
   }
 
   .grey-msg {
@@ -61,8 +68,10 @@
 }
 
 @media (max-width: 1192px) {
-  .blue-msg, .grey-msg {
-    font-size: 15px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 15px;
   }
 
   .grey-msg {
@@ -71,167 +80,201 @@
 }
 
 @media (max-width: 1164px) {
-  .blue-msg, .grey-msg {
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
     font-size: 14.75px;
   }
 
   .grey-msg {
-    margin-right: -27.5px; 
+    margin-right: -27.5px;
   }
 }
 
 @media (max-width: 1151px) {
-  .blue-msg, .grey-msg {
-    font-size: 14.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 14.5px;
   }
 
   .grey-msg {
-    margin-right: -30px; 
+    margin-right: -30px;
   }
 }
 
 @media (max-width: 1137px) {
-  .blue-msg, .grey-msg {
-    font-size: 13.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 13.5px;
   }
 
   .grey-msg {
-    margin-right: -32.5px; 
+    margin-right: -32.5px;
   }
 }
 
 @media (max-width: 1083px) {
-  .blue-msg, .grey-msg {
-    font-size: 13px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 13px;
   }
 
   .grey-msg {
-    margin-right: -35px; 
+    margin-right: -35px;
   }
 }
 
 @media (max-width: 1056px) {
-  .blue-msg, .grey-msg {
-    font-size: 12.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 12.5px;
   }
 
   .grey-msg {
-    margin-right: -37.5px; 
+    margin-right: -37.5px;
   }
 }
 
 @media (max-width: 1029px) {
-  .blue-msg, .grey-msg {
-    font-size: 12px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 12px;
   }
 
   .grey-msg {
-    margin-right: -40px; 
+    margin-right: -40px;
   }
 }
 
 @media (max-width: 1002px) {
-  .blue-msg, .grey-msg {
-    font-size: 11.75px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 11.75px;
   }
 
   .grey-msg {
-    margin-right: -42.5px; 
+    margin-right: -42.5px;
   }
 }
 
 @media (max-width: 988px) {
-  .blue-msg, .grey-msg {
-    font-size: 11.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 11.5px;
   }
 
   .grey-msg {
-    margin-right: -45px; 
+    margin-right: -45px;
   }
-} 
+}
 
 @media (max-width: 975px) {
-  .blue-msg, .grey-msg {
-    font-size: 11px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 11px;
   }
 
   .grey-msg {
-    margin-right: -47.5px; 
+    margin-right: -47.5px;
   }
 }
 
 @media (max-width: 948px) {
-  .blue-msg, .grey-msg {
-    font-size: 10.75px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 10.75px;
   }
 
   .grey-msg {
-    margin-right: -50px; 
+    margin-right: -50px;
   }
 }
 
 @media (max-width: 934px) {
-  .blue-msg, .grey-msg {
-    font-size: 10.25px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 10.25px;
   }
 
   .grey-msg {
-    margin-right: -52.5px; 
+    margin-right: -52.5px;
   }
 }
 
 @media (max-width: 907px) {
-  .blue-msg, .grey-msg {
-    font-size: 10px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 10px;
   }
 
   .grey-msg {
-    margin-right: -55px
+    margin-right: -55px;
   }
 }
 
 @media (max-width: 893px) {
-  .blue-msg, .grey-msg {
-    font-size: 9.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 9.5px;
   }
 
   .grey-msg {
-    margin-right: -56px; 
+    margin-right: -56px;
   }
 }
 
 @media (max-width: 866px) {
-  .blue-msg, .grey-msg {
-    font-size: 9.25px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 9.25px;
   }
 
   .grey-msg {
-    margin-right: -56.5px; 
+    margin-right: -56.5px;
   }
 }
 
 @media (max-width: 853px) {
-  .blue-msg, .grey-msg {
-    font-size: 9px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 9px;
   }
 
   .grey-msg {
-    margin-right: -57px; 
+    margin-right: -57px;
   }
 }
 
 @media (max-width: 839px) {
-  .blue-msg, .grey-msg {
-    font-size: 8.75px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 8.75px;
   }
 
   .grey-msg {
-    margin-right: -57.25px; 
+    margin-right: -57.25px;
   }
 }
 
-@media (max-width: 826px)  {
-  .blue-msg, .grey-msg {
+@media (max-width: 826px) {
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
     max-width: 50%;
     font-size: 16px;
     border-radius: 30px 30px 0px 30px;
@@ -239,187 +282,205 @@
 }
 
 @media (max-width: 810px) {
-  .blue-msg, .grey-msg {
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
     font-size: 15px;
   }
 
   .grey-msg {
-    margin-right: -58px; 
+    margin-right: -58px;
   }
 }
 
 @media (max-width: 769px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 14.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 14.5px;
   }
 
   .grey-msg {
-    margin-right: -59px; 
+    margin-right: -59px;
   }
 }
 
 @media (max-width: 752px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 14px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 14px;
   }
 
   .grey-msg {
-    margin-right: -60px; 
+    margin-right: -60px;
   }
 }
 
 @media (max-width: 735px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 13.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 13.5px;
   }
 
   .grey-msg {
-    margin-right: -61px; 
+    margin-right: -61px;
   }
 }
 
 @media (max-width: 718px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 13px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 13px;
   }
 
   .grey-msg {
-    margin-right: -62px; 
+    margin-right: -62px;
   }
 }
 
 @media (max-width: 701px) {
   .blue-msg,
-  .grey-msg {
-    font-size: 12.5px; 
+  .grey-msg,
+  .donate-msg {
+    font-size: 12.5px;
   }
 
   .grey-msg {
-    margin-right: -63px; 
+    margin-right: -63px;
   }
 }
 
 @media (max-width: 684px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 12px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 12px;
   }
 
   .grey-msg {
-    margin-right: -64px; 
+    margin-right: -64px;
   }
 }
 
 @media (max-width: 670px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 11.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 11.5px;
   }
 
   .grey-msg {
-    margin-right: -65px; 
+    margin-right: -65px;
   }
 }
 
 @media (max-width: 650px) {
-  .blue-msg, 
-  .grey-msg {
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
     font-size: 11px;
   }
 
   .grey-msg {
-    margin-right: -66px; 
+    margin-right: -66px;
   }
 }
 
 @media (max-width: 633px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 10.5px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 10.5px;
   }
 
   .grey-msg {
-    margin-right: -67px; 
+    margin-right: -67px;
   }
 }
 
 @media (max-width: 616px) {
   .blue-msg,
-  .grey-msg {
-    font-size: 10px; 
+  .grey-msg,
+  .donate-msg {
+    font-size: 10px;
   }
 
   .grey-msg {
-    margin-right: -68px; 
+    margin-right: -68px;
   }
 }
 
 @media (max-width: 599px) {
   .blue-msg,
-  .grey-msg {
-    font-size: 9.5px; 
+  .grey-msg,
+  .donate-msg {
+    font-size: 9.5px;
   }
 
   .grey-msg {
-    margin-right: -69px; 
+    margin-right: -69px;
   }
 }
 
 @media (max-width: 582px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 9px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 9px;
   }
 
   .grey-msg {
-    margin-right: -70px; 
+    margin-right: -70px;
   }
 }
 
 @media (max-width: 565px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 8.5px
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 8.5px;
   }
 
   .grey-msg {
-    margin-right: -71px; 
+    margin-right: -71px;
   }
 }
 
 @media (max-width: 549px) {
-  .blue-msg, 
-  .grey-msg {
-    font-size: 8px; 
+  .blue-msg,
+  .grey-msg,
+  .donate-msg {
+    font-size: 8px;
   }
 
   .grey-msg {
-    margin-right: -72px; 
+    margin-right: -72px;
   }
 }
 
 @media (max-width: 532px) {
   .blue-msg,
-  .grey-msg {
+  .grey-msg,
+  .donate-msg {
     font-size: 7.25px;
   }
 
   .grey-msg {
-    margin-right: -73px; 
+    margin-right: -73px;
   }
 }
 
 @media (max-width: 515px) {
   .blue-msg,
-  .grey-msg {
-    font-size: 7px; 
+  .grey-msg,
+  .donate-msg {
+    font-size: 7px;
   }
 
   .grey-msg {
-    margin-right: -74px; 
+    margin-right: -74px;
   }
 }
