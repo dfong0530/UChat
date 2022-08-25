@@ -31,6 +31,12 @@ const CreateAccount = () => {
             }
 
             setForm({...form, location: `${location.city}, ${location.country}`});
+        }, (error) => {
+
+            console.log(error);
+            setForm({...form, location: 'Location Not Specified'})
+            // alert("Enable Geo Location and Refresh Page.");
+            // setForm({name:"", username: "", password: "", location: "",inUkraine: false});
         });
 
     }, []);

@@ -49,6 +49,7 @@ the donation button */
 
 .menu-item {
   visibility: collapse;
+  cursor: pointer;
 }
 
 /* used for when these buttons are clicked or hovered over */
@@ -125,7 +126,8 @@ the donation button */
 so the message bubble width is adjusted based on the amount of text */
 .message {
   width: 100%;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
+  margin-top: 17px;
 }
 
 /* a div surrounding the user message input box so the dimensions
@@ -191,16 +193,16 @@ buttons and input boxes throughout the messages UI */
   }
 
   .profile-pic {
-    width: 61px; 
-    height: 59px; 
+    width: 61px;
+    height: 59px;
   }
 
   .icon {
-    transform: scale(0.95); 
+    transform: scale(0.95);
   }
 
   .name-location {
-    line-height: 27px; 
+    line-height: 27px;
   }
 
   .id {
@@ -211,550 +213,550 @@ buttons and input boxes throughout the messages UI */
     font-size: 14px;
   }
 
-  .donate-button, .message-box {
-    font-size: 17.5px; 
+  .donate-button,
+  .message-box {
+    font-size: 17.5px;
   }
 
   .donate-button {
-    width: 185px; 
-    height: 52.5px; 
+    width: 185px;
+    height: 52.5px;
   }
 
   .message-box {
-    width: 67.5%; 
+    width: 67.5%;
   }
 
   .message-input div {
-    width: 4.25%; 
+    width: 4.25%;
   }
 }
 
 @media (max-width: 1272px) {
   .information {
-    column-gap: 20.5px; 
+    column-gap: 20.5px;
   }
 
   .profile-pic {
-    width: 60.5px; 
-    height: 58.5px; 
+    width: 60.5px;
+    height: 58.5px;
   }
 
-
-  .name-location { 
-    line-height: 26.5px; 
+  .name-location {
+    line-height: 26.5px;
   }
 
   .id {
-    font-size: 23.5px; 
+    font-size: 23.5px;
   }
 
   .location {
-    font-size: 13.5px; 
+    font-size: 13.5px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 17.5px; 
+    font-size: 17.5px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 17px; 
+    font-size: 17px;
   }
 
   .donate-button {
-    width: 180px; 
+    width: 180px;
   }
 
   .message-box {
-    width: 67%; 
+    width: 67%;
   }
 
   .message-input div {
-    width: 4.5%; 
+    width: 4.5%;
   }
 
   .donate-button {
-    width: 165px; 
+    width: 165px;
     height: 51px;
   }
 
   .message-box {
-    width: 65%; 
+    width: 65%;
   }
 
   .message-input div {
-    width: 4.9%; 
+    width: 4.9%;
   }
 }
 
 @media (max-width: 1056px) {
   .information {
-    column-gap: 20px; 
+    column-gap: 20px;
   }
 
   .profile-pic {
-    width: 60px; 
-    height: 58px; 
+    width: 60px;
+    height: 58px;
   }
 
   .icon {
-    transform: scale(0.92.5); 
+    transform: scale(0.92.5);
   }
 
-  .name-location { 
-    line-height: 26px; 
+  .name-location {
+    line-height: 26px;
   }
 
   .id {
-    font-size: 23px; 
+    font-size: 23px;
   }
 
   .location {
-    font-size: 13px; 
+    font-size: 13px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 17px; 
+    font-size: 17px;
   }
 
   .donate-button {
-    width: 175px; 
-    height: 52px; 
+    width: 175px;
+    height: 52px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    width: 67%; 
+    width: 67%;
   }
 
   .message-input div {
-    width: 4.7%; 
+    width: 4.7%;
   }
 
   .icon {
-    transform: scale(0.80); 
+    transform: scale(0.8);
   }
 
   .message-box {
-    width: 64%; 
+    width: 64%;
   }
 
   .message-input div {
-    width: 5.25%; 
+    width: 5.25%;
   }
 }
 
 @media (max-width: 988px) {
   .information {
-    column-gap: 18px; 
+    column-gap: 18px;
   }
 
   .profile-pic {
-    width: 57.5px; 
-    height: 55.5px; 
-  }
-  
-  .icon {
-    transform: scale(0.77.5); 
+    width: 57.5px;
+    height: 55.5px;
   }
 
-  .name-location { 
-    line-height: 23.5px; 
+  .icon {
+    transform: scale(0.77.5);
+  }
+
+  .name-location {
+    line-height: 23.5px;
   }
 
   .id {
-    font-size: 20.5px; 
+    font-size: 20.5px;
   }
 
   .location {
-    font-size: 10.5px; 
+    font-size: 10.5px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 14.5px; 
+    font-size: 14.5px;
   }
 
   .donate-button {
-    width: 155px; 
+    width: 155px;
     height: 50px;
   }
 
   .message-box {
-    width: 63.5%; 
+    width: 63.5%;
   }
 
   .message-input div {
-    width: 5.5%; 
+    width: 5.5%;
   }
 }
 
 @media (max-width: 948px) {
   .message-input div {
-    width: 5.75%; 
+    width: 5.75%;
   }
 }
 
 @media (max-width: 934px) {
   .information {
-    column-gap: 19.5px; 
+    column-gap: 19.5px;
   }
 
   .profile-pic {
-    width: 59px; 
-    height: 57px; 
+    width: 59px;
+    height: 57px;
   }
 
   .icon {
-    transform: scale(0.90); 
+    transform: scale(0.9);
   }
 
-  .name-location { 
-    line-height: 25px; 
+  .name-location {
+    line-height: 25px;
   }
 
   .id {
-    font-size: 22px; 
+    font-size: 22px;
   }
 
   .location {
-    font-size: 12px; 
+    font-size: 12px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 16.25px; 
+    font-size: 16.25px;
   }
 
   .donate-button {
-    width: 170px; 
+    width: 170px;
   }
 
   .message-box {
-    width: 66%; 
+    width: 66%;
   }
 
   .message-input div {
-    width: 4.8%; 
+    width: 4.8%;
   }
 }
 
-@media (max-width: 1164px) {  
+@media (max-width: 1164px) {
   .message-input div {
-    width: 4.85%; 
+    width: 4.85%;
   }
 }
 
 @media (max-width: 1151px) {
   .information {
-    column-gap: 19px; 
+    column-gap: 19px;
   }
 
   .profile-pic {
-    width: 58.5px; 
-    height: 56.5px; 
+    width: 58.5px;
+    height: 56.5px;
   }
 
   .icon {
-    transform: scale(0.87.5); 
+    transform: scale(0.87.5);
   }
 
-  .name-location { 
-    line-height: 24.5px; 
+  .name-location {
+    line-height: 24.5px;
   }
 
   .id {
-    font-size: 21.5px; 
+    font-size: 21.5px;
   }
 
   .location {
-    font-size: 11.5px; 
+    font-size: 11.5px;
   }
 
-  .enter-button, 
+  .enter-button,
   .message-box {
     font-size: 16px;
   }
-  
+
   .message-box {
-    width: 65.5%; 
+    width: 65.5%;
   }
 
   .message-input div {
-    width: 4.85%; 
+    width: 4.85%;
   }
 }
 
 @media (max-width: 1137px) {
   .information {
-    column-gap: 19px; 
+    column-gap: 19px;
   }
 
   .profile-pic {
-    width: 57.5px; 
-    height: 55px; 
+    width: 57.5px;
+    height: 55px;
   }
 
   .icon {
-    transform: scale(0.85); 
+    transform: scale(0.85);
   }
 
-  .name-location { 
-    line-height: 24px; 
+  .name-location {
+    line-height: 24px;
   }
 
   .id {
-    font-size: 20px; 
+    font-size: 20px;
   }
 
   .location {
-    font-size: 10px; 
+    font-size: 10px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 14px; 
+    font-size: 14px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 15.75px; 
+    font-size: 15.75px;
   }
 
   .donate-button {
-    width: 165px; 
+    width: 165px;
     height: 51px;
   }
 
   .message-box {
-    width: 65%; 
+    width: 65%;
   }
 
   .message-input div {
-    width: 4.9%; 
+    width: 4.9%;
   }
 }
 
 @media (max-width: 1056px) {
   .information {
-    column-gap: 18.5px; 
+    column-gap: 18.5px;
   }
 
   .profile-pic {
-    width: 58px; 
-    height: 56px; 
+    width: 58px;
+    height: 56px;
   }
 
   .icon {
-    transform: scale(0.82.5); 
+    transform: scale(0.82.5);
   }
 
-  .name-location { 
-    line-height: 23.5px; 
+  .name-location {
+    line-height: 23.5px;
   }
 
   .id {
-    font-size: 21px; 
+    font-size: 21px;
   }
 
   .location {
-    font-size: 11px; 
+    font-size: 11px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 15.5px; 
+    font-size: 15.5px;
   }
 
   .message-box {
-    width: 64.5%; 
+    width: 64.5%;
   }
 
   .message-input div {
-    width: 5%; 
+    width: 5%;
   }
 }
 
 @media (max-width: 1029px) {
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 15px; 
+    font-size: 15px;
   }
 
   .donate-button {
-    width: 160px; 
-    height: 50.5px; 
+    width: 160px;
+    height: 50.5px;
   }
 
   .icon {
-    transform: scale(0.80); 
+    transform: scale(0.8);
   }
 
   .message-box {
-    width: 64%; 
+    width: 64%;
   }
 
   .message-input div {
-    width: 5.25%; 
+    width: 5.25%;
   }
 }
 
 @media (max-width: 988px) {
   .information {
-    column-gap: 18px; 
+    column-gap: 18px;
   }
 
   .profile-pic {
-    width: 57.5px; 
-    height: 55.5px; 
-  }
-  
-  .icon {
-    transform: scale(0.77.5); 
+    width: 57.5px;
+    height: 55.5px;
   }
 
-  .name-location { 
-    line-height: 23.5px; 
+  .icon {
+    transform: scale(0.77.5);
+  }
+
+  .name-location {
+    line-height: 23.5px;
   }
 
   .id {
-    font-size: 20.5px; 
+    font-size: 20.5px;
   }
 
   .location {
-    font-size: 10.5px; 
+    font-size: 10.5px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 14.5px; 
+    font-size: 14.5px;
   }
 
   .donate-button {
-    width: 155px; 
+    width: 155px;
     height: 50px;
   }
 
   .message-box {
-    width: 63.5%; 
+    width: 63.5%;
   }
 
   .message-input div {
-    width: 5.5%; 
+    width: 5.5%;
   }
 }
 
 @media (max-width: 948px) {
   .message-input div {
-    width: 5.75%; 
+    width: 5.75%;
   }
 }
 
 @media (max-width: 934px) {
   .information {
-    column-gap: 17.5px; 
+    column-gap: 17.5px;
   }
 
   .profile-pic {
-    width: 57px; 
-    height: 55px; 
+    width: 57px;
+    height: 55px;
   }
 
-  .name-location { 
-    line-height: 23px; 
+  .name-location {
+    line-height: 23px;
   }
 
   .id {
-    font-size: 20px; 
+    font-size: 20px;
   }
 
   .location {
-    font-size: 10px; 
+    font-size: 10px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 14px; 
+    font-size: 14px;
   }
 
   .donate-button {
-    width: 150px; 
+    width: 150px;
   }
 
   .message-box {
-    width: 63%; 
+    width: 63%;
   }
 
   .message-input div {
-    width: 6%; 
+    width: 6%;
   }
 }
 
 @media (max-width: 907px) {
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 13.75px; 
+    font-size: 13.75px;
   }
 
   .donate-button {
-    width: 145px; 
+    width: 145px;
   }
 
   .message-box {
-    width: 62.5%; 
+    width: 62.5%;
   }
 
   .message-input div {
-    width: 6.25%; 
+    width: 6.25%;
   }
 }
 
 @media (max-width: 838px) {
   .information {
-    column-gap: 17px; 
+    column-gap: 17px;
   }
 
   .profile-pic {
-    width: 56px; 
-    height: 54px; 
+    width: 56px;
+    height: 54px;
   }
 
-  .name-location { 
-    line-height: 22px; 
+  .name-location {
+    line-height: 22px;
   }
 
   .id {
-    font-size: 19px; 
+    font-size: 19px;
   }
 
   .location {
-    font-size: 9px; 
+    font-size: 9px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 13.5px; 
+    font-size: 13.5px;
   }
 
   .donate-button {
-    width: 140px; 
+    width: 140px;
   }
 
   .message-box {
-    width: 62%; 
+    width: 62%;
   }
 
   .message-input div {
-    width: 6.5%; 
+    width: 6.5%;
   }
 }
 
 @media (max-width: 826px) {
   .main {
-    width: 128%; 
-    transform: translate(-180px); 
+    width: 128%;
+    transform: translate(-180px);
   }
 
   .menu-item {
@@ -766,20 +768,20 @@ buttons and input boxes throughout the messages UI */
     height: 100vh;
     display: grid;
     grid-template-columns: 22% 78%;
-    background: rgba(0, 0, 0, 0.35); 
+    background: rgba(0, 0, 0, 0.35);
   }
 
-  .header { 
-    border-bottom: 2px solid #dddddd; 
+  .header {
+    border-bottom: 2px solid #dddddd;
   }
 
   .menu-item {
-    margin-left: 10%; 
-    visibility: visible; 
+    margin-left: 10%;
+    visibility: visible;
   }
 
   .information {
-    margin-left: 20%;  
+    margin-left: 20%;
   }
 
   .donate-button {
@@ -787,356 +789,353 @@ buttons and input boxes throughout the messages UI */
   }
 
   .menu-item:hover {
-    opacity: 0.65; 
+    opacity: 0.65;
   }
 
   .menu-item:active {
     opacity: 0.45;
   }
 
-  .message-box, 
+  .message-box,
   .message-input div {
-    margin-bottom: 15%; 
+    margin-bottom: 15%;
   }
 
   .message-input div {
-    width: 5.25%; 
+    width: 5.25%;
   }
 }
 
 @media (max-width: 810px) {
   .main {
-    width: 128.5%; 
+    width: 128.5%;
   }
 
   .information {
-    margin-left: 130px; 
+    margin-left: 130px;
   }
 
   .menu-item {
-    margin-left: 14%; 
+    margin-left: 14%;
   }
 
   .profile-pic {
-    width: 54px; 
-    height: 52px; 
+    width: 54px;
+    height: 52px;
   }
 
   .message-box {
     width: 61.5%;
-    margin-left: 40px; 
+    margin-left: 40px;
   }
 
   .message-input div {
-    width: 5.5%; 
+    width: 5.5%;
   }
 }
 
 @media (max-width: 769px) {
   .main {
-    width: 130%; 
+    width: 130%;
   }
 
   .information {
-    margin-left: 120px; 
+    margin-left: 120px;
   }
 
   .menu-item {
-    margin-left: 15%; 
+    margin-left: 15%;
   }
 
   .profile-pic {
-    width: 52px; 
-    height: 50px; 
+    width: 52px;
+    height: 50px;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 13.75px; 
+    font-size: 13.75px;
   }
 
   .donate-button {
-    width: 135px; 
+    width: 135px;
   }
 
   .message-box {
-    width: 60%; 
-    margin-left: 45px; 
+    width: 60%;
+    margin-left: 45px;
   }
 
   .message-input div {
-    width: 5.75%; 
+    width: 5.75%;
   }
 }
-
 
 @media (max-width: 735px) {
   .main {
-    width: 131.25%; 
+    width: 131.25%;
   }
 
   .information {
-    margin-left: 110px; 
-  }
-  
-  .profile-pic {
-    width: 50px; 
-    height: 48px; 
-  }
-
-  .menu-item {
-    margin-left: 16%; 
-  }
-
-  .donate-button, 
-  .message-box {
-    font-size: 13.5px; 
-  }
-
-  .donate-button {
-    width: 130px; 
-  }
-
-  .message-box {
-    width: 58%; 
-    margin-left: 50px; 
-  }
-
-  .message-input div {
-    width: 6%; 
-  }
-
-@media (max-width: 701px) {
-  .main {
-    width: 133%; 
-  }
-
-  .information {
-    margin-left: 100px; 
-  }
-  
-  .profile-pic {
-    width: 48px; 
-    height: 46px; 
-  }
-
-  .menu-item {
-    margin-left: 17%; 
-  }
-
-  .donate-button, 
-  .message-box {
-    font-size: 13px; 
-  }
-
-  .donate-button {
-    width: 125px; 
-  }
-
-  .message-box {
-    width: 57%; 
-    margin-left: 55px; 
-  }
-
-  .message-input div {
-    width: 6.25%; 
-  }
-}
-
-@media (max-width: 670px) {
-  .main {
-    width: 134.25%; 
-  }
-
-  .information {
-    margin-left: 100px; 
+    margin-left: 110px;
   }
 
   .profile-pic {
-    width: 46px; 
-    height: 44px; 
+    width: 50px;
+    height: 48px;
   }
 
   .menu-item {
-    margin-left: 18%; 
+    margin-left: 16%;
   }
 
-  .donate-button, 
+  .donate-button,
   .message-box {
-    font-size: 12.75px; 
+    font-size: 13.5px;
   }
 
   .donate-button {
-    width: 120px; 
+    width: 130px;
   }
 
   .message-box {
-    width: 56%; 
-    margin-left: 60px; 
+    width: 58%;
+    margin-left: 50px;
   }
 
   .message-input div {
-    width: 6.5%; 
+    width: 6%;
+  }
+
+  @media (max-width: 701px) {
+    .main {
+      width: 133%;
+    }
+
+    .information {
+      margin-left: 100px;
+    }
+
+    .profile-pic {
+      width: 48px;
+      height: 46px;
+    }
+
+    .menu-item {
+      margin-left: 17%;
+    }
+
+    .donate-button,
+    .message-box {
+      font-size: 13px;
+    }
+
+    .donate-button {
+      width: 125px;
+    }
+
+    .message-box {
+      width: 57%;
+      margin-left: 55px;
+    }
+
+    .message-input div {
+      width: 6.25%;
+    }
+  }
+
+  @media (max-width: 670px) {
+    .main {
+      width: 134.25%;
+    }
+
+    .information {
+      margin-left: 100px;
+    }
+
+    .profile-pic {
+      width: 46px;
+      height: 44px;
+    }
+
+    .menu-item {
+      margin-left: 18%;
+    }
+
+    .donate-button,
+    .message-box {
+      font-size: 12.75px;
+    }
+
+    .donate-button {
+      width: 120px;
+    }
+
+    .message-box {
+      width: 56%;
+      margin-left: 60px;
+    }
+
+    .message-input div {
+      width: 6.5%;
+    }
+  }
+
+  @media (max-width: 633px) {
+    .main {
+      width: 136.5%;
+    }
+
+    .information {
+      margin-left: 90px;
+    }
+
+    .profile-pic {
+      width: 44px;
+      height: 42px;
+    }
+
+    .menu-item {
+      margin-left: 19%;
+    }
+
+    .donate-button,
+    .message-box {
+      font-size: 12.5px;
+    }
+
+    .donate-button {
+      width: 115px;
+    }
+
+    .message-box {
+      width: 55%;
+      margin-left: 65px;
+    }
+
+    .message-input div {
+      width: 6.75%;
+    }
+  }
+
+  @media (max-width: 599px) {
+    .main {
+      width: 138.5%;
+    }
+
+    .information {
+      margin-left: 80px;
+    }
+
+    .profile-pic {
+      width: 42px;
+      height: 40px;
+    }
+
+    .menu-item {
+      margin-left: 20%;
+    }
+
+    .donate-button,
+    .message-box {
+      font-size: 12px;
+    }
+
+    .donate-button {
+      width: 110px;
+    }
+
+    .message-box {
+      width: 54%;
+      margin-left: 70px;
+    }
+
+    .message-input div {
+      width: 7%;
+    }
+  }
+
+  @media (max-width: 565px) {
+    .main {
+      width: 140.75%;
+    }
+
+    .information {
+      margin-left: 70px;
+    }
+
+    .profile-pic {
+      width: 40px;
+      height: 38px;
+    }
+
+    .menu-item {
+      margin-left: 21%;
+    }
+
+    .donate-button,
+    .message-box {
+      font-size: 11.75px;
+    }
+
+    .donate-button {
+      width: 105px;
+    }
+
+    .message-box {
+      width: 53%;
+      margin-left: 75px;
+    }
+
+    .message-input div {
+      width: 7.5%;
+    }
+  }
+
+  @media (max-width: 532px) {
+    .main {
+      width: 143.5%;
+    }
+
+    .information {
+      margin-left: 60px;
+    }
+
+    .profile-pic {
+      width: 40px;
+      height: 38px;
+    }
+
+    .menu-item {
+      margin-left: 22%;
+    }
+
+    .donate-button,
+    .message-box {
+      font-size: 11.5px;
+    }
+
+    .donate-button {
+      width: 100px;
+    }
+
+    .message-box {
+      width: 52%;
+      margin-left: 80px;
+    }
+
+    .message-input div {
+      width: 8%;
+    }
+  }
+
+  @media (max-width: 515px) {
+    .main {
+      width: 145%;
+    }
+
+    .information {
+      margin-left: 50px;
+    }
   }
 }
-
-@media (max-width: 633px) {
-  .main {
-    width: 136.5%; 
-  }
-
-  .information {
-    margin-left: 90px; 
-  }
-
-  .profile-pic {
-    width: 44px; 
-    height: 42px; 
-  }
-
-  .menu-item {
-    margin-left: 19%; 
-  }
-
-  .donate-button, 
-  .message-box {
-    font-size: 12.5px; 
-  }
-
-  .donate-button {
-    width: 115px; 
-  }
-
-  .message-box {
-    width: 55%; 
-    margin-left: 65px; 
-  }
-
-  .message-input div {
-    width: 6.75%; 
-  }
-}
-
-@media (max-width: 599px) {
-  .main {
-    width: 138.5%; 
-  }
-
-  .information {
-    margin-left: 80px; 
-  }
-
-  .profile-pic {
-    width: 42px; 
-    height: 40px; 
-  }
-
-  .menu-item {
-    margin-left: 20%; 
-  }
-
-  .donate-button, 
-  .message-box {
-    font-size: 12px; 
-  }
-
-  .donate-button {
-    width: 110px; 
-  }
-
-  .message-box {
-    width: 54%; 
-    margin-left: 70px; 
-  }
-
-  .message-input div {
-    width: 7%; 
-  }
-}
-
-@media (max-width: 565px) {
-  .main {
-    width: 140.75%; 
-  }
-
-  .information {
-    margin-left: 70px; 
-  }
-
-  .profile-pic {
-    width: 40px; 
-    height: 38px; 
-  }
-
-  .menu-item {
-    margin-left: 21%; 
-  }
-
-  .donate-button, 
-  .message-box {
-    font-size: 11.75px; 
-  }
-
-  .donate-button {
-    width: 105px; 
-  }
-
-  .message-box {
-    width: 53%; 
-    margin-left: 75px; 
-  }
-
-  .message-input div {
-    width: 7.5%; 
-  }
-}
-
-@media (max-width: 532px) {
-  .main {
-    width: 143.5%; 
-  }
-
-  .information {
-    margin-left: 60px; 
-  }
-
-  .profile-pic {
-    width: 40px; 
-    height: 38px; 
-  }
-
-  .menu-item {
-    margin-left: 22%; 
-  }
-
-  .donate-button, 
-  .message-box {
-    font-size: 11.5px; 
-  }
-
-  .donate-button {
-    width: 100px; 
-  }
-
-  .message-box {
-    width: 52%; 
-    margin-left: 80px; 
-  }
-
-  .message-input div {
-    width: 8%; 
-  }
-}
-
-@media (max-width: 515px) {
-  .main {
-    width: 145%; 
-  }
-
-  .information {
-    margin-left: 50px; 
-  }
-}
-
-}
-

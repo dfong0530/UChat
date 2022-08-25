@@ -226,7 +226,7 @@ const Messages = () => {
               </div>
             </section>
 
-            {user.inUkraine && <button className="donate-button" onClick={handleDonation}>
+            {!user.inUkraine && <button className="donate-button" onClick={handleDonation}>
               Donate Now
             </button>}
           </div>
@@ -274,7 +274,7 @@ const Messages = () => {
       </section>
       {/* when the donation button is clicked on */}
       {donationBoxDisplay.darkOverlay && (
-        <div id="dark-overlay"></div>
+        <div id="dark-overlay" onClick={() => setDonationBoxDisplay({donationBox: false, darkOverlay: false})}></div>
       )}
       {donationBoxDisplay.donationBox  && (
         <DonationBox

@@ -14,12 +14,7 @@ function App() {
   const navigate = useNavigate(); 
   //{_id, username, password, name, location, inUkraine, friends: [{ roomID: string, name: string, location: string}]}
   // const [user, setUser] = useState({_id: '', username: '', password: '', location: '', name: '', friends: []});   
-  const [user, setUser] = useState({_id: 'oasfhfaoeiuhfeohafsoh', username: 'david', password: 'davidpassword', location: 'New York', name: 'David', friends: [{
-    "roomID": "62fd717ef05419f5d0f3ed36",
-    "name": "Gabby",
-    "location": "Ukraine",
-    "_id": "62fd717ff05419f5d0f3ed39"
-}]});
+  const [user, setUser] = useState({_id: '', username: '', password: '', location: '', name: '', friends: []});
   //{roomID: str, room: str, messages: [{_id: str, userID, message: string, donation: bool, donationAmount: int}]}
   const [room, setRoom] = useState({roomID: "", room: "", messages: []}); 
 
@@ -31,7 +26,7 @@ function App() {
           <Route path="/" element={<Initial />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/messages" element={<Messages />} />
+          <Route path="/messages" element={user._id !== '' ? <Messages /> : <Login />} />
         </Routes>
       </GlobalContext.Provider>
     </>
