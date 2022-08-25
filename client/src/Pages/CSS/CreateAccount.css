@@ -39,6 +39,15 @@
   color: white;
 }
 
+.title {
+	padding: 0 0 20px 0;
+}
+
+.logo, .title {
+	color: #5ba3e4;
+	font-family: Poppins;
+}
+
 .input {
   font-family: "Poppins";
   padding: 15px;
@@ -76,10 +85,3 @@ span {
 }
 
 
-input:invalid[focused="true"]{
-  border: 1px solid red;
-}
-
-input:invalid[focused = 'true'] ~ span {
-  display: block;
-}
