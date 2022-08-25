@@ -54,10 +54,10 @@ const CreateAccount = () => {
                 className="logoCreateAccount"
                 sx={{
                     fontSize: 120,
-                    "@media (max-width: 1000px)": { fontSize: 108 },
-                    "@media (max-width: 800px)": { fontSize: 96 },
-                    "@media (max-width: 600px)": { fontSize: 80 },
-                    "@media (max-width: 425px)": { fontSize: 72 },
+                     "@media (max-width: 850px)": { fontSize: 108 },
+                    // "@media (max-width: 800px)": { fontSize: 96 },
+                    // "@media (max-width: 600px)": { fontSize: 80 },
+                    // "@media (max-width: 425px)": { fontSize: 72 },
                 }}
                 />
                     <p className="titleCreateAccount">UChat</p>
