@@ -2,7 +2,7 @@
 
 https://user-images.githubusercontent.com/68403991/186737627-181dabf5-c82f-4d66-8d6d-fc8c2b7be2f8.mov
 
-### <pre>[Demo Video](https://www.google.com/)     [Project Link](https://uchat-client.netlify.app/)     [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)     [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
+### <pre>[Demo Video](https://www.google.com/) [Project Link](https://uchat-client.netlify.app/) [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client) [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
 
 ###### Frontend Developers: David Fong, Justin Tran, Veevek Dave, Tashi Sherpa
 
@@ -47,10 +47,13 @@ Users outside of Ukraine have options to donate to the person they are speaking 
 
 #### Tashi Sherpa
 
-    I worked on building the frontend portion of the project for the landing page and the donation 
-    functionality on the messaging page through the use of React.js, HTML, CSS, and Javascript.
+    I was a frontend developer for this project. I worked on the landing page the donation design and functionality,
+    and the media queries for the landing, login and create account page for a more responsive user interface.
+    To carry out these tasks, I used React.js, HTML, CSS, and Javascript.
 
-    To do this, I adjusted multiple media queries for 
+    I would say that this journey really helped me learn and develop my skills with React.js and Git as well as
+    solidify and reinforce my understanding of HTML, CSS, and Javascript.
+
 ---
 
 ### How to test
