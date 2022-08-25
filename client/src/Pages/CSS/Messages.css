@@ -752,13 +752,11 @@ buttons and input boxes throughout the messages UI */
 }
 
 @media (max-width: 826px) {
-  .main, 
-  .background {
+  .main {
     width: 128%; 
     transform: translate(-180px); 
   }
 
-  .background, 
   .menu-item {
     transition: 0.2s;
   }
@@ -807,8 +805,26 @@ buttons and input boxes throughout the messages UI */
 }
 
 @media (max-width: 810px) {
+  .main {
+    width: 128.5%; 
+  }
+
+  .information {
+    margin-left: 130px; 
+  }
+
+  .menu-item {
+    margin-left: 14%; 
+  }
+
+  .profile-pic {
+    width: 54px; 
+    height: 52px; 
+  }
+
   .message-box {
     width: 61.5%;
+    margin-left: 40px; 
   }
 
   .message-input div {
@@ -817,6 +833,23 @@ buttons and input boxes throughout the messages UI */
 }
 
 @media (max-width: 769px) {
+  .main {
+    width: 130%; 
+  }
+
+  .information {
+    margin-left: 120px; 
+  }
+
+  .menu-item {
+    margin-left: 15%; 
+  }
+
+  .profile-pic {
+    width: 52px; 
+    height: 50px; 
+  }
+
   .donate-button, 
   .message-box {
     font-size: 13.75px; 
@@ -828,6 +861,7 @@ buttons and input boxes throughout the messages UI */
 
   .message-box {
     width: 60%; 
+    margin-left: 45px; 
   }
 
   .message-input div {
@@ -837,6 +871,23 @@ buttons and input boxes throughout the messages UI */
 
 
 @media (max-width: 735px) {
+  .main {
+    width: 131.25%; 
+  }
+
+  .information {
+    margin-left: 110px; 
+  }
+  
+  .profile-pic {
+    width: 50px; 
+    height: 48px; 
+  }
+
+  .menu-item {
+    margin-left: 16%; 
+  }
+
   .donate-button, 
   .message-box {
     font-size: 13.5px; 
@@ -848,11 +899,244 @@ buttons and input boxes throughout the messages UI */
 
   .message-box {
     width: 58%; 
+    margin-left: 50px; 
   }
 
   .message-input div {
     width: 6%; 
   }
+
+@media (max-width: 701px) {
+  .main {
+    width: 133%; 
+  }
+
+  .information {
+    margin-left: 100px; 
+  }
+  
+  .profile-pic {
+    width: 48px; 
+    height: 46px; 
+  }
+
+  .menu-item {
+    margin-left: 17%; 
+  }
+
+  .donate-button, 
+  .message-box {
+    font-size: 13px; 
+  }
+
+  .donate-button {
+    width: 125px; 
+  }
+
+  .message-box {
+    width: 57%; 
+    margin-left: 55px; 
+  }
+
+  .message-input div {
+    width: 6.25%; 
+  }
+}
+
+@media (max-width: 670px) {
+  .main {
+    width: 134.25%; 
+  }
+
+  .information {
+    margin-left: 100px; 
+  }
+
+  .profile-pic {
+    width: 46px; 
+    height: 44px; 
+  }
+
+  .menu-item {
+    margin-left: 18%; 
+  }
+
+  .donate-button, 
+  .message-box {
+    font-size: 12.75px; 
+  }
+
+  .donate-button {
+    width: 120px; 
+  }
+
+  .message-box {
+    width: 56%; 
+    margin-left: 60px; 
+  }
+
+  .message-input div {
+    width: 6.5%; 
+  }
+}
+
+@media (max-width: 633px) {
+  .main {
+    width: 136.5%; 
+  }
+
+  .information {
+    margin-left: 90px; 
+  }
+
+  .profile-pic {
+    width: 44px; 
+    height: 42px; 
+  }
+
+  .menu-item {
+    margin-left: 19%; 
+  }
+
+  .donate-button, 
+  .message-box {
+    font-size: 12.5px; 
+  }
+
+  .donate-button {
+    width: 115px; 
+  }
+
+  .message-box {
+    width: 55%; 
+    margin-left: 65px; 
+  }
+
+  .message-input div {
+    width: 6.75%; 
+  }
+}
+
+@media (max-width: 599px) {
+  .main {
+    width: 138.5%; 
+  }
+
+  .information {
+    margin-left: 80px; 
+  }
+
+  .profile-pic {
+    width: 42px; 
+    height: 40px; 
+  }
+
+  .menu-item {
+    margin-left: 20%; 
+  }
+
+  .donate-button, 
+  .message-box {
+    font-size: 12px; 
+  }
+
+  .donate-button {
+    width: 110px; 
+  }
+
+  .message-box {
+    width: 54%; 
+    margin-left: 70px; 
+  }
+
+  .message-input div {
+    width: 7%; 
+  }
+}
+
+@media (max-width: 565px) {
+  .main {
+    width: 140.75%; 
+  }
+
+  .information {
+    margin-left: 70px; 
+  }
+
+  .profile-pic {
+    width: 40px; 
+    height: 38px; 
+  }
+
+  .menu-item {
+    margin-left: 21%; 
+  }
+
+  .donate-button, 
+  .message-box {
+    font-size: 11.75px; 
+  }
+
+  .donate-button {
+    width: 105px; 
+  }
+
+  .message-box {
+    width: 53%; 
+    margin-left: 75px; 
+  }
+
+  .message-input div {
+    width: 7.5%; 
+  }
+}
+
+@media (max-width: 532px) {
+  .main {
+    width: 143.5%; 
+  }
+
+  .information {
+    margin-left: 60px; 
+  }
+
+  .profile-pic {
+    width: 40px; 
+    height: 38px; 
+  }
+
+  .menu-item {
+    margin-left: 22%; 
+  }
+
+  .donate-button, 
+  .message-box {
+    font-size: 11.5px; 
+  }
+
+  .donate-button {
+    width: 100px; 
+  }
+
+  .message-box {
+    width: 52%; 
+    margin-left: 80px; 
+  }
+
+  .message-input div {
+    width: 8%; 
+  }
+}
+
+@media (max-width: 515px) {
+  .main {
+    width: 145%; 
+  }
+
+  .information {
+    margin-left: 50px; 
+  }
+}
 
 }
 
