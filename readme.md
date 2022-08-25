@@ -1,6 +1,6 @@
 # UChat - a Ukrainian support chat application
 
-https://user-images.githubusercontent.com/68403991/185759497-8fe9bf8b-9027-4282-86d1-ca8bbae83e98.mov
+https://user-images.githubusercontent.com/68403991/186737627-181dabf5-c82f-4d66-8d6d-fc8c2b7be2f8.mov
 
 ### <pre>[Demo Video](https://www.google.com/)     [Project Link](https://uchat-client.netlify.app/)     [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)     [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
 
