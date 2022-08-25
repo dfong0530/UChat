@@ -9,7 +9,7 @@
   font-family: "Poppins";
 }
 
-@media (max-width: 2000px) {
+@media (max-width: 10000px) {
   .login-page {
     color: #6ab1f0;
     height: 100%;

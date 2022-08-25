@@ -1,4 +1,4 @@
-.app {
+.appCreateAccount {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,51 +6,25 @@
   background-color: #f5f5f5;
 }
 
-.logo {
+.appCreateAccount h1 {
+  color: blue;
+  text-align: center;
+}
+
+.logoCreateAccount {
   justify-content: top;
   align-items: center;
 }
 
-.app form {
-  padding: 0px 60px;
-  border-radius: 10px;
+.appCreateAccount button:hover {
+  transition: 0.2s;
+  opacity: 0.85;
 }
 
-.app h1 {
-  color: blue;
-  text-align: center;
-}
-.app button {
-  background: #5ba3e4;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
-  width: 300px;
-  height: 42px;
-  border: none;
-  color: #ffffff;
-  font-size: 1.1rem;
+.logoCreateAccount,
+.titleCreateAccount {
+  color: #5ba3e4;
   font-family: Poppins;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.app button:hover {
-  background-color: #4caf50; /* Green */
-  color: white;
-}
-
-.input {
-  font-family: "Poppins";
-  padding: 15px;
-  margin: 10px 0px;
-
-  border: none;
-  border-radius: 50px;
-	width: 300px;
-	height: 42px;
-  padding-left: 40px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: 0.15s;
 }
 
 .formInput {
@@ -59,18 +33,149 @@
   width: 280px;
 }
 
-span {
-  font-size: 12px;
-  padding: 3px;
-  color: red;
-  display: none;
+.flexCreateAcc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-input:invalid[focused="true"]{
-  border: 1px solid red;
+.logo-comp {
+  text-align: center;
 }
 
-input:invalid[focused = 'true'] ~ span {
-  display: block;
+.appCreateAccount form {
+  padding: 0px 60px;
+  border-radius: 10px;
+}
+
+@media (max-width: 10000px) {
+
+  .appCreateAccount button {
+    background: #5ba3e4;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    width: 350px;
+    height: 45px;
+    border: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .titleCreateAccount {
+    font-weight: 800;
+    font-size: 40px;
+    padding: 0 0 20px 0;
+  }
+
+  .inputCreateAcc {
+    font-family: "Poppins";
+    padding: 15px;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 50px;
+    width: 350px;
+    height: 45px;
+    padding-left: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+    margin-top: 20px;
+  }
+
+  .inputCreateAcc::-webkit-input-placeholder {
+    font-size: 16px;
+  }
+
+  .btnCreateAcc {
+    margin-top: 30px;
+  }
+
+  .loginDirect {
+    font-family: "Poppins";
+    color: rgb(70, 70, 70);
+    font-size: 15px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .login-linkDirect {
+    color: #0075ff;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: 38px;
+    text-decoration: none;
+    padding-left: 5px;
+  }
+}
+
+@media (max-width: 850px) {
+
+  .appCreateAccount button {
+    background: #5ba3e4;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    width: 300px;
+    height: 44px;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .titleCreateAccount {
+    font-weight: 800;
+    font-size: 37px;
+    padding: 0 0 25px 0;
+  }
+
+  .inputCreateAcc {
+    font-family: "Poppins";
+    padding: 15px;
+    margin: 20px 0px;
+    border: none;
+    border-radius: 50px;
+    width: 300px;
+    height: 42px;
+    padding-left: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+    margin-top: 20px;
+  }
+
+  .inputCreateAcc::-webkit-input-placeholder {
+    font-size: 15px;
+  }
+
+  .btnCreateAcc {
+    margin-top: 30px;
+  }
+
+  .loginDirect {
+    font-family: "Poppins";
+    color: rgb(70, 70, 70);
+    font-size: 15px;
+    margin-top: 0px;
+    margin-right: 10px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .login-linkDirect {
+    color: #0075ff;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Poppins";
+    line-height: 38px;
+    text-decoration: none;
+    padding-left: 5px;
+  }
 }
