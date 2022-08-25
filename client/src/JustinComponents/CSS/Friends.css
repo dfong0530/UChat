@@ -422,7 +422,7 @@ can fit the screen */
 @media (max-width: 769px) {
   .add-friend p {
     font-size: 24px; 
-    margin-right: -95px; 
+    margin-right: -90px; 
   }
 
   .close-menu {
@@ -433,10 +433,77 @@ can fit the screen */
 @media (max-width: 735px) {
   .add-friend p {
     font-size: 23.5px; 
-    margin-right: -90px;
+    margin-right: -80px;
   }
 
   .close-menu {
     transform: scale(1.35); 
+  }
+}
+
+@media (max-width: 701px) {
+  .add-friend p {
+    font-size: 23px; 
+    margin-right: -70px;
+  }
+
+  .close-menu {
+    transform: scale(1.3); 
+  }
+}
+
+@media (max-width: 670px) {
+  .add-friend p {
+    font-size: 22.5px; 
+    margin-right: -60px;
+  }
+
+  .close-menu {
+    transform: scale(1.25); 
+  }
+}
+
+@media (max-width: 633px) {
+  .add-friend p {
+    font-size: 22px; 
+    margin-right: -50px;
+  }
+
+  .close-menu {
+    transform: scale(1.2); 
+  }
+}
+
+@media (max-width: 599px) {
+  .add-friend p {
+    font-size: 21.5px; 
+    margin-right: -45px;
+  }
+
+  .close-menu {
+    transform: scale(1.25); 
+  }
+}
+
+
+@media (max-width: 565px) {
+  .add-friend p {
+    font-size: 21px; 
+    margin-right: -40px;
+  }
+
+  .close-menu {
+    transform: scale(1.1); 
+  }
+}
+
+@media (max-width: 532px) {
+  .add-friend p {
+    font-size: 20.5px; 
+    margin-right: -35px;
+  }
+
+  .close-menu {
+    transform: scale(1.15); 
   }
 }
