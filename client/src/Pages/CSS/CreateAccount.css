@@ -43,11 +43,6 @@
   text-align: center;
 }
 
-.appCreateAccount form {
-  padding: 0px 60px;
-  border-radius: 10px;
-}
-
 @media (max-width: 10000px) {
 
   .appCreateAccount button {
