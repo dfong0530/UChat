@@ -35,8 +35,8 @@
 }
 
 .app button:hover {
-  background-color: #4caf50; /* Green */
-  color: white;
+	transition: 0.2s;
+  opacity: 0.85;
 }
 
 .title {
