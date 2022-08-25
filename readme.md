@@ -48,7 +48,7 @@ Users outside of Ukraine have options to donate to the person they are speaking 
 #### Tashi Sherpa
 
     I was a frontend developer for this project. I worked on the landing page the donation design and functionality,
-    and the media queries for the landing, login and create account page for a more responsive user interface.
+    and the media queries for pages to ensure a responsive user interface for all screen sizes.
     To carry out these tasks, I used React.js, HTML, CSS, and Javascript.
 
     I would say that this journey really helped me learn and develop my skills with React.js and Git as well as
