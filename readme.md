@@ -45,6 +45,14 @@ Users outside of Ukraine have options to donate to the person they are speaking 
 
 #### Veevek Dave
 
+    I worked as a front-end developer for this project. I was reponsible for creating Create-Account page and 
+    the message component which was used in the messaging page. I utlized React.js and CSS to build these pages.
+    I also assisted the members in my Team whenever they needed help or were stuck.
+    
+    Through this experience, I learned how to impliment React.js, but more importantly learned how to work in team 
+    and communicate effectivly through using tools like Git, Figma, and daily "stand-ups". Thanks to David for this
+    great learning oppurtunity.
+    
 #### Tashi Sherpa
 
     I was a frontend developer for this project. I worked on the landing page the donation design and functionality,
