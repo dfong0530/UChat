@@ -1,4 +1,4 @@
-import "./CSS/Messages.css";
+ import "./CSS/Messages.css";
 import io from "socket.io-client";
 import Friends from "../JustinComponents/Friends.js";
 import Message from "../VeevekComponents/Message.js";

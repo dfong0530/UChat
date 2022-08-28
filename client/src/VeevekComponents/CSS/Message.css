@@ -272,12 +272,19 @@
 }
 
 @media (max-width: 826px) {
-  .blue-msg,
+  .blue-msg, 
   .grey-msg,
   .donate-msg {
     max-width: 50%;
     font-size: 16px;
+  }
+
+  .grey-msg {
     border-radius: 30px 30px 0px 30px;
+  }
+
+  .blue-msg {
+    border-radius: 30px 30px 30px 0;
   }
 }
 
@@ -286,6 +293,10 @@
   .grey-msg,
   .donate-msg {
     font-size: 15px;
+  }
+
+  .blue-msg {
+    margin-left: 41px; 
   }
 
   .grey-msg {
@@ -300,6 +311,10 @@
     font-size: 14.5px;
   }
 
+  .blue-msg {
+    margin-left: 42px; 
+  }
+
   .grey-msg {
     margin-right: -59px;
   }
@@ -310,6 +325,10 @@
   .grey-msg,
   .donate-msg {
     font-size: 14px;
+  }
+
+  .blue-msg {
+    margin-left: 43px; 
   }
 
   .grey-msg {
@@ -324,6 +343,10 @@
     font-size: 13.5px;
   }
 
+  .blue-msg {
+    margin-left: 44px; 
+  }
+
   .grey-msg {
     margin-right: -61px;
   }
@@ -336,6 +359,10 @@
     font-size: 13px;
   }
 
+  .blue-msg {
+    margin-left: 45px; 
+  }
+
   .grey-msg {
     margin-right: -62px;
   }
@@ -346,6 +373,10 @@
   .grey-msg,
   .donate-msg {
     font-size: 12.5px;
+  }
+  
+  .blue-msg {
+    margin-left: 46px; 
   }
 
   .grey-msg {
@@ -360,6 +391,10 @@
     font-size: 12px;
   }
 
+  .blue-msg {
+    margin-left: 47px; 
+  }
+
   .grey-msg {
     margin-right: -64px;
   }
@@ -370,6 +405,10 @@
   .grey-msg,
   .donate-msg {
     font-size: 11.5px;
+  }
+
+  .blue-msg {
+    margin-left: 48px; 
   }
 
   .grey-msg {
@@ -384,6 +423,10 @@
     font-size: 11px;
   }
 
+  .blue-msg {
+    margin-left: 49px; 
+  }
+
   .grey-msg {
     margin-right: -66px;
   }
@@ -396,6 +439,10 @@
     font-size: 10.5px;
   }
 
+  .blue-msg {
+    margin-left: 50px; 
+  }
+
   .grey-msg {
     margin-right: -67px;
   }
@@ -406,6 +453,10 @@
   .grey-msg,
   .donate-msg {
     font-size: 10px;
+  }
+  
+  .blue-msg {
+    margin-left: 51px; 
   }
 
   .grey-msg {
@@ -420,6 +471,10 @@
     font-size: 9.5px;
   }
 
+  .blue-msg {
+    margin-left: 52px; 
+  }
+
   .grey-msg {
     margin-right: -69px;
   }
@@ -430,6 +485,10 @@
   .grey-msg,
   .donate-msg {
     font-size: 9px;
+  }
+
+  .blue-msg {
+    margin-left: 53px; 
   }
 
   .grey-msg {
@@ -444,6 +503,10 @@
     font-size: 8.5px;
   }
 
+  .blue-msg {
+    margin-left: 53px; 
+  }
+
   .grey-msg {
     margin-right: -71px;
   }
@@ -456,6 +519,10 @@
     font-size: 8px;
   }
 
+  .blue-msg {
+    margin-left: 54px; 
+  }
+
   .grey-msg {
     margin-right: -72px;
   }
@@ -466,6 +533,10 @@
   .grey-msg,
   .donate-msg {
     font-size: 7.25px;
+  }
+
+  .blue-msg {
+    margin-left: 55px; 
   }
 
   .grey-msg {
