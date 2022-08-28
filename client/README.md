@@ -25,4 +25,14 @@ Login - If user's credentials are corrrect --> HTTP Request to GetUserData and G
 
 ## Messages Page
 
-###### Actions:
+###### Actions: Add Friend button, Switch Friend, Donate Button, Message Input
+
+Add Friend button: When this is clicked, the user adds a friend and at first, the friend will appear anonymous since the other user has to add a friend
+and the messages will be switched to the room with the new friend automatically 
+
+Switch Friend: Whenever the user clicks on another friend, they will be able to switch to the messages page for that friend 
+
+Donate Button: When this is clicked, the user will be able to specify an amount and a message which will be displayed on the chatting area
+
+Message Input: When the user inputs a message, it will be displayed in the chat and added to the array of messages for the specify roomID with that friend 
+and the userID.
