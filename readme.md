@@ -2,7 +2,7 @@
 
 https://user-images.githubusercontent.com/68403991/186737627-181dabf5-c82f-4d66-8d6d-fc8c2b7be2f8.mov
 
-### <pre>[Demo Video](https://www.google.com/) [Project Link](https://uchat-client.netlify.app/) [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client) [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
+### <pre>[Demo Video](https://www.youtube.com/watch?v=qso32-_gCZ8).    [Project Link](https://uchat-client.netlify.app/)     [Frontend Architecture](https://github.com/dfong0530/UChat/tree/main/client)     [Backend Architecture](https://github.com/dfong0530/UChat/tree/main/server)</pre>
 
 ###### Frontend Developers: David Fong, Justin Tran, Veevek Dave, Tashi Sherpa
 
