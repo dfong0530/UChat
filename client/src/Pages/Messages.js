@@ -15,11 +15,11 @@ const socket = io("http://localhost:5000");
 
 const Messages = () => {
   const { user, setUser, room, setRoom } = useContext(GlobalContext);
-  const [message, setMessage] = useState("");
-  const [info, setInfo] = useState({ name: "", location: "" });
+  const [message, setMessage] = useState(""); //message box input state variable
+  const [info, setInfo] = useState({ name: "", location: "" }); //Current friend location, name
   const [donationBoxDisplay, setDonationBoxDisplay] = 
-  useState({donationBox: false, darkOverlay: false});
-  const [menu, setMenu] = useState(false); 
+  useState({donationBox: false, darkOverlay: false}); //Used for display of donation box.
+  const [menu, setMenu] = useState(false); //state variable for side bar on mobile view.
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleMenu = useCallback(() => setMenu(!menu)); 
@@ -65,7 +65,6 @@ const Messages = () => {
   useEffect(() => {
     user.friends.map((aFriend) => {
       if (aFriend.roomID === room.roomID) {
-        console.log(aFriend.name, aFriend.location);
         setInfo({ name: aFriend.name, location: aFriend.location });
       }
       return aFriend;

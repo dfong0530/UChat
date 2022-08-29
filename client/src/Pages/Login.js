@@ -21,7 +21,7 @@ const Login = () => {
     try {
       const data = await LoginRequest(form);
       let roomData = { roomID: "", room: "", messages: [] };
-      console.log(data);
+      //If the user has rooms join the first room and update the state varaibles
       if (data.User.rooms.length !== 0) {
         roomData = await GetRoomData(
           data.User.rooms[0].roomID,

@@ -2,7 +2,8 @@ import axios from 'axios';
 
 //city, country --> Given lat, lng
 export const GetLocation = async(lat, lng) => {
-    const ret = await axios.get(`http://localhost:5000/api/v1/maps/get-location?lat=${lat}&lng=${lng}`);
+    //Made request to heroku backend because we didn't want to expose our google maps API key in the backend.
+    const ret = await axios.get(`https://u-chat-backend.herokuapp.com/api/v1/maps/get-location?lat=${lat}&lng=${lng}`);
     const data = await ret.data;
 
     return data;

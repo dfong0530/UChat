@@ -5,6 +5,7 @@ import GlobalContext from "../GlobalContext";
 import { GetLocation, CreateAccountRequest } from "../Data/GetData";
 
 const CreateAccount = () => {
+    //form state variables
     const [form, setForm] = useState({
         name:"",
         username: "",
@@ -22,7 +23,8 @@ const CreateAccount = () => {
 
     useEffect(() => {
 
-        // usernameRef.current.focus();
+        // Gets the lat, lng of user and makes a request to the backend, which makes a request to 
+        //google maps. The Google Maps API returns a city, country based on the parameters
         navigator.geolocation.getCurrentPosition(async function(position) {
             const location = await GetLocation(position.coords.latitude, position.coords.longitude);
 

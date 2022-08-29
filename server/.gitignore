@@ -1,3 +1,3 @@
 /node_modules
-.env
+secret.txt
 ../.DS_Store
