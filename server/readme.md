@@ -86,3 +86,10 @@ rooms.js --> This middleware file contains functions responsible for adding mess
 <img width="600" alt="Screen Shot 2022-08-18 at 6 30 57 PM" src="https://user-images.githubusercontent.com/68403991/185506566-15ea6430-11c6-4efa-9aba-b7ac2440e148.png">
 
 The join-rooms db only contians two entries show in the image above. These entries act as queues for the users. When users want to be paired they are matched with another user in Ukraine or a user outside of Ukraine. When a match cannont be made the user is saved in a queue and remains there until a match is avaliable.
+
+## Security
+
+I posted the .env file so that others on git hub could easily clone our code. However, I have taken all precautionary mesures including setting restrictions on the admin in the db connection string. 
+
+Moreover, I decided not to include the google maps api key in the .env file. For the endpoint that required the maps api key, I made a request to the server on heroku instead of the one on localhost:5000.
+
