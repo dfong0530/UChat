@@ -22,7 +22,7 @@ Our chat application allows the rest of the world to communicate with people in 
 
 The user is then directed to the chat application where they have options to add friends and chat with people in Ukraine or the rest of the world depending on where they reside.
 
-Users outside of Ukraine have options to donate to the person they are speaking with.
+Users outside of Ukraine have options to donate to the person they are speaking with. 
 
 ---
 
